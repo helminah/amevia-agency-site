@@ -369,8 +369,8 @@ function initMotion() {
 
     gsap.utils.toArray('[data-count]').forEach((number) => {
         const value = Number(number.dataset.count);
-        gsap.fromTo(number, { textContent: 0 }, {
-            textContent: value,
+        gsap.from(number, {
+            textContent: 0,
             duration: 1.7,
             ease: 'power2.out',
             snap: { textContent: 1 },
@@ -384,6 +384,29 @@ function initMotion() {
             }
         });
     });
+
+    gsap.from('.hero-video', {
+        scale: 1.12,
+        duration: 1.6,
+        ease: 'power2.out',
+        delay: 0.1
+    });
+
+    const floatingCta = document.getElementById('floatingCta');
+    if (floatingCta) {
+        let ctaShown = false;
+        const ctaToggle = () => {
+            if (window.scrollY > 400 && !ctaShown) {
+                ctaShown = true;
+                floatingCta.classList.add('is-visible');
+            } else if (window.scrollY <= 200 && ctaShown) {
+                ctaShown = false;
+                floatingCta.classList.remove('is-visible');
+            }
+        };
+        window.addEventListener('scroll', ctaToggle, { passive: true });
+        ctaToggle();
+    }
 }
 
 function initFallback() {
@@ -417,6 +440,15 @@ function initForm() {
         const btnText = button.querySelector('.btn-text');
         const btnLoader = button.querySelector('.btn-loader');
         const data = Object.fromEntries(new FormData(contactForm));
+        if (data.website) {
+            formStatus.textContent = 'Message envoye. AMEVIA vous repond sous 24h.';
+            formStatus.className = 'form-status success';
+            contactForm.reset();
+            btnText.style.display = 'inline';
+            btnLoader.style.display = 'none';
+            button.disabled = false;
+            return;
+        }
 
         btnText.style.display = 'none';
         btnLoader.style.display = 'block';
@@ -462,7 +494,10 @@ function initPreloader(onDone) {
     const barFill = document.getElementById('preloaderBarFill');
     const duration = 600;
     const stagger = 100;
-    const totalLoadTime = 2200;
+    const MIN_LOAD_TIME = 1400;
+    const MAX_LOAD_TIME = 3200;
+
+    const startTime = performance.now();
 
     letters.forEach((letter, index) => {
         setTimeout(() => {
@@ -475,20 +510,61 @@ function initPreloader(onDone) {
 
     if (percent) {
         setTimeout(() => { percent.style.opacity = '1'; }, 400);
-        let current = 0;
-        const interval = setInterval(() => {
-            current += Math.floor(Math.random() * 4) + 2;
-            if (current >= 100) { current = 100; clearInterval(interval); }
-            percent.textContent = current + '%';
-            if (barFill) barFill.style.width = current + '%';
-        }, totalLoadTime / 45);
     }
 
+    const criticalImages = [
+        'assets/images/logo.png',
+        'assets/images/real-lengor-screen.jpg'
+    ];
+
+    const imagePromises = criticalImages.map((src) => new Promise((resolve) => {
+        const img = new Image();
+        img.onload = resolve;
+        img.onerror = resolve;
+        img.src = src;
+    }));
+
+    const fontPromise = document.fonts?.ready ? document.fonts.ready : Promise.resolve();
+
+    let currentPercent = 0;
+    let percentInterval;
+
+    const updatePercent = () => {
+        currentPercent += Math.floor(Math.random() * 3) + 2;
+        if (currentPercent >= 95) currentPercent = 95;
+        if (percent) percent.textContent = currentPercent + '%';
+        if (barFill) barFill.style.width = currentPercent + '%';
+    };
+
+    percentInterval = setInterval(updatePercent, 50);
+
+    Promise.all([...imagePromises, fontPromise]).then(() => {
+        const elapsed = performance.now() - startTime;
+        const remaining = Math.max(MIN_LOAD_TIME - elapsed, 0);
+
+        setTimeout(() => {
+            clearInterval(percentInterval);
+            if (percent) percent.textContent = '100%';
+            if (barFill) barFill.style.width = '100%';
+
+            setTimeout(() => {
+                preloader.classList.add('is-done');
+                document.body.style.overflow = '';
+                document.body.classList.add('page-is-ready');
+                onDone?.();
+            }, 300);
+        }, remaining);
+    });
+
     setTimeout(() => {
-        preloader.classList.add('is-done');
-        document.body.style.overflow = '';
-        onDone?.();
-    }, totalLoadTime);
+        clearInterval(percentInterval);
+        if (!preloader.classList.contains('is-done')) {
+            preloader.classList.add('is-done');
+            document.body.style.overflow = '';
+            document.body.classList.add('page-is-ready');
+            onDone?.();
+        }
+    }, MAX_LOAD_TIME);
 }
 
 function initTextScramble() {

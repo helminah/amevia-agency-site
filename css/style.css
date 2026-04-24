@@ -1140,6 +1140,35 @@ main {
     font-size: 1rem;
 }
 
+.floating-cta-desktop {
+    display: none;
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 106;
+    padding: 14px 28px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--cyan), var(--coral));
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    box-shadow: 0 8px 32px rgba(0,88,124,0.28);
+    transform: translateY(120px);
+    opacity: 0;
+    transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    cursor: pointer;
+}
+.floating-cta-desktop.is-visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+.floating-cta-desktop:hover {
+    box-shadow: 0 12px 40px rgba(0,88,124,0.38);
+    transform: translateY(-2px);
+}
+
 .text-reveal-line {
     overflow: hidden;
     display: block;
@@ -1278,6 +1307,15 @@ main {
 
     .sticky-cta-mobile {
         display: block;
+    }
+}
+
+@media (min-width: 1024px) {
+    .floating-cta-desktop {
+        display: block;
+    }
+    .floating-cta-desktop.is-visible ~ .whatsapp-float {
+        bottom: 84px;
     }
 }
 
