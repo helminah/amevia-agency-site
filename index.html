@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMEVIA - Agence Marketing Digital</title>
+    <meta name="description" content="AMEVIA cree des sites web premium, des contenus et des campagnes digitales pour transformer une presence en demandes concretes.">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=wow-4">
+</head>
+<body>
+    <div class="cursor" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+    <div class="page-glow" aria-hidden="true"></div>
+    <canvas class="shader-canvas" id="shaderCanvas" aria-hidden="true"></canvas>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <nav class="nav" id="navbar">
+        <a class="brand" href="#hero" aria-label="AMEVIA accueil">
+            <img src="assets/images/logo.png" alt="" class="brand-mark">
+            <span>AMEVIA</span>
+        </a>
+        <div class="nav-links" aria-label="Navigation principale">
+            <a href="#work">Realisations</a>
+            <a href="#services">Services</a>
+            <a href="#method">Methode</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <a class="nav-action" href="#contact">Demander un brief</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu">
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#work">Realisations</a>
+        <a href="#services">Services</a>
+        <a href="#method">Methode</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <main>
+        <section class="hero" id="hero">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="https://videos.pexels.com/video-files/3209828/3209828-uhd_2560_1440_25fps.mp4" type="video/mp4">
+            </video>
+            <div class="hero-frost" aria-hidden="true"></div>
+            <div class="hero-copy">
+                <p class="eyebrow"><span></span> Creation de site web premium</p>
+                <h1 class="kinetic-title" data-split="words">Votre site doit donner confiance avant le premier appel.</h1>
+                <p>AMEVIA conçoit des sites vitrines et e-commerce qui ressemblent à une vraie marque : direction artistique, textes, animations, responsive et parcours de conversion.</p>
+                <div class="hero-proof-list" aria-label="Promesses AMEVIA">
+                    <span>Design sur mesure</span>
+                    <span>Mobile impeccable</span>
+                    <span>Conversion pensée dès le départ</span>
+                </div>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#contact">Demander mon site</a>
+                    <a class="btn btn-secondary" href="#contact">Parler de mon projet</a>
+                </div>
+            </div>
+            <div class="hero-showcase" aria-label="Captures de projets AMEVIA">
+                <figure class="mockup-card mockup-main">
+                    <img src="assets/images/real-lengor-screen.jpg" alt="Capture du site Le Ngor">
+                    <figcaption>Restaurant Le Ngor</figcaption>
+                </figure>
+                <figure class="mockup-card mockup-small mockup-a">
+                    <img src="assets/images/real-drhelminah-screen.jpg" alt="Capture du site Dr Helminah">
+                    <figcaption>Personal brand</figcaption>
+                </figure>
+                <figure class="mockup-card mockup-small mockup-b">
+                    <img src="assets/images/real-suavecomfort-screen.jpg" alt="Capture du site Suave Comfort">
+                    <figcaption>E-commerce</figcaption>
+                </figure>
+                <div class="motion-badge motion-badge-a">Site premium</div>
+                <div class="motion-badge motion-badge-b">Parcours clair</div>
+            </div>
+        </section>
+
+        <section class="proof-strip" aria-label="Indicateurs AMEVIA">
+            <div><strong data-count="50">0</strong><span>projets livres</span></div>
+            <div><strong data-count="6">0</strong><span>pays couverts</span></div>
+            <div><strong data-count="180">0</strong><span>% de visibilite moyenne</span></div>
+            <div><strong data-count="25">0</strong><span>K abonnes generes</span></div>
+        </section>
+
+        <section class="site-offer" aria-label="Creation de site web AMEVIA">
+            <div class="site-offer-copy">
+                <p class="eyebrow"><span></span> Votre vitrine, mais au niveau superieur</p>
+                <h2 class="kinetic-title" data-split="words">Un site AMEVIA ne se contente pas d'etre beau. Il donne envie de vous choisir.</h2>
+                <p>Votre site devient votre meilleur commercial : il explique, rassure, montre votre niveau et transforme l'interet en demande concrete.</p>
+            </div>
+            <div class="site-feature-grid">
+                <article class="site-feature">
+                    <span>01</span>
+                    <h3>Une premiere impression forte</h3>
+                    <p>Hero, images, rythme, textes et direction artistique alignés pour que votre marque paraisse solide immédiatement.</p>
+                </article>
+                <article class="site-feature">
+                    <span>02</span>
+                    <h3>Un parcours qui guide</h3>
+                    <p>Chaque section répond à une objection : qui vous êtes, ce que vous proposez, pourquoi vous faire confiance, comment agir.</p>
+                </article>
+                <article class="site-feature">
+                    <span>03</span>
+                    <h3>Une experience vivante</h3>
+                    <p>Animations, glassmorphism, scroll motion et micro-interactions au service du message, pas de l'effet gratuit.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="work" id="work">
+            <div class="section-heading">
+                <p class="eyebrow"><span></span> Realisations</p>
+                <h2 class="kinetic-title" data-split="words">Des captures reelles, pas des decors fictifs.</h2>
+                <p>Chaque visuel presente un projet existant ou un extrait reel de l'univers AMEVIA.</p>
+            </div>
+            <div class="work-grid">
+                <article class="project-card">
+                    <a href="https://restaurantlengor.sn" target="_blank" rel="noreferrer" aria-label="Voir le site Le Ngor">
+                        <img src="assets/images/real-lengor-screen.jpg" alt="Capture du site Le Ngor">
+                    </a>
+                    <div>
+                        <span>Site vitrine - Restaurant</span>
+                        <h3>Le Ngor</h3>
+                        <p>Une experience claire pour presenter le lieu, l'ambiance, le menu et faciliter la reservation.</p>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <a href="https://drhelminah.com" target="_blank" rel="noreferrer" aria-label="Voir le site Dr Helminah">
+                        <img src="assets/images/real-drhelminah-screen.jpg" alt="Capture du site Dr Helminah">
+                    </a>
+                    <div>
+                        <span>Personal brand - Expertise</span>
+                        <h3>Dr Helminah</h3>
+                        <p>Un site qui structure une parole experte et guide le visiteur vers la prise de contact.</p>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <a href="https://suavecomfort.com" target="_blank" rel="noreferrer" aria-label="Voir le site Suave Comfort">
+                        <img src="assets/images/real-suavecomfort-screen.jpg" alt="Capture du site Suave Comfort">
+                    </a>
+                    <div>
+                        <span>E-commerce - Conversion</span>
+                        <h3>Suave Comfort</h3>
+                        <p>Un parcours produit plus lisible, concu pour rassurer et simplifier la decision d'achat.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="services" id="services">
+            <div class="section-heading">
+                <p class="eyebrow"><span></span> Services</p>
+                <h2 class="kinetic-title" data-split="words">Quatre leviers, un seul objectif : generer de la confiance.</h2>
+            </div>
+            <div class="service-grid">
+                <article class="service-card">
+                    <span>01</span>
+                    <h3>Sites web premium</h3>
+                    <p>Architecture, design responsive, animations propres et parcours de conversion lisible.</p>
+                </article>
+                <article class="service-card">
+                    <span>02</span>
+                    <h3>Identite & message</h3>
+                    <p>Positionnement, ton, sections, preuves et direction visuelle pour rendre l'offre evidente.</p>
+                </article>
+                <article class="service-card">
+                    <span>03</span>
+                    <h3>Contenus & social media</h3>
+                    <p>Reels, carrousels, textes et calendrier editorial pour expliquer et faire revenir l'audience.</p>
+                </article>
+                <article class="service-card">
+                    <span>04</span>
+                    <h3>Publicite & acquisition</h3>
+                    <p>Creatives, landing pages et campagnes pour transformer l'attention en demandes concretes.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="method" id="method">
+            <div class="method-copy">
+                <p class="eyebrow"><span></span> Methode</p>
+                <h2 class="kinetic-title" data-split="words">On ne commence pas par l'effet. On commence par le sens.</h2>
+                <p>Le design arrive apres la clarte : qui vous servez, ce qu'ils doivent comprendre, ce qui les rassure, puis ce qui les fait agir.</p>
+            </div>
+            <div class="method-steps">
+                <article>
+                    <span>Diagnostiquer</span>
+                    <p>Objectif, audience, offre, preuves et points de friction.</p>
+                </article>
+                <article>
+                    <span>Designer</span>
+                    <p>Structure, direction artistique, textes et experience mobile.</p>
+                </article>
+                <article>
+                    <span>Lancer</span>
+                    <p>Mise en ligne, contenus, publicites, suivi et optimisations.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="brand-note">
+            <div class="brand-image">
+                <img src="assets/images/devises.png" alt="Devise AMEVIA : creer, connecter, marquer les esprits">
+            </div>
+            <div>
+                <p class="eyebrow"><span></span> Signature</p>
+                <h2 class="kinetic-title" data-split="words">Creer. Connecter. Marquer les esprits.</h2>
+                <p>La promesse reste simple : une presence digitale qui a du style, mais surtout une fonction claire dans votre croissance.</p>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="contact-copy">
+                <p class="eyebrow"><span></span> Contact</p>
+                <h2 class="kinetic-title" data-split="words">Expliquez l'objectif. AMEVIA construit le chemin.</h2>
+                <p>Site, repositionnement, contenus ou campagne : envoyez les bases, on vous repond avec une premiere direction claire.</p>
+                <a href="mailto:contact@amevia.com">contact@amevia.com</a>
+                <a href="tel:+221775043006">+221 77 504 30 06</a>
+            </div>
+            <form class="contact-form" id="contactForm">
+                <label>
+                    <span>Nom</span>
+                    <input type="text" name="name" autocomplete="name" required>
+                </label>
+                <label>
+                    <span>Email</span>
+                    <input type="email" name="email" autocomplete="email" required>
+                </label>
+                <label>
+                    <span>Service</span>
+                    <select name="service" required>
+                        <option value="">Choisir un service</option>
+                        <option value="Site web premium">Site web premium</option>
+                        <option value="Identite et message">Identite & message</option>
+                        <option value="Contenus et social media">Contenus & social media</option>
+                        <option value="Publicite et acquisition">Publicite & acquisition</option>
+                    </select>
+                </label>
+                <label>
+                    <span>Projet</span>
+                    <textarea name="message" rows="5" required></textarea>
+                </label>
+                <button class="btn btn-primary" type="submit">
+                    <span class="btn-text">Envoyer le brief</span>
+                    <span class="btn-loader"></span>
+                </button>
+                <p class="form-status" id="formStatus" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div>
+            <img src="assets/images/logo.png" alt="" class="footer-logo">
+            <strong>AMEVIA</strong>
+        </div>
+        <p>Creer. Connecter. Marquer les esprits.</p>
+        <span>2026</span>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/main.js?v=wow-4"></script>
+</body>
+</html>
