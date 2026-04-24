@@ -46,6 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.registerPlugin(ScrollTrigger);
         initMotion();
         initCharReveal();
+        initMagneticButtons();
+        initTiltCards();
+        initImageReveal();
+        initLineDraw();
+        initTypewriter();
+        initHeroMouseParallax();
     });
 });
 
@@ -55,10 +61,13 @@ function splitKineticTitles() {
         const words = title.textContent.trim().split(/\s+/);
         title.textContent = '';
         words.forEach((word, index) => {
+            const wrap = document.createElement('span');
+            wrap.className = 'word-wrap';
             const span = document.createElement('span');
             span.className = 'word';
             span.textContent = word;
-            title.append(span);
+            wrap.appendChild(span);
+            title.append(wrap);
             if (index < words.length - 1) title.append(' ');
         });
         title.dataset.splitted = 'true';
@@ -601,6 +610,131 @@ function initTextScramble() {
     });
 }
 
+function initMagneticButtons() {
+    if (!window.matchMedia('(pointer: fine)').matches) return;
+
+    document.querySelectorAll('.btn, .nav-action').forEach((btn) => {
+        btn.classList.add('btn-magnetic');
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+        });
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = '';
+        });
+    });
+}
+
+function initTiltCards() {
+    if (!window.matchMedia('(pointer: fine)').matches) return;
+
+    document.querySelectorAll('.project-card, .service-card').forEach((card) => {
+        card.classList.add('tilt-card');
+        const shine = document.createElement('div');
+        shine.className = 'tilt-shine';
+        card.appendChild(shine);
+
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width;
+            const y = (e.clientY - rect.top) / rect.height;
+            const rotateX = (0.5 - y) * 12;
+            const rotateY = (x - 0.5) * 12;
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+            shine.style.background = `linear-gradient(${135 + rotateY * 3}deg, rgba(255,255,255,${0.3 + x * 0.2}) 0%, transparent 50%, rgba(255,255,255,0.05) 100%)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+        });
+    });
+}
+
+function initImageReveal() {
+    document.querySelectorAll('.project-card a, .brand-image').forEach((container) => {
+        container.classList.add('image-reveal');
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-revealed');
+            observer.unobserve(entry.target);
+        });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.image-reveal').forEach((el) => observer.observe(el));
+}
+
+function initLineDraw() {
+    const sections = document.querySelectorAll('section');
+    sections.forEach((section, index) => {
+        if (index === sections.length - 1) return;
+        const line = document.createElement('div');
+        line.className = 'line-draw';
+        section.after(line);
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-drawn');
+            observer.unobserve(entry.target);
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.line-draw').forEach((el) => observer.observe(el));
+}
+
+function initTypewriter() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const target = document.querySelector('.footer-tagline');
+    if (!target || target.dataset.typewriter === 'true') return;
+    target.dataset.typewriter = 'true';
+
+    const text = target.textContent;
+    target.innerHTML = '<span class="typewriter-text"></span><span class="typewriter-cursor"></span>';
+    const span = target.querySelector('.typewriter-text');
+    let i = 0;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            observer.unobserve(target);
+            const interval = setInterval(() => {
+                span.textContent += text[i];
+                i++;
+                if (i >= text.length) clearInterval(interval);
+            }, 60);
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(target);
+}
+
+function initHeroMouseParallax() {
+    if (!window.matchMedia('(pointer: fine)').matches) return;
+
+    const showcase = document.querySelector('.hero-showcase');
+    if (!showcase) return;
+    showcase.classList.add('is-parallax');
+
+    const cards = showcase.querySelectorAll('.mockup-card');
+    document.querySelector('.hero').addEventListener('mousemove', (e) => {
+        const rect = showcase.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+        cards.forEach((card, index) => {
+            const depth = (index + 1) * 6;
+            card.style.transform = `translate(${x * depth}px, ${y * depth}px)`;
+        });
+    });
+}
+
 function initCharReveal() {
     if (!window.gsap || !window.ScrollTrigger) return;
 
@@ -618,10 +752,11 @@ function initCharReveal() {
     });
 
     gsap.utils.toArray('.site-feature h3, .project-card h3, .service-card h3').forEach((heading) => {
-        gsap.to(heading.querySelectorAll('.char'), {
-            y: 0,
-            opacity: 1,
-            duration: 0.55,
+        gsap.from(heading.querySelectorAll('.char'), {
+            y: 20,
+            opacity: 0,
+            filter: 'blur(6px)',
+            duration: 0.6,
             ease: 'power3.out',
             stagger: 0.015,
             scrollTrigger: {
