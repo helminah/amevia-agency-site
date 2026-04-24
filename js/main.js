@@ -458,32 +458,37 @@ function initPreloader(onDone) {
 
     document.body.style.overflow = 'hidden';
     const letters = preloader.querySelectorAll('.preloader-letter');
-    const line = preloader.querySelector('.preloader-line');
-    const duration = 500;
-    const stagger = 120;
+    const percent = document.getElementById('preloaderPercent');
+    const barFill = document.getElementById('preloaderBarFill');
+    const duration = 600;
+    const stagger = 100;
+    const totalLoadTime = 2200;
 
     letters.forEach((letter, index) => {
         setTimeout(() => {
-            letter.style.transition = `opacity ${duration}ms cubic-bezier(0.16, 1, 0.3, 1), transform ${duration}ms cubic-bezier(0.16, 1, 0.3, 1)`;
+            letter.style.transition = `opacity ${duration}ms cubic-bezier(0.16, 1, 0.3, 1), transform ${duration}ms cubic-bezier(0.16, 1, 0.3, 1), filter ${duration}ms cubic-bezier(0.16, 1, 0.3, 1)`;
             letter.style.opacity = '1';
-            letter.style.transform = 'translateY(0) rotateX(0deg)';
-        }, index * stagger);
+            letter.style.transform = 'translateY(0) rotateX(0deg) scale(1)';
+            letter.style.filter = 'blur(0px)';
+        }, index * stagger + 200);
     });
 
-    const lineDelay = letters.length * stagger + 200;
-    setTimeout(() => {
-        if (line) {
-            line.style.transition = `width 600ms cubic-bezier(0.16, 1, 0.3, 1)`;
-            line.style.width = '100%';
-        }
-    }, lineDelay);
+    if (percent) {
+        setTimeout(() => { percent.style.opacity = '1'; }, 400);
+        let current = 0;
+        const interval = setInterval(() => {
+            current += Math.floor(Math.random() * 4) + 2;
+            if (current >= 100) { current = 100; clearInterval(interval); }
+            percent.textContent = current + '%';
+            if (barFill) barFill.style.width = current + '%';
+        }, totalLoadTime / 45);
+    }
 
-    const doneDelay = lineDelay + 900;
     setTimeout(() => {
         preloader.classList.add('is-done');
         document.body.style.overflow = '';
         onDone?.();
-    }, doneDelay);
+    }, totalLoadTime);
 }
 
 function initTextScramble() {
