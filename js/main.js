@@ -1,48 +1,52 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const navbar = document.getElementById('navbar');
-    const navToggle = document.getElementById('navToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const progress = document.querySelector('.scroll-progress');
+    initPreloader(() => {
+        const navbar = document.getElementById('navbar');
+        const navToggle = document.getElementById('navToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const progress = document.querySelector('.scroll-progress');
 
-    const setProgress = () => {
-        const max = document.documentElement.scrollHeight - window.innerHeight;
-        const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
-        progress.style.width = `${pct}%`;
-        navbar.classList.toggle('is-scrolled', window.scrollY > 40);
-    };
+        const setProgress = () => {
+            const max = document.documentElement.scrollHeight - window.innerHeight;
+            const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+            progress.style.width = `${pct}%`;
+            navbar.classList.toggle('is-scrolled', window.scrollY > 40);
+        };
 
-    setProgress();
-    window.addEventListener('scroll', setProgress, { passive: true });
+        setProgress();
+        window.addEventListener('scroll', setProgress, { passive: true });
 
-    navToggle?.addEventListener('click', () => {
-        mobileMenu.classList.toggle('is-open');
-        navToggle.classList.toggle('is-open');
-    });
-
-    document.querySelectorAll('a[href^="#"]').forEach((link) => {
-        link.addEventListener('click', (event) => {
-            const target = document.querySelector(link.getAttribute('href'));
-            if (!target) return;
-            event.preventDefault();
-            mobileMenu.classList.remove('is-open');
-            navToggle?.classList.remove('is-open');
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        navToggle?.addEventListener('click', () => {
+            mobileMenu.classList.toggle('is-open');
+            navToggle.classList.toggle('is-open');
         });
+
+        document.querySelectorAll('a[href^="#"]').forEach((link) => {
+            link.addEventListener('click', (event) => {
+                const target = document.querySelector(link.getAttribute('href'));
+                if (!target) return;
+                event.preventDefault();
+                mobileMenu.classList.remove('is-open');
+                navToggle?.classList.remove('is-open');
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        splitKineticTitles();
+        initTextScramble();
+        initShaderCanvas();
+        initCardLight();
+        initCursor();
+        initForm();
+
+        if (!window.gsap || !window.ScrollTrigger || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            initFallback();
+            return;
+        }
+
+        gsap.registerPlugin(ScrollTrigger);
+        initMotion();
+        initCharReveal();
     });
-
-    splitKineticTitles();
-    initShaderCanvas();
-    initCardLight();
-    initCursor();
-    initForm();
-
-    if (!window.gsap || !window.ScrollTrigger || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        initFallback();
-        return;
-    }
-
-    gsap.registerPlugin(ScrollTrigger);
-    initMotion();
 });
 
 function splitKineticTitles() {
@@ -441,5 +445,139 @@ function initForm() {
             btnLoader.style.display = 'none';
             button.disabled = false;
         }
+    });
+}
+
+function initPreloader(onDone) {
+    const preloader = document.getElementById('preloader');
+    if (!preloader || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        if (preloader) preloader.classList.add('is-done');
+        onDone?.();
+        return;
+    }
+
+    document.body.style.overflow = 'hidden';
+    const letters = preloader.querySelectorAll('.preloader-letter');
+    const line = preloader.querySelector('.preloader-line');
+    const duration = 500;
+    const stagger = 120;
+
+    letters.forEach((letter, index) => {
+        setTimeout(() => {
+            letter.style.transition = `opacity ${duration}ms cubic-bezier(0.16, 1, 0.3, 1), transform ${duration}ms cubic-bezier(0.16, 1, 0.3, 1)`;
+            letter.style.opacity = '1';
+            letter.style.transform = 'translateY(0) rotateX(0deg)';
+        }, index * stagger);
+    });
+
+    const lineDelay = letters.length * stagger + 200;
+    setTimeout(() => {
+        if (line) {
+            line.style.transition = `width 600ms cubic-bezier(0.16, 1, 0.3, 1)`;
+            line.style.width = '100%';
+        }
+    }, lineDelay);
+
+    const doneDelay = lineDelay + 900;
+    setTimeout(() => {
+        preloader.classList.add('is-done');
+        document.body.style.overflow = '';
+        onDone?.();
+    }, doneDelay);
+}
+
+function initTextScramble() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
+    document.querySelectorAll('[data-scramble]').forEach((el) => {
+        const original = el.textContent;
+        el.classList.add('is-scrambled');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                observer.unobserve(el);
+
+                let iteration = 0;
+                const interval = setInterval(() => {
+                    el.textContent = original
+                        .split('')
+                        .map((char, index) => {
+                            if (char === ' ') return ' ';
+                            if (index < iteration) return original[index];
+                            return chars[Math.floor(Math.random() * chars.length)];
+                        })
+                        .join('');
+
+                    if (iteration >= original.length) clearInterval(interval);
+                    iteration += 1 / 2;
+                }, 28);
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(el);
+    });
+}
+
+function initCharReveal() {
+    if (!window.gsap || !window.ScrollTrigger) return;
+
+    document.querySelectorAll('.site-feature h3, .project-card h3, .service-card h3').forEach((heading) => {
+        if (heading.dataset.charRevealed) return;
+        const text = heading.textContent;
+        heading.innerHTML = '';
+        text.split('').forEach((char) => {
+            const span = document.createElement('span');
+            span.className = 'char';
+            span.textContent = char === ' ' ? '\u00A0' : char;
+            heading.appendChild(span);
+        });
+        heading.dataset.charRevealed = 'true';
+    });
+
+    gsap.utils.toArray('.site-feature h3, .project-card h3, .service-card h3').forEach((heading) => {
+        gsap.to(heading.querySelectorAll('.char'), {
+            y: 0,
+            opacity: 1,
+            duration: 0.55,
+            ease: 'power3.out',
+            stagger: 0.015,
+            scrollTrigger: {
+                trigger: heading,
+                start: 'top 88%',
+                once: true
+            }
+        });
+    });
+
+    gsap.utils.toArray('.testimonial-card').forEach((card, index) => {
+        gsap.from(card, {
+            y: 40,
+            opacity: 0,
+            duration: 0.8,
+            ease: 'power3.out',
+            delay: index * 0.1,
+            scrollTrigger: {
+                trigger: card,
+                start: 'top 88%',
+                once: true
+            }
+        });
+    });
+
+    gsap.utils.toArray('.faq-item').forEach((item, index) => {
+        gsap.from(item, {
+            y: 30,
+            opacity: 0,
+            duration: 0.7,
+            ease: 'power3.out',
+            delay: index * 0.08,
+            scrollTrigger: {
+                trigger: item,
+                start: 'top 90%',
+                once: true
+            }
+        });
     });
 }
