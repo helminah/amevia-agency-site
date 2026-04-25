@@ -685,6 +685,13 @@ main {
     transition: transform 0.8s var(--ease);
 }
 
+.project-card img.preview-vertical {
+    aspect-ratio: 9/16;
+    object-fit: contain;
+    object-position: center;
+    background: var(--surface-soft);
+}
+
 .project-card:hover img {
     transform: scale(1.045);
 }
