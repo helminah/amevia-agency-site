@@ -44,6 +44,7 @@
     </script>
 </head>
 <body>
+    <div class="noise-overlay" aria-hidden="true"></div>
     <div class="preloader" id="preloader" aria-hidden="true">
         <div class="preloader-inner">
             <span class="preloader-letter">A</span>
@@ -128,7 +129,14 @@
                 <div class="motion-badge motion-badge-a">Site premium</div>
                 <div class="motion-badge motion-badge-b">Parcours clair</div>
             </div>
+        <div class="hero-curve" aria-hidden="true">
+                <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,0 L0,80 Q720,120 1440,80 L1440,0 Z" fill="var(--bg)"/></svg>
+            </div>
         </section>
+
+        <div class="wave-divider wave-top" aria-hidden="true">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="rgba(255,255,255,0.35)"/></svg>
+        </div>
 
         <section class="proof-strip" aria-label="Indicateurs AMEVIA">
             <div><strong data-count="50">50</strong><span>projets livres</span></div>
@@ -137,6 +145,11 @@
             <div><strong data-count="25">25</strong><span>K abonnes generes</span></div>
         </section>
 
+        <div class="wave-divider" aria-hidden="true">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="rgba(255,255,255,0.35)"/></svg>
+        </div>
+
+        <div class="section-number" aria-hidden="true">01</div>
         <section class="site-offer" aria-label="Creation de site web AMEVIA">
             <div class="site-offer-copy">
                 <p class="eyebrow" data-scramble><span></span> Votre vitrine, mais au niveau superieur</p>
@@ -159,9 +172,27 @@
                     <h3>Une experience vivante</h3>
                     <p>Animations, glassmorphism, scroll motion et micro-interactions au service du message, pas de l'effet gratuit.</p>
                 </article>
+                <article class="project-card">
+                    <a href="#contact" aria-label="Projet Dakar Burger">
+                        <div class="project-media">
+                            <img src="assets/images/demo-dakar-burger.gif" alt="Capture du site Dakar Burger" loading="lazy">
+                            <div class="project-stamp">Nouveau</div>
+                        </div>
+                    </a>
+                    <div>
+                        <span>Site vitrine - Restauration</span>
+                        <h3>Dakar Burger</h3>
+                        <p>Design immersif pour un burger restaurant avec animations fluides et parcours de commande clair.</p>
+                    </div>
+                </article>
             </div>
         </section>
 
+        <div class="wave-divider" aria-hidden="true">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="rgba(255,255,255,0.35)"/></svg>
+        </div>
+
+        <div class="section-number" aria-hidden="true">02</div>
         <section class="work" id="work">
             <div class="section-heading">
                 <p class="eyebrow" data-scramble><span></span> Realisations</p>
@@ -199,9 +230,40 @@
                         <p>Un parcours produit plus lisible, concu pour rassurer et simplifier la decision d'achat.</p>
                     </div>
                 </article>
+                <article class="project-card">
+                    <a href="#contact" aria-label="Projet Dakar Burger Preview">
+                        <div class="project-media">
+                            <img src="assets/images/portfolio-dakar-burger-preview.gif" alt="Preview animée du site Dakar Burger" loading="lazy">
+                            <div class="project-stamp">Nouveau</div>
+                        </div>
+                    </a>
+                    <div>
+                        <span>Site vitrine - Restauration</span>
+                        <h3>Dakar Burger</h3>
+                        <p>Preview animée du design immersif avec animations fluides et interface intuitive.</p>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <a href="#contact" aria-label="Projet Dakar Burger">
+                        <div class="project-media">
+                            <img src="assets/images/demo-dakar-burger.gif" alt="Capture du site Dakar Burger" loading="lazy">
+                            <div class="project-stamp">Nouveau</div>
+                        </div>
+                    </a>
+                    <div>
+                        <span>Site vitrine - Restauration</span>
+                        <h3>Dakar Burger</h3>
+                        <p>Design immersif pour un burger restaurant avec animations fluides et parcours de commande clair.</p>
+                    </div>
+                </article>
             </div>
         </section>
 
+        <div class="wave-divider" aria-hidden="true">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="rgba(255,255,255,0.35)"/></svg>
+        </div>
+
+        <div class="section-number" aria-hidden="true">03</div>
         <section class="testimonials" aria-label="Temoignages clients">
             <div class="section-heading">
                 <p class="eyebrow" data-scramble><span></span> Temoignages</p>
@@ -232,6 +294,76 @@
             </div>
         </section>
 
+        <div class="wave-divider" aria-hidden="true">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="rgba(255,255,255,0.35)"/></svg>
+        </div>
+
+        <section class="pricing" id="pricing" aria-label="Tarifs AMEVIA">
+            <div class="section-heading">
+                <p class="eyebrow" data-scramble><span></span> Tarifs</p>
+                <h2 class="kinetic-title" data-split="words">Des prix clairs pour des sites qui vendent.</h2>
+                <p>Chaque forfait inclut le design sur mesure, le responsive, les animations et la mise en ligne.</p>
+            </div>
+            <div class="pricing-grid">
+                <article class="pricing-card">
+                    <span class="pricing-badge">Populaire</span>
+                    <h3>Vitrine Premium</h3>
+                    <div class="pricing-price">
+                        <span class="price-fcfa">175 000 FCFA</span>
+                        <span class="price-eur">~267 &euro;</span>
+                    </div>
+                    <ul>
+                        <li>Site one-page ou multi-pages (3-5 pages)</li>
+                        <li>Design sur mesure &amp; animations</li>
+                        <li>Responsive mobile &amp; tablette</li>
+                        <li>Formulaire de contact int&eacute;gr&eacute;</li>
+                        <li>SEO technique de base</li>
+                        <li>Livraison sous 7 jours</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Choisir ce forfait</a>
+                </article>
+                <article class="pricing-card pricing-featured">
+                    <span class="pricing-badge">E-commerce</span>
+                    <h3>Boutique en ligne</h3>
+                    <div class="pricing-price">
+                        <span class="price-fcfa">350 000 FCFA</span>
+                        <span class="price-eur">~534 &euro;</span>
+                    </div>
+                    <ul>
+                        <li>Tout le pack Vitrine Premium</li>
+                        <li>Catalogue produits (jusqu'&agrave; 50 r&eacute;f&eacute;rences)</li>
+                        <li>Panier &amp; tunnel de commande</li>
+                        <li>Paiement mobile int&eacute;gr&eacute; (Wave, Orange Money)</li>
+                        <li>Tableau de bord administrateur</li>
+                        <li>Support technique 30 jours</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Choisir ce forfait</a>
+                </article>
+                <article class="pricing-card">
+                    <span class="pricing-badge">Sur mesure</span>
+                    <h3>Pack Complet</h3>
+                    <div class="pricing-price">
+                        <span class="price-fcfa">Sur devis</span>
+                        <span class="price-eur">&Agrave; partir de ~762 &euro;</span>
+                    </div>
+                    <ul>
+                        <li>Site premium ou e-commerce</li>
+                        <li>Identit&eacute; visuelle compl&egrave;te (logo, charte)</li>
+                        <li>Contenus r&eacute;seaux sociaux (10 posts)</li>
+                        <li>Shooting photo ou vid&eacute;o recommand&eacute;</li>
+                        <li>Strat&eacute;gie de lancement &amp; ads</li>
+                        <li>Accompagnement sur 3 mois</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary">Demander un devis</a>
+                </article>
+            </div>
+        </section>
+
+        <div class="wave-divider" aria-hidden="true">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="rgba(255,255,255,0.35)"/></svg>
+        </div>
+
+        <div class="section-number" aria-hidden="true">04</div>
         <section class="services" id="services">
             <div class="section-heading">
                 <p class="eyebrow" data-scramble><span></span> Services</p>
@@ -261,6 +393,11 @@
             </div>
         </section>
 
+        <div class="wave-divider" aria-hidden="true">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="rgba(255,255,255,0.35)"/></svg>
+        </div>
+
+        <div class="section-number" aria-hidden="true">05</div>
         <section class="method" id="method">
             <div class="method-copy">
                 <p class="eyebrow" data-scramble><span></span> Methode</p>
@@ -283,6 +420,11 @@
             </div>
         </section>
 
+        <div class="wave-divider" aria-hidden="true">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="rgba(255,255,255,0.35)"/></svg>
+        </div>
+
+        <div class="section-number" aria-hidden="true">06</div>
         <section class="brand-note">
             <div class="brand-image">
                 <img src="assets/images/devises.png" alt="Devise AMEVIA : creer, connecter, marquer les esprits" loading="lazy">
@@ -294,6 +436,11 @@
             </div>
         </section>
 
+        <div class="wave-divider" aria-hidden="true">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="rgba(255,255,255,0.35)"/></svg>
+        </div>
+
+        <div class="section-number" aria-hidden="true">07</div>
         <section class="faq" id="faq" aria-label="Questions frequentes">
             <div class="section-heading">
                 <p class="eyebrow" data-scramble><span></span> FAQ</p>
@@ -323,6 +470,11 @@
             </div>
         </section>
 
+        <div class="wave-divider" aria-hidden="true">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="rgba(255,255,255,0.35)"/></svg>
+        </div>
+
+        <div class="section-number" aria-hidden="true">08</div>
         <section class="contact" id="contact">
             <div class="contact-copy">
                 <p class="eyebrow" data-scramble><span></span> Contact</p>
