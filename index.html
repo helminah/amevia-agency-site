@@ -1,483 +1,484 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMEVIA - Agence Marketing Digital</title>
-    <meta name="description" content="AMEVIA cree des sites web premium, des contenus et des campagnes digitales pour transformer une presence en demandes concretes.">
-    <meta name="robots" content="index, follow">
-    <meta name="google-site-verification" content="pte_zAUiEpm__wkg13Pkywwc0WsiGzc8TBUDUkTKWvM" />
-    <link rel="canonical" href="https://ameviaagency.com/">
-    <link rel="icon" type="image/png" href="assets/images/logo.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=wow-7">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ameviaagency.com/">
-    <meta property="og:title" content="AMEVIA - Agence Marketing Digital">
-    <meta property="og:description" content="AMEVIA cree des sites web premium, des contenus et des campagnes digitales pour transformer une presence en demandes concretes.">
-    <meta property="og:image" content="https://ameviaagency.com/assets/images/amevia-web-branding.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://amevia.com/">
-    <meta name="twitter:title" content="AMEVIA - Agence Marketing Digital">
-    <meta name="twitter:description" content="AMEVIA cree des sites web premium, des contenus et des campagnes digitales pour transformer une presence en demandes concretes.">
-    <meta name="twitter:image" content="https://amevia.com/assets/images/amevia-web-branding.png">
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "AMEVIA",
-        "url": "https://amevia.com",
-        "logo": "https://amevia.com/assets/images/logo.png",
-        "sameAs": [
-            "https://www.linkedin.com/in/helminah-rm"
-        ],
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+221-77-504-3006",
-            "contactType": "customer service",
-            "areaServed": "SN",
-            "availableLanguage": ["French", "English"]
-        }
-    }
-    </script>
-</head>
-<body>
-    <div class="noise-overlay" aria-hidden="true"></div>
-    <div class="preloader" id="preloader" aria-hidden="true">
-        <div class="preloader-inner">
-            <span class="preloader-letter">A</span>
-            <span class="preloader-letter">M</span>
-            <span class="preloader-letter">E</span>
-            <span class="preloader-letter">V</span>
-            <span class="preloader-letter">I</span>
-            <span class="preloader-letter">A</span>
-            <div class="preloader-percent" id="preloaderPercent">0%</div>
-        </div>
-        <div class="preloader-bar">
-            <div class="preloader-bar-fill" id="preloaderBarFill"></div>
-        </div>
-    </div>
-    <a href="#main" class="skip-link">Aller au contenu</a>
-    <div class="cursor" aria-hidden="true"></div>
-    <div class="cursor-ring" aria-hidden="true"></div>
-    <div class="page-glow" aria-hidden="true"></div>
-    <canvas class="shader-canvas" id="shaderCanvas" aria-hidden="true"></canvas>
-    <div class="scroll-progress" aria-hidden="true"></div>
-
-    <nav class="nav" id="navbar">
-        <a class="brand" href="#hero" aria-label="AMEVIA accueil">
-            <img src="assets/images/logo.png" alt="" class="brand-mark" fetchpriority="high">
-            <span>AMEVIA</span>
-        </a>
-        <div class="nav-links" aria-label="Navigation principale">
-            <a href="#work">Realisations</a>
-            <a href="#services">Services</a>
-            <a href="#method">Methode</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <a class="nav-action" href="#contact">Demander un brief</a>
-        <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu">
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
-
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#work">Realisations</a>
-        <a href="#services">Services</a>
-        <a href="#method">Methode</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-    </div>
-
-    <main id="main">
-        <section class="hero" id="hero">
-            <video class="hero-video" autoplay muted loop playsinline aria-label="Video decoratif d'arriere-plan">
-                <source src="https://videos.pexels.com/video-files/3209828/3209828-uhd_2560_1440_25fps.mp4" type="video/mp4">
-            </video>
-            <div class="hero-frost" aria-hidden="true"></div>
-            <div class="hero-copy">
-                <p class="eyebrow" data-scramble><span></span> Creation de site web premium</p>
-                <h1 class="kinetic-title" data-split="words">Votre site doit donner confiance avant le premier appel.</h1>
-                <p>AMEVIA conçoit des sites vitrines et e-commerce qui ressemblent à une vraie marque : direction artistique, textes, animations, responsive et parcours de conversion.</p>
-                <div class="hero-proof-list" aria-label="Promesses AMEVIA">
-                    <span>Design sur mesure</span>
-                    <span>Mobile impeccable</span>
-                    <span>Conversion pensée dès le départ</span>
-                </div>
-                <div class="hero-actions">
-                    <a class="btn btn-primary" href="#contact">Demander mon site</a>
-                    <a class="btn btn-secondary" href="#contact">Parler de mon projet</a>
-                </div>
-            </div>
-            <div class="hero-showcase" aria-label="Captures de projets AMEVIA">
-                <figure class="mockup-card mockup-main">
-                    <img src="assets/images/real-lengor-screen.jpg" alt="Capture du site Le Ngor" fetchpriority="high">
-                    <figcaption>Restaurant Le Ngor</figcaption>
-                </figure>
-                <figure class="mockup-card mockup-small mockup-a">
-                    <img src="assets/images/real-drhelminah-screen.jpg" alt="Capture du site Dr Helminah" loading="lazy">
-                    <figcaption>Personal brand</figcaption>
-                </figure>
-                <figure class="mockup-card mockup-small mockup-b">
-                    <img src="assets/images/real-suavecomfort-screen.jpg" alt="Capture du site Suave Comfort" loading="lazy">
-                    <figcaption>E-commerce</figcaption>
-                </figure>
-                <div class="motion-badge motion-badge-a">Site premium</div>
-                <div class="motion-badge motion-badge-b">Parcours clair</div>
-            </div>
-        <div class="hero-curve" aria-hidden="true">
-                <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,0 L0,80 Q720,120 1440,80 L1440,0 Z" fill="var(--bg)"/></svg>
-            </div>
-        </section>
-
-        <div class="wave-divider wave-top" aria-hidden="true">
-            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="rgba(255,255,255,0.35)"/></svg>
-        </div>
-
-        <section class="proof-strip" aria-label="Indicateurs AMEVIA">
-            <div><strong data-count="50">50</strong><span>projets livres</span></div>
-            <div><strong data-count="6">6</strong><span>pays couverts</span></div>
-            <div><strong data-count="180">180</strong><span>% de visibilite moyenne</span></div>
-            <div><strong data-count="25">25</strong><span>K abonnes generes</span></div>
-        </section>
-
-        <div class="wave-divider" aria-hidden="true">
-            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="rgba(255,255,255,0.35)"/></svg>
-        </div>
-
-        <div class="section-number" aria-hidden="true">01</div>
-        <section class="site-offer" aria-label="Creation de site web AMEVIA">
-            <div class="site-offer-copy">
-                <p class="eyebrow" data-scramble><span></span> Votre vitrine, mais au niveau superieur</p>
-                <h2 class="kinetic-title" data-split="words">Un site AMEVIA ne se contente pas d'etre beau. Il donne envie de vous choisir.</h2>
-                <p>Votre site devient votre meilleur commercial : il explique, rassure, montre votre niveau et transforme l'interet en demande concrete.</p>
-            </div>
-            <div class="site-feature-grid">
-                <article class="site-feature">
-                    <span>01</span>
-                    <h3>Une premiere impression forte</h3>
-                    <p>Hero, images, rythme, textes et direction artistique alignés pour que votre marque paraisse solide immédiatement.</p>
-                </article>
-                <article class="site-feature">
-                    <span>02</span>
-                    <h3>Un parcours qui guide</h3>
-                    <p>Chaque section répond à une objection : qui vous êtes, ce que vous proposez, pourquoi vous faire confiance, comment agir.</p>
-                </article>
-                <article class="site-feature">
-                    <span>03</span>
-                    <h3>Une experience vivante</h3>
-                    <p>Animations, glassmorphism, scroll motion et micro-interactions au service du message, pas de l'effet gratuit.</p>
-                </article>
-                <article class="project-card">
-                    <a href="#contact" aria-label="Projet Dakar Burger">
-                        <div class="project-media">
-                            <video src="assets/images/demo-dakar-burger.mp4" autoplay loop muted playsinline style="width:100%;height:100%;object-fit:contain;"></video>
-                            <div class="project-stamp">Nouveau</div>
-                        </div>
-                    </a>
-                    <div>
-                        <span>Site vitrine - Restauration</span>
-                        <h3>Dakar Burger</h3>
-                        <p>Design immersif pour un burger restaurant avec animations fluides et parcours de commande clair.</p>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <div class="wave-divider" aria-hidden="true">
-            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="rgba(255,255,255,0.35)"/></svg>
-        </div>
-
-        <div class="section-number" aria-hidden="true">02</div>
-        <section class="work" id="work">
-            <div class="section-heading">
-                <p class="eyebrow" data-scramble><span></span> Realisations</p>
-                <h2 class="kinetic-title" data-split="words">Des captures reelles, pas des decors fictifs.</h2>
-                <p>Chaque visuel presente un projet existant ou un extrait reel de l'univers AMEVIA.</p>
-            </div>
-            <div class="work-grid">
-                <article class="project-card">
-                    <a href="https://restaurantlengor.sn" target="_blank" rel="noreferrer" aria-label="Voir le site Le Ngor">
-                        <img src="assets/images/real-lengor-screen.jpg" alt="Capture du site Le Ngor" loading="lazy">
-                    </a>
-                    <div>
-                        <span>Site vitrine - Restaurant</span>
-                        <h3>Le Ngor</h3>
-                        <p>Une experience claire pour presenter le lieu, l'ambiance, le menu et faciliter la reservation.</p>
-                    </div>
-                </article>
-                <article class="project-card">
-                    <a href="https://drhelminah.com" target="_blank" rel="noreferrer" aria-label="Voir le site Dr Helminah">
-                        <img src="assets/images/real-drhelminah-screen.jpg" alt="Capture du site Dr Helminah" loading="lazy">
-                    </a>
-                    <div>
-                        <span>Personal brand - Expertise</span>
-                        <h3>Dr Helminah</h3>
-                        <p>Un site qui structure une parole experte et guide le visiteur vers la prise de contact.</p>
-                    </div>
-                </article>
-                <article class="project-card">
-                    <a href="https://suavecomfort.com" target="_blank" rel="noreferrer" aria-label="Voir le site Suave Comfort">
-                        <img src="assets/images/real-suavecomfort-screen.jpg" alt="Capture du site Suave Comfort" loading="lazy">
-                    </a>
-                    <div>
-                        <span>E-commerce - Conversion</span>
-                        <h3>Suave Comfort</h3>
-                        <p>Un parcours produit plus lisible, concu pour rassurer et simplifier la decision d'achat.</p>
-                    </div>
-                </article>
-                <article class="project-card">
-                    <a href="#contact" aria-label="Projet Dakar Burger Preview">
-                        <div class="project-media">
-                            <video class="preview-vertical" src="assets/images/portfolio-dakar-burger-preview.mp4" autoplay loop muted playsinline style="width:100%;height:100%;object-fit:contain;"></video>
-                            <div class="project-stamp">Nouveau</div>
-                        </div>
-                    </a>
-                    <div>
-                        <span>Site vitrine - Restauration</span>
-                        <h3>Dakar Burger</h3>
-                        <p>Preview animée du design immersif avec animations fluides et interface intuitive.</p>
-                    </div>
-                </article>
-                <article class="project-card">
-                    <a href="#contact" aria-label="Projet Dakar Burger">
-                        <div class="project-media">
-                            <video src="assets/images/demo-dakar-burger.mp4" autoplay loop muted playsinline style="width:100%;height:100%;object-fit:contain;"></video>
-                            <div class="project-stamp">Nouveau</div>
-                        </div>
-                    </a>
-                    <div>
-                        <span>Site vitrine - Restauration</span>
-                        <h3>Dakar Burger</h3>
-                        <p>Design immersif pour un burger restaurant avec animations fluides et parcours de commande clair.</p>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <div class="wave-divider" aria-hidden="true">
-            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="rgba(255,255,255,0.35)"/></svg>
-        </div>
-
-        <div class="section-number" aria-hidden="true">03</div>
-        <section class="testimonials" aria-label="Temoignages clients">
-            <div class="section-heading">
-                <p class="eyebrow" data-scramble><span></span> Temoignages</p>
-                <h2 class="kinetic-title" data-split="words">Ce que disent les clients qui nous ont fait confiance.</h2>
-            </div>
-            <div class="testimonial-grid">
-                <blockquote class="testimonial-card">
-                    <p>"AMEVIA a transforme notre presence en ligne. Le site nous apporte des reservations chaque semaine sans qu'on ait a courir apres les clients."</p>
-                    <footer>
-                        <strong>Fatou D.</strong>
-                        <span>Proprietaire, Le Ngor</span>
-                    </footer>
-                </blockquote>
-                <blockquote class="testimonial-card">
-                    <p>"Un travail rapide, propre et strategique. Le site reflete exactement l'image qu'on voulait donner de notre marque."</p>
-                    <footer>
-                        <strong>Dr Helminah</strong>
-                        <span>Fondatrice, Amevia</span>
-                    </footer>
-                </blockquote>
-                <blockquote class="testimonial-card">
-                    <p>"Enfin une equipe qui comprend que le design doit servir la vente. Nos conversions ont grimpe des la premiere semaine."</p>
-                    <footer>
-                        <strong>Karim B.</strong>
-                        <span>CEO, Suave Comfort</span>
-                    </footer>
-                </blockquote>
-            </div>
-        </section>
-
-        
-
-        
-
-        
-
-        <div class="section-number" aria-hidden="true">04</div>
-        <section class="services" id="services">
-            <div class="section-heading">
-                <p class="eyebrow" data-scramble><span></span> Services</p>
-                <h2 class="kinetic-title" data-split="words">Quatre leviers, un seul objectif : generer de la confiance.</h2>
-            </div>
-            <div class="service-grid">
-                <article class="service-card">
-                    <span>01</span>
-                    <h3>Sites web premium</h3>
-                    <p>Architecture, design responsive, animations propres et parcours de conversion lisible.</p>
-                </article>
-                <article class="service-card">
-                    <span>02</span>
-                    <h3>Identite & message</h3>
-                    <p>Positionnement, ton, sections, preuves et direction visuelle pour rendre l'offre evidente.</p>
-                </article>
-                <article class="service-card">
-                    <span>03</span>
-                    <h3>Contenus & social media</h3>
-                    <p>Reels, carrousels, textes et calendrier editorial pour expliquer et faire revenir l'audience.</p>
-                </article>
-                <article class="service-card">
-                    <span>04</span>
-                    <h3>Publicite & acquisition</h3>
-                    <p>Creatives, landing pages et campagnes pour transformer l'attention en demandes concretes.</p>
-                </article>
-            </div>
-        </section>
-
-        <div class="wave-divider" aria-hidden="true">
-            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="rgba(255,255,255,0.35)"/></svg>
-        </div>
-
-        <div class="section-number" aria-hidden="true">05</div>
-        <section class="method" id="method">
-            <div class="method-copy">
-                <p class="eyebrow" data-scramble><span></span> Methode</p>
-                <h2 class="kinetic-title" data-split="words">On ne commence pas par l'effet. On commence par le sens.</h2>
-                <p>Le design arrive apres la clarte : qui vous servez, ce qu'ils doivent comprendre, ce qui les rassure, puis ce qui les fait agir.</p>
-            </div>
-            <div class="method-steps">
-                <article>
-                    <span>Diagnostiquer</span>
-                    <p>Objectif, audience, offre, preuves et points de friction.</p>
-                </article>
-                <article>
-                    <span>Designer</span>
-                    <p>Structure, direction artistique, textes et experience mobile.</p>
-                </article>
-                <article>
-                    <span>Lancer</span>
-                    <p>Mise en ligne, contenus, publicites, suivi et optimisations.</p>
-                </article>
-            </div>
-        </section>
-
-        <div class="wave-divider" aria-hidden="true">
-            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="rgba(255,255,255,0.35)"/></svg>
-        </div>
-
-        <div class="section-number" aria-hidden="true">06</div>
-        <section class="brand-note">
-            <div class="brand-image">
-                <img src="assets/images/devises.png" alt="Devise AMEVIA : creer, connecter, marquer les esprits" loading="lazy">
-            </div>
-            <div>
-                <p class="eyebrow" data-scramble><span></span> Signature</p>
-                <h2 class="kinetic-title" data-split="words">Creer. Connecter. Marquer les esprits.</h2>
-                <p>La promesse reste simple : une presence digitale qui a du style, mais surtout une fonction claire dans votre croissance.</p>
-            </div>
-        </section>
-
-        <div class="wave-divider" aria-hidden="true">
-            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="rgba(255,255,255,0.35)"/></svg>
-        </div>
-
-        <div class="section-number" aria-hidden="true">07</div>
-        <section class="faq" id="faq" aria-label="Questions frequentes">
-            <div class="section-heading">
-                <p class="eyebrow" data-scramble><span></span> FAQ</p>
-                <h2 class="kinetic-title" data-split="words">Les questions qu'on nous pose le plus souvent.</h2>
-            </div>
-            <div class="faq-list">
-                <details class="faq-item">
-                    <summary>Combien coute un site web premium ?</summary>
-                    <p>Chaque projet est sur mesure. Apres un brief gratuit, AMEVIA vous envoie un devis detaille en 24h. Pas de forfait cache, pas de mauvaise surprise.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>En combien de temps est livre un site ?</summary>
-                    <p>Sites vitrines livres a partir de 72h. Projets e-commerce ou complexes : sous 7 jours ouvres selon le catalogue et les integrations.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>Vous faites aussi le logo et l'identite visuelle ?</summary>
-                    <p>Oui. AMEVIA accompagne la direction artistique complete : positionnement, charte graphique, typographie, palette et declinaisons reseaux sociaux.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>Le site sera-t-il visible sur Google ?</summary>
-                    <p>Chaque site est livre avec une base SEO technique (balises, schemas, vitesse, responsive) et un sitemap soumis aux moteurs de recherche.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>Proposez-vous la maintenance apres le lancement ?</summary>
-                    <p>Oui. AMEVIA propose des formules de maintenance mensuelle pour les mises a jour, sauvegardes, modifications de contenu et optimisations continues.</p>
-                </details>
-            </div>
-        </section>
-
-        <div class="wave-divider" aria-hidden="true">
-            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="rgba(255,255,255,0.35)"/></svg>
-        </div>
-
-        <div class="section-number" aria-hidden="true">08</div>
-        <section class="contact" id="contact">
-            <div class="contact-copy">
-                <p class="eyebrow" data-scramble><span></span> Contact</p>
-                <h2 class="kinetic-title" data-split="words">Expliquez l'objectif. AMEVIA construit le chemin.</h2>
-                <p>Site, repositionnement, contenus ou campagne : envoyez les bases, on vous repond avec une premiere direction claire.</p>
-                <a href="mailto:contact@amevia.com">contact@amevia.com</a>
-                <a href="tel:+221775043006">+221 77 504 30 06</a>
-                <a href="https://wa.me/221775043006" class="whatsapp-link" target="_blank" rel="noreferrer">WhatsApp</a>
-            </div>
-            <form class="contact-form" id="contactForm">
-                <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;opacity:0;pointer-events:none;height:0;width:0;">
-                <label>
-                    <span>Nom</span>
-                    <input type="text" name="name" autocomplete="name" required>
-                </label>
-                <label>
-                    <span>Email</span>
-                    <input type="email" name="email" autocomplete="email" required>
-                </label>
-                <label>
-                    <span>Service</span>
-                    <select name="service" required>
-                        <option value="">Choisir un service</option>
-                        <option value="Site web premium">Site web premium</option>
-                        <option value="Identite et message">Identite & message</option>
-                        <option value="Contenus et social media">Contenus & social media</option>
-                        <option value="Publicite et acquisition">Publicite & acquisition</option>
-                    </select>
-                </label>
-                <label>
-                    <span>Projet</span>
-                    <textarea name="message" rows="5" required></textarea>
-                </label>
-                <button class="btn btn-primary" type="submit">
-                    <span class="btn-text">Envoyer le brief</span>
-                    <span class="btn-loader"></span>
-                </button>
-                <p class="form-status" id="formStatus" aria-live="polite"></p>
-            </form>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div>
-            <img src="assets/images/logo.png" alt="" class="footer-logo" loading="lazy">
-            <strong>AMEVIA</strong>
-        </div>
-        <p class="footer-tagline">Creer. Connecter. Marquer les esprits.</p>
-        <div style="display:flex; gap:18px; align-items:center;">
-            <a href="mentions-legales.html" style="color:var(--muted); text-decoration:none; font-size:0.82rem; font-weight:600;">Mentions legales</a>
-            <span>2026</span>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/221775043006" class="whatsapp-float" target="_blank" rel="noreferrer" aria-label="Contacter AMEVIA sur WhatsApp">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    </a>
-
-    <div class="sticky-cta-mobile">
-        <a href="#contact" class="btn btn-primary">Demander mon site</a>
-    </div>
-
-    <a href="#contact" class="floating-cta-desktop" id="floatingCta">Demander mon site</a>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="js/main.js?v=wow-7"></script>
-</body>
-</html>
+     1|<!DOCTYPE html>
+     2|<html lang="fr">
+     3|<head>
+     4|    <meta charset="UTF-8">
+     5|    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6|    <title>AMEVIA - Agence Marketing Digital</title>
+     7|    <meta name="description" content="AMEVIA cree des sites web premium, des contenus et des campagnes digitales pour transformer une presence en demandes concretes.">
+     8|    <meta name="robots" content="index, follow">
+     9|    <meta name="google-site-verification" content="pte_zAUiEpm__wkg13Pkywwc0WsiGzc8TBUDUkTKWvM" />
+    10|    <link rel="canonical" href="https://ameviaagency.com/">
+    11|    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    12|    <link rel="preconnect" href="https://fonts.googleapis.com">
+    13|    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    14|    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    15|    <link rel="stylesheet" href="css/style.css?v=wow-7">
+    16|    <meta property="og:type" content="website">
+    17|    <meta property="og:url" content="https://ameviaagency.com/">
+    18|    <meta property="og:title" content="AMEVIA - Agence Marketing Digital">
+    19|    <meta property="og:description" content="AMEVIA cree des sites web premium, des contenus et des campagnes digitales pour transformer une presence en demandes concretes.">
+    20|    <meta property="og:image" content="https://ameviaagency.com/assets/images/amevia-web-branding.png">
+    21|    <meta name="twitter:card" content="summary_large_image">
+    22|    <meta name="twitter:url" content="https://amevia.com/">
+    23|    <meta name="twitter:title" content="AMEVIA - Agence Marketing Digital">
+    24|    <meta name="twitter:description" content="AMEVIA cree des sites web premium, des contenus et des campagnes digitales pour transformer une presence en demandes concretes.">
+    25|    <meta name="twitter:image" content="https://amevia.com/assets/images/amevia-web-branding.png">
+    26|    <script type="application/ld+json">
+    27|    {
+    28|        "@context": "https://schema.org",
+    29|        "@type": "Organization",
+    30|        "name": "AMEVIA",
+    31|        "url": "https://amevia.com",
+    32|        "logo": "https://amevia.com/assets/images/logo.png",
+    33|        "sameAs": [
+    34|            "https://www.linkedin.com/in/helminah-rm"
+    35|        ],
+    36|        "contactPoint": {
+    37|            "@type": "ContactPoint",
+    38|            "telephone": "+221-77-504-3006",
+    39|            "contactType": "customer service",
+    40|            "areaServed": "SN",
+    41|            "availableLanguage": ["French", "English"]
+    42|        }
+    43|    }
+    44|    </script>
+    45|</head>
+    46|<body>
+    47|    <div class="noise-overlay" aria-hidden="true"></div>
+    48|    <div class="preloader" id="preloader" aria-hidden="true">
+    49|        <div class="preloader-inner">
+    50|            <span class="preloader-letter">A</span>
+    51|            <span class="preloader-letter">M</span>
+    52|            <span class="preloader-letter">E</span>
+    53|            <span class="preloader-letter">V</span>
+    54|            <span class="preloader-letter">I</span>
+    55|            <span class="preloader-letter">A</span>
+    56|            <div class="preloader-percent" id="preloaderPercent">0%</div>
+    57|        </div>
+    58|        <div class="preloader-bar">
+    59|            <div class="preloader-bar-fill" id="preloaderBarFill"></div>
+    60|        </div>
+    61|    </div>
+    62|    <a href="#main" class="skip-link">Aller au contenu</a>
+    63|    <div class="cursor" aria-hidden="true"></div>
+    64|    <div class="cursor-ring" aria-hidden="true"></div>
+    65|    <div class="page-glow" aria-hidden="true"></div>
+    66|    <canvas class="shader-canvas" id="shaderCanvas" aria-hidden="true"></canvas>
+    67|    <div class="scroll-progress" aria-hidden="true"></div>
+    68|
+    69|    <nav class="nav" id="navbar">
+    70|        <a class="brand" href="#hero" aria-label="AMEVIA accueil">
+    71|            <img src="assets/images/logo.png" alt="" class="brand-mark" fetchpriority="high">
+    72|            <span>AMEVIA</span>
+    73|        </a>
+    74|        <div class="nav-links" aria-label="Navigation principale">
+    75|            <a href="#work">Realisations</a>
+    76|            <a href="#services">Services</a>
+    77|            <a href="#method">Methode</a>
+    78|            <a href="#faq">FAQ</a>
+    79|            <a href="#contact">Contact</a>
+    80|        </div>
+    81|        <a class="nav-action" href="#contact">Demander un brief</a>
+    82|        <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu">
+    83|            <span></span>
+    84|            <span></span>
+    85|        </button>
+    86|    </nav>
+    87|
+    88|    <div class="mobile-menu" id="mobileMenu">
+    89|        <a href="#work">Realisations</a>
+    90|        <a href="#services">Services</a>
+    91|        <a href="#method">Methode</a>
+    92|        <a href="#faq">FAQ</a>
+    93|        <a href="#contact">Contact</a>
+    94|    </div>
+    95|
+    96|    <main id="main">
+    97|        <section class="hero" id="hero">
+    98|            <video class="hero-video" autoplay muted loop playsinline aria-label="Video decoratif d'arriere-plan">
+    99|                <source src="https://videos.pexels.com/video-files/3209828/3209828-uhd_2560_1440_25fps.mp4" type="video/mp4">
+   100|            </video>
+   101|            <div class="hero-frost" aria-hidden="true"></div>
+   102|            <div class="hero-copy">
+   103|                <p class="eyebrow" data-scramble><span></span> Creation de site web premium</p>
+   104|                <h1 class="kinetic-title" data-split="words">Votre site doit donner confiance avant le premier appel.</h1>
+   105|                <p>AMEVIA conçoit des sites vitrines et e-commerce qui ressemblent à une vraie marque : direction artistique, textes, animations, responsive et parcours de conversion.</p>
+   106|                <div class="hero-proof-list" aria-label="Promesses AMEVIA">
+   107|                    <span>Design sur mesure</span>
+   108|                    <span>Mobile impeccable</span>
+   109|                    <span>Conversion pensée dès le départ</span>
+   110|                </div>
+   111|                <div class="hero-actions">
+   112|                    <a class="btn btn-primary" href="#contact">Demander mon site</a>
+   113|                    <a class="btn btn-secondary" href="#work">Voir nos realisations</a>
+   114|                </div>
+   115|            </div>
+   116|            <div class="hero-showcase" aria-label="Captures de projets AMEVIA">
+   117|                <figure class="mockup-card mockup-main">
+   118|                    <img src="assets/images/real-lengor-screen.jpg" alt="Capture du site Le Ngor" fetchpriority="high">
+   119|                    <figcaption>Restaurant Le Ngor</figcaption>
+   120|                </figure>
+   121|                <figure class="mockup-card mockup-small mockup-a">
+   122|                    <img src="assets/images/real-drhelminah-screen.jpg" alt="Capture du site Dr Helminah" loading="lazy">
+   123|                    <figcaption>Personal brand</figcaption>
+   124|                </figure>
+   125|                <figure class="mockup-card mockup-small mockup-b">
+   126|                    <img src="assets/images/real-suavecomfort-screen.jpg" alt="Capture du site Suave Comfort" loading="lazy">
+   127|                    <figcaption>E-commerce</figcaption>
+   128|                </figure>
+   129|                <div class="motion-badge motion-badge-a">Site premium</div>
+   130|                <div class="motion-badge motion-badge-b">Parcours clair</div>
+   131|            </div>
+   132|        <div class="hero-curve" aria-hidden="true">
+   133|                <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,0 L0,80 Q720,120 1440,80 L1440,0 Z" fill="var(--bg)"/></svg>
+   134|            </div>
+   135|        </section>
+   136|
+   137|        <div class="wave-divider wave-top" aria-hidden="true">
+   138|            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="rgba(255,255,255,0.35)"/></svg>
+   139|        </div>
+   140|
+   141|        <section class="proof-strip" aria-label="Indicateurs AMEVIA">
+   142|            <div><strong data-count="50">50</strong><span>projets livres</span></div>
+   143|            <div><strong data-count="6">6</strong><span>pays couverts</span></div>
+   144|            <div><strong data-count="180">180</strong><span>% de visibilite moyenne</span></div>
+   145|            <div><strong data-count="25">25</strong><span>K abonnes generes</span></div>
+   146|        </section>
+   147|
+   148|        <div class="wave-divider" aria-hidden="true">
+   149|            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="rgba(255,255,255,0.35)"/></svg>
+   150|        </div>
+   151|
+   152|
+153|        <section class="site-offer" aria-label="Creation de site web AMEVIA">
+   154|            <div class="site-offer-copy">
+   155|                <p class="eyebrow" data-scramble><span></span> Votre vitrine, mais au niveau superieur</p>
+   156|                <h2 class="kinetic-title" data-split="words">Un site AMEVIA ne se contente pas d'etre beau. Il donne envie de vous choisir.</h2>
+   157|                <p>Votre site devient votre meilleur commercial : il explique, rassure, montre votre niveau et transforme l'interet en demande concrete.</p>
+   158|            </div>
+   159|            <div class="site-feature-grid">
+   160|                <article class="site-feature">
+   161|                    <span>01</span>
+   162|                    <h3>Une premiere impression forte</h3>
+   163|                    <p>Hero, images, rythme, textes et direction artistique alignés pour que votre marque paraisse solide immédiatement.</p>
+   164|                </article>
+   165|                <article class="site-feature">
+   166|                    <span>02</span>
+   167|                    <h3>Un parcours qui guide</h3>
+   168|                    <p>Chaque section répond à une objection : qui vous êtes, ce que vous proposez, pourquoi vous faire confiance, comment agir.</p>
+   169|                </article>
+   170|                <article class="site-feature">
+   171|                    <span>03</span>
+   172|                    <h3>Une experience vivante</h3>
+   173|                    <p>Animations, glassmorphism, scroll motion et micro-interactions au service du message, pas de l'effet gratuit.</p>
+   174|                </article>
+   175|                <article class="project-card">
+   176|                    <a href="#contact" aria-label="Projet Dakar Burger">
+   177|                        <div class="project-media">
+   178|                            <video src="assets/images/demo-dakar-burger.mp4" autoplay loop muted playsinline style="width:100%;height:100%;object-fit:contain;"></video>
+   179|                            <div class="project-stamp">Nouveau</div>
+   180|                        </div>
+   181|                    </a>
+   182|                    <div>
+   183|                        <span>Site vitrine - Restauration</span>
+   184|                        <h3>Dakar Burger</h3>
+   185|                        <p>Design immersif pour un burger restaurant avec animations fluides et parcours de commande clair.</p>
+   186|                    </div>
+   187|                </article>
+   188|            </div>
+   189|        </section>
+   190|
+   191|        <div class="wave-divider" aria-hidden="true">
+   192|            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="rgba(255,255,255,0.35)"/></svg>
+   193|        </div>
+   194|
+   195|
+196|        <section class="work" id="work">
+   197|            <div class="section-heading">
+   198|                <p class="eyebrow" data-scramble><span></span> Realisations</p>
+   199|                <h2 class="kinetic-title" data-split="words">Des captures reelles, pas des decors fictifs.</h2>
+   200|                <p>Chaque visuel presente un projet existant ou un extrait reel de l'univers AMEVIA.</p>
+   201|            </div>
+   202|            <div class="work-grid">
+   203|                <article class="project-card">
+   204|                    <a href="https://restaurantlengor.sn" target="_blank" rel="noreferrer" aria-label="Voir le site Le Ngor">
+   205|                        <img src="assets/images/real-lengor-screen.jpg" alt="Capture du site Le Ngor" loading="lazy">
+   206|                    </a>
+   207|                    <div>
+   208|                        <span>Site vitrine - Restaurant</span>
+   209|                        <h3>Le Ngor</h3>
+   210|                        <p>Une experience claire pour presenter le lieu, l'ambiance, le menu et faciliter la reservation.</p>
+   211|                    </div>
+   212|                </article>
+   213|                <article class="project-card">
+   214|                    <a href="https://drhelminah.com" target="_blank" rel="noreferrer" aria-label="Voir le site Dr Helminah">
+   215|                        <img src="assets/images/real-drhelminah-screen.jpg" alt="Capture du site Dr Helminah" loading="lazy">
+   216|                    </a>
+   217|                    <div>
+   218|                        <span>Personal brand - Expertise</span>
+   219|                        <h3>Dr Helminah</h3>
+   220|                        <p>Un site qui structure une parole experte et guide le visiteur vers la prise de contact.</p>
+   221|                    </div>
+   222|                </article>
+   223|                <article class="project-card">
+   224|                    <a href="https://suavecomfort.com" target="_blank" rel="noreferrer" aria-label="Voir le site Suave Comfort">
+   225|                        <img src="assets/images/real-suavecomfort-screen.jpg" alt="Capture du site Suave Comfort" loading="lazy">
+   226|                    </a>
+   227|                    <div>
+   228|                        <span>E-commerce - Conversion</span>
+   229|                        <h3>Suave Comfort</h3>
+   230|                        <p>Un parcours produit plus lisible, concu pour rassurer et simplifier la decision d'achat.</p>
+   231|                    </div>
+   232|                </article>
+   233|                <article class="project-card">
+   234|                    <a href="#contact" aria-label="Projet Dakar Burger Preview">
+   235|                        <div class="project-media">
+   236|                            <video class="preview-vertical" src="assets/images/portfolio-dakar-burger-preview.mp4" autoplay loop muted playsinline style="width:100%;height:100%;object-fit:contain;"></video>
+   237|                            <div class="project-stamp">Nouveau</div>
+   238|                        </div>
+   239|                    </a>
+   240|                    <div>
+   241|                        <span>Site vitrine - Restauration</span>
+   242|                        <h3>Dakar Burger</h3>
+   243|                        <p>Preview animée du design immersif avec animations fluides et interface intuitive.</p>
+   244|                    </div>
+   245|                </article>
+   246|                <article class="project-card">
+   247|                    <a href="#contact" aria-label="Projet Dakar Burger">
+   248|                        <div class="project-media">
+   249|                            <video src="assets/images/demo-dakar-burger.mp4" autoplay loop muted playsinline style="width:100%;height:100%;object-fit:contain;"></video>
+   250|                            <div class="project-stamp">Nouveau</div>
+   251|                        </div>
+   252|                    </a>
+   253|                    <div>
+   254|                        <span>Site vitrine - Restauration</span>
+   255|                        <h3>Dakar Burger</h3>
+   256|                        <p>Design immersif pour un burger restaurant avec animations fluides et parcours de commande clair.</p>
+   257|                    </div>
+   258|                </article>
+   259|            </div>
+   260|        </section>
+   261|
+   262|        <div class="wave-divider" aria-hidden="true">
+   263|            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="rgba(255,255,255,0.35)"/></svg>
+   264|        </div>
+   265|
+   266|
+267|        <section class="testimonials" aria-label="Temoignages clients">
+   268|            <div class="section-heading">
+   269|                <p class="eyebrow" data-scramble><span></span> Temoignages</p>
+   270|                <h2 class="kinetic-title" data-split="words">Ce que disent les clients qui nous ont fait confiance.</h2>
+   271|            </div>
+   272|            <div class="testimonial-grid">
+   273|                <blockquote class="testimonial-card">
+   274|                    <p>"AMEVIA a transforme notre presence en ligne. Le site nous apporte des reservations chaque semaine sans qu'on ait a courir apres les clients."</p>
+   275|                    <footer>
+   276|                        <strong>Fatou D.</strong>
+   277|                        <span>Proprietaire, Le Ngor</span>
+   278|                    </footer>
+   279|                </blockquote>
+   280|                <blockquote class="testimonial-card">
+   281|                    <p>"Un travail rapide, propre et strategique. Le site reflete exactement l'image qu'on voulait donner de notre marque."</p>
+   282|                    <footer>
+   283|                        <strong>Dr Helminah</strong>
+   284|                        <span>Fondatrice, Amevia</span>
+   285|                    </footer>
+   286|                </blockquote>
+   287|                <blockquote class="testimonial-card">
+   288|                    <p>"Enfin une equipe qui comprend que le design doit servir la vente. Nos conversions ont grimpe des la premiere semaine."</p>
+   289|                    <footer>
+   290|                        <strong>Karim B.</strong>
+   291|                        <span>CEO, Suave Comfort</span>
+   292|                    </footer>
+   293|                </blockquote>
+   294|            </div>
+   295|        </section>
+   296|
+   297|        
+   298|
+   299|        
+   300|
+   301|        
+   302|
+   303|
+304|        <section class="services" id="services">
+   305|            <div class="section-heading">
+   306|                <p class="eyebrow" data-scramble><span></span> Services</p>
+   307|                <h2 class="kinetic-title" data-split="words">Quatre leviers, un seul objectif : generer de la confiance.</h2>
+   308|            </div>
+   309|            <div class="service-grid">
+   310|                <article class="service-card">
+   311|                    <span>01</span>
+   312|                    <h3>Sites web premium</h3>
+   313|                    <p>Architecture, design responsive, animations propres et parcours de conversion lisible.</p>
+   314|                </article>
+   315|                <article class="service-card">
+   316|                    <span>02</span>
+   317|                    <h3>Identite & message</h3>
+   318|                    <p>Positionnement, ton, sections, preuves et direction visuelle pour rendre l'offre evidente.</p>
+   319|                </article>
+   320|                <article class="service-card">
+   321|                    <span>03</span>
+   322|                    <h3>Contenus & social media</h3>
+   323|                    <p>Reels, carrousels, textes et calendrier editorial pour expliquer et faire revenir l'audience.</p>
+   324|                </article>
+   325|                <article class="service-card">
+   326|                    <span>04</span>
+   327|                    <h3>Publicite & acquisition</h3>
+   328|                    <p>Creatives, landing pages et campagnes pour transformer l'attention en demandes concretes.</p>
+   329|                </article>
+   330|            </div>
+   331|        </section>
+   332|
+   333|        <div class="wave-divider" aria-hidden="true">
+   334|            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="rgba(255,255,255,0.35)"/></svg>
+   335|        </div>
+   336|
+   337|
+338|        <section class="method" id="method">
+   339|            <div class="method-copy">
+   340|                <p class="eyebrow" data-scramble><span></span> Methode</p>
+   341|                <h2 class="kinetic-title" data-split="words">On ne commence pas par l'effet. On commence par le sens.</h2>
+   342|                <p>Le design arrive apres la clarte : qui vous servez, ce qu'ils doivent comprendre, ce qui les rassure, puis ce qui les fait agir.</p>
+   343|            </div>
+   344|            <div class="method-steps">
+   345|                <article>
+   346|                    <span>Diagnostiquer</span>
+   347|                    <p>Objectif, audience, offre, preuves et points de friction.</p>
+   348|                </article>
+   349|                <article>
+   350|                    <span>Designer</span>
+   351|                    <p>Structure, direction artistique, textes et experience mobile.</p>
+   352|                </article>
+   353|                <article>
+   354|                    <span>Lancer</span>
+   355|                    <p>Mise en ligne, contenus, publicites, suivi et optimisations.</p>
+   356|                </article>
+   357|            </div>
+   358|        </section>
+   359|
+   360|        <div class="wave-divider" aria-hidden="true">
+   361|            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="rgba(255,255,255,0.35)"/></svg>
+   362|        </div>
+   363|
+   364|
+365|        <section class="brand-note">
+   366|            <div class="brand-image">
+   367|                <img src="assets/images/devises.png" alt="Devise AMEVIA : creer, connecter, marquer les esprits" loading="lazy">
+   368|            </div>
+   369|            <div>
+   370|                <p class="eyebrow" data-scramble><span></span> Signature</p>
+   371|                <h2 class="kinetic-title" data-split="words">Creer. Connecter. Marquer les esprits.</h2>
+   372|                <p>La promesse reste simple : une presence digitale qui a du style, mais surtout une fonction claire dans votre croissance.</p>
+   373|            </div>
+   374|        </section>
+   375|
+   376|        <div class="wave-divider" aria-hidden="true">
+   377|            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="rgba(255,255,255,0.35)"/></svg>
+   378|        </div>
+   379|
+   380|
+381|        <section class="faq" id="faq" aria-label="Questions frequentes">
+   382|            <div class="section-heading">
+   383|                <p class="eyebrow" data-scramble><span></span> FAQ</p>
+   384|                <h2 class="kinetic-title" data-split="words">Les questions qu'on nous pose le plus souvent.</h2>
+   385|            </div>
+   386|            <div class="faq-list">
+   387|                <details class="faq-item">
+   388|                    <summary>Combien coute un site web premium ?</summary>
+   389|                    <p>Chaque projet est sur mesure. Apres un brief gratuit, AMEVIA vous envoie un devis detaille en 24h. Pas de forfait cache, pas de mauvaise surprise.</p>
+   390|                </details>
+   391|                <details class="faq-item">
+   392|                    <summary>En combien de temps est livre un site ?</summary>
+   393|                    <p>Sites vitrines livres a partir de 72h. Projets e-commerce ou complexes : sous 7 jours ouvres selon le catalogue et les integrations.</p>
+   394|                </details>
+   395|                <details class="faq-item">
+   396|                    <summary>Vous faites aussi le logo et l'identite visuelle ?</summary>
+   397|                    <p>Oui. AMEVIA accompagne la direction artistique complete : positionnement, charte graphique, typographie, palette et declinaisons reseaux sociaux.</p>
+   398|                </details>
+   399|                <details class="faq-item">
+   400|                    <summary>Le site sera-t-il visible sur Google ?</summary>
+   401|                    <p>Chaque site est livre avec une base SEO technique (balises, schemas, vitesse, responsive) et un sitemap soumis aux moteurs de recherche.</p>
+   402|                </details>
+   403|                <details class="faq-item">
+   404|                    <summary>Proposez-vous la maintenance apres le lancement ?</summary>
+   405|                    <p>Oui. AMEVIA propose des formules de maintenance mensuelle pour les mises a jour, sauvegardes, modifications de contenu et optimisations continues.</p>
+   406|                </details>
+   407|            </div>
+   408|        </section>
+   409|
+   410|        <div class="wave-divider" aria-hidden="true">
+   411|            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="rgba(255,255,255,0.35)"/></svg>
+   412|        </div>
+   413|
+   414|
+415|        <section class="contact" id="contact">
+   416|            <div class="contact-copy">
+   417|                <p class="eyebrow" data-scramble><span></span> Contact</p>
+   418|                <h2 class="kinetic-title" data-split="words">Expliquez l'objectif. AMEVIA construit le chemin.</h2>
+   419|                <p>Site, repositionnement, contenus ou campagne : envoyez les bases, on vous repond avec une premiere direction claire.</p>
+   420|                <a href="mailto:contact@amevia.com">contact@amevia.com</a>
+   421|                <a href="tel:+221****3006">+221 77 504 30 06</a>
+   422|                <a href="https://wa.me/221775043006" class="whatsapp-link" target="_blank" rel="noreferrer">WhatsApp</a>
+   423|            </div>
+   424|            <form class="contact-form" id="contactForm">
+   425|                <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;opacity:0;pointer-events:none;height:0;width:0;">
+   426|                <label>
+   427|                    <span>Nom</span>
+   428|                    <input type="text" name="name" autocomplete="name" required>
+   429|                </label>
+   430|                <label>
+   431|                    <span>Email</span>
+   432|                    <input type="email" name="email" autocomplete="email" required>
+   433|                </label>
+   434|                <label>
+   435|                    <span>Service</span>
+   436|                    <select name="service" required>
+   437|                        <option value="">Choisir un service</option>
+   438|                        <option value="Site web premium">Site web premium</option>
+   439|                        <option value="Identite et message">Identite & message</option>
+   440|                        <option value="Contenus et social media">Contenus & social media</option>
+   441|                        <option value="Publicite et acquisition">Publicite & acquisition</option>
+   442|                    </select>
+   443|                </label>
+   444|                <label>
+   445|                    <span>Projet</span>
+   446|                    <textarea name="message" rows="5" required></textarea>
+   447|                </label>
+   448|                <button class="btn btn-primary" type="submit">
+   449|                    <span class="btn-text">Envoyer le brief</span>
+   450|                    <span class="btn-loader"></span>
+   451|                </button>
+   452|                <p class="form-status" id="formStatus" aria-live="polite"></p>
+   453|            </form>
+   454|        </section>
+   455|    </main>
+   456|
+   457|    <footer class="footer">
+   458|        <div>
+   459|            <img src="assets/images/logo.png" alt="" class="footer-logo" loading="lazy">
+   460|            <strong>AMEVIA</strong>
+   461|        </div>
+   462|        <p class="footer-tagline">Creer. Connecter. Marquer les esprits.</p>
+   463|        <div style="display:flex; gap:18px; align-items:center;">
+   464|            <a href="mentions-legales.html" style="color:var(--muted); text-decoration:none; font-size:0.82rem; font-weight:600;">Mentions legales</a>
+   465|            <span>2026</span>
+   466|        </div>
+   467|    </footer>
+   468|
+   469|    <a href="https://wa.me/221775043006" class="whatsapp-float" target="_blank" rel="noreferrer" aria-label="Contacter AMEVIA sur WhatsApp">
+   470|        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+   471|    </a>
+   472|
+   473|    <div class="sticky-cta-mobile">
+   474|        <a href="#contact" class="btn btn-primary">Demander mon site</a>
+   475|    </div>
+   476|
+   477|    <a href="#contact" class="floating-cta-desktop" id="floatingCta">Demander mon site</a>
+   478|
+   479|    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+   480|    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+   481|    <script src="js/main.js?v=wow-7"></script>
+   482|</body>
+   483|</html>
+   484|
