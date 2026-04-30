@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         gsap.registerPlugin(ScrollTrigger);
         initMotion();
+        setTimeout(() => document.body.classList.add('hero-text-safe'), 1800);
         initCharReveal();
         initMagneticButtons();
         initTiltCards();
@@ -280,13 +281,23 @@ function initMotion() {
         stagger: 0.1
     });
 
-    gsap.from('.mockup-card', {
+        gsap.from('.mockup-card', {
         y: 56,
         opacity: 0,
         rotate: -2,
         duration: 1,
         ease: 'power3.out',
         stagger: 0.12
+    });
+
+    gsap.from('.hero-ai-frame', {
+        opacity: 0,
+        scale: 0.9,
+        rotate: -4,
+        x: 48,
+        duration: 1.25,
+        ease: 'power3.out',
+        delay: 0.16
     });
 
     gsap.from('.motion-badge', {
@@ -297,6 +308,15 @@ function initMotion() {
         ease: 'power3.out',
         stagger: 0.12,
         delay: 0.3
+    });
+
+    gsap.from('.hero-impact-panel', {
+        y: 28,
+        opacity: 0,
+        scale: 0.94,
+        duration: 0.85,
+        ease: 'power3.out',
+        delay: 0.52
     });
 
     gsap.to('.motion-badge-a', {
@@ -312,6 +332,24 @@ function initMotion() {
         y: 14,
         rotate: -2,
         duration: 3.2,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut'
+    });
+
+    gsap.to('.motion-badge-c', {
+        y: -10,
+        x: 8,
+        rotate: 1.5,
+        duration: 3.6,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut'
+    });
+
+    gsap.to('.hero-ai-frame img, .hero-ai-frame video', {
+        scale: 1.09,
+        duration: 7,
         repeat: -1,
         yoyo: true,
         ease: 'sine.inOut'
@@ -362,7 +400,7 @@ function initMotion() {
         });
     });
 
-    gsap.utils.toArray('.project-card, .service-card, .site-feature, .method-steps article, .brand-image, .contact-form, .proof-strip div').forEach((item) => {
+    gsap.utils.toArray('.project-card, .service-card, .site-feature, .method-steps article, .brand-image, .contact-form, .proof-strip div, .testimonial-card').forEach((item) => {
         gsap.from(item, {
             y: 44,
             opacity: 0,
@@ -419,6 +457,7 @@ function initMotion() {
 }
 
 function initFallback() {
+    document.body.classList.add('hero-text-safe');
     const revealItems = document.querySelectorAll('.project-card, .service-card, .site-feature, .method-steps article, .brand-image, .contact-form, .proof-strip div');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -450,7 +489,7 @@ function initForm() {
         const btnLoader = button.querySelector('.btn-loader');
         const data = Object.fromEntries(new FormData(contactForm));
         if (data.website) {
-            formStatus.textContent = 'Message envoye. AMEVIA vous repond sous 24h.';
+            formStatus.textContent = 'Message envoyé. AMEVIA vous répond sous 24h.';
             formStatus.className = 'form-status success';
             contactForm.reset();
             btnText.style.display = 'inline';
@@ -475,11 +514,11 @@ function initForm() {
 
             if (!response.ok) throw new Error('Formspree rejected the message');
 
-            formStatus.textContent = 'Message envoye. AMEVIA vous repond sous 24h.';
+            formStatus.textContent = 'Message envoyé. AMEVIA vous répond sous 24h.';
             formStatus.className = 'form-status success';
             contactForm.reset();
         } catch (error) {
-            formStatus.textContent = 'Envoi impossible ici. Ecrivez directement a contact@amevia.com.';
+            formStatus.textContent = 'Envoi impossible ici. Écrivez directement à contact@ameviaagency.com.';
             formStatus.className = 'form-status error';
         } finally {
             btnText.style.display = 'inline';
@@ -503,8 +542,8 @@ function initPreloader(onDone) {
     const barFill = document.getElementById('preloaderBarFill');
     const duration = 600;
     const stagger = 100;
-    const MIN_LOAD_TIME = 1400;
-    const MAX_LOAD_TIME = 3200;
+    const MIN_LOAD_TIME = 450;
+    const MAX_LOAD_TIME = 1400;
 
     const startTime = performance.now();
 
@@ -523,7 +562,7 @@ function initPreloader(onDone) {
 
     const criticalImages = [
         'assets/images/logo.png',
-        'assets/images/real-lengor-screen.jpg'
+        'assets/images/dakar-burger-page-lite.jpg'
     ];
 
     const imagePromises = criticalImages.map((src) => new Promise((resolve) => {
@@ -533,7 +572,8 @@ function initPreloader(onDone) {
         img.src = src;
     }));
 
-    const fontPromise = document.fonts?.ready ? document.fonts.ready : Promise.resolve();
+    const fontPromise = Promise.resolve();
+    const videoPromise = Promise.resolve();
 
     let currentPercent = 0;
     let percentInterval;
@@ -547,7 +587,7 @@ function initPreloader(onDone) {
 
     percentInterval = setInterval(updatePercent, 50);
 
-    Promise.all([...imagePromises, fontPromise]).then(() => {
+    Promise.all([...imagePromises, fontPromise, videoPromise]).then(() => {
         const elapsed = performance.now() - startTime;
         const remaining = Math.max(MIN_LOAD_TIME - elapsed, 0);
 
