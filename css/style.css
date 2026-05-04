@@ -303,20 +303,13 @@ main {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.9;
-    filter: saturate(1.06) contrast(1.04);
+    opacity: 1;
+    filter: saturate(1.1) contrast(1.05) brightness(1.02);
     border-radius: 18px;
 }
 
 .hero-frost {
-    inset: 0;
-    z-index: 1;
-    background:
-        linear-gradient(90deg, rgba(241,245,238,0.95) 0%, rgba(241,245,238,0.72) 38%, rgba(241,245,238,0.18) 100%),
-        radial-gradient(circle at 70% 38%, rgba(0, 165, 200, 0.36), transparent 27rem),
-        radial-gradient(circle at 84% 70%, rgba(243, 93, 79, 0.26), transparent 20rem);
-    backdrop-filter: blur(1px) saturate(145%);
-    -webkit-backdrop-filter: blur(1px) saturate(145%);
+    display: none;
 }
 
 .hero-copy,
@@ -328,12 +321,12 @@ main {
 .hero-copy {
     max-width: 690px;
     padding: clamp(22px, 3vw, 34px);
-    border: 1px solid rgba(255, 255, 255, 0.56);
+    border: 1px solid rgba(255, 255, 255, 0.64);
     border-radius: 14px;
-    background: linear-gradient(145deg, rgba(255,255,255,0.62), rgba(255,255,255,0.22));
-    backdrop-filter: blur(18px) saturate(150%);
-    -webkit-backdrop-filter: blur(18px) saturate(150%);
-    box-shadow: 0 30px 100px rgba(26, 43, 40, 0.12);
+    background: linear-gradient(145deg, rgba(255,255,255,0.78), rgba(255,255,255,0.45));
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    box-shadow: 0 30px 100px rgba(26, 43, 40, 0.14);
 }
 
 .eyebrow {
@@ -571,11 +564,14 @@ main {
 .device-topbar span:nth-child(3) { background: var(--lime); }
 
 .device-phone {
-    padding: 24px 8px 10px;
-    border: 8px solid #111615;
-    border-radius: 34px;
-    background: #111615;
-    box-shadow: 0 26px 70px rgba(17, 22, 21, 0.24);
+    padding: 28px 8px 12px;
+    border: 7px solid #1a1a1a;
+    border-radius: 40px;
+    background: linear-gradient(145deg, #2a2a2a, #111111);
+    box-shadow:
+        0 26px 70px rgba(17, 22, 21, 0.28),
+        inset 0 1px 0 rgba(255,255,255,0.08),
+        0 0 0 1px rgba(255,255,255,0.05);
 }
 
 .device-phone img {
@@ -591,13 +587,14 @@ main {
 .phone-speaker {
     position: absolute;
     left: 50%;
-    top: 9px;
+    top: 10px;
     z-index: 2;
-    width: 64px;
-    height: 8px;
-    border-radius: 999px;
-    background: rgba(255,255,255,0.18);
+    width: 90px;
+    height: 22px;
+    border-radius: 20px;
+    background: #000;
     transform: translateX(-50%);
+    box-shadow: inset 0 0 4px rgba(0,0,0,0.6);
 }
 
 .mockup-card figcaption {
@@ -1639,6 +1636,67 @@ main {
     opacity: 0;
 }
 
+
+/* ===== Portfolio Gallery ===== */
+.portfolio-gallery {
+    width: min(1180px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: clamp(40px, 6vw, 80px) 0;
+}
+
+.gallery-scroll {
+    margin-top: 38px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 8px;
+}
+
+.gallery-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-track {
+    display: flex;
+    gap: 16px;
+    width: max-content;
+    padding: 4px;
+}
+
+.gallery-item {
+    flex: 0 0 auto;
+    width: clamp(240px, 30vw, 360px);
+    margin: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.68);
+    background: linear-gradient(145deg, rgba(255,255,255,0.68), rgba(255,255,255,0.28));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.74), 0 18px 50px rgba(44,56,52,0.1);
+    transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+
+.gallery-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 28px 70px rgba(25,37,35,0.14);
+}
+
+.gallery-item img {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 680px) {
+    .gallery-item {
+        width: 200px;
+    }
+}
+
 @media (max-width: 1040px) {
     body {
         cursor: auto;
@@ -1794,7 +1852,7 @@ main {
     }
 
     .hero-showcase {
-        min-height: 330px;
+        min-height: 380px;
         display: block;
     }
 
@@ -1810,7 +1868,7 @@ main {
         position: absolute;
         left: 0;
         bottom: 0;
-        width: min(138px, 42%);
+        width: min(160px, 46%);
     }
 
     .motion-badge {
@@ -1857,18 +1915,18 @@ main {
         position: relative;
         right: auto;
         bottom: auto;
-        width: min(250px, 72vw);
+        width: min(260px, 75vw);
         min-width: 0;
         margin: 0 auto;
         justify-self: center;
     }
 
     .case-card:nth-child(3) .case-media .device-mac {
-        display: block;
+        display: none;
     }
 
     .case-card:nth-child(3) .case-media .device-phone {
-        display: none;
+        display: block;
     }
 
     .service-card,
