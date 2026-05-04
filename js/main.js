@@ -31,6 +31,16 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+        if (isMobile) {
+            document.body.classList.add('hero-text-safe');
+            initCardLight();
+            initForm();
+            initFallback();
+            return;
+        }
+
         splitKineticTitles();
         initTextScramble();
         initShaderCanvas();
@@ -290,15 +300,6 @@ function initMotion() {
         stagger: 0.12
     });
 
-    gsap.from('.hero-ai-frame', {
-        opacity: 0,
-        scale: 0.9,
-        rotate: -4,
-        x: 48,
-        duration: 1.25,
-        ease: 'power3.out',
-        delay: 0.16
-    });
 
     gsap.from('.motion-badge', {
         y: 24,
@@ -347,13 +348,6 @@ function initMotion() {
         ease: 'sine.inOut'
     });
 
-    gsap.to('.hero-ai-frame img, .hero-ai-frame video', {
-        scale: 1.09,
-        duration: 7,
-        repeat: -1,
-        yoyo: true,
-        ease: 'sine.inOut'
-    });
 
     gsap.to('.hero-video', {
         yPercent: 10,
@@ -530,8 +524,9 @@ function initForm() {
 
 function initPreloader(onDone) {
     const preloader = document.getElementById('preloader');
-    if (!preloader || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (!preloader || window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.matchMedia('(max-width: 768px)').matches) {
         if (preloader) preloader.classList.add('is-done');
+        document.body.classList.add('page-is-ready');
         onDone?.();
         return;
     }
@@ -561,8 +556,7 @@ function initPreloader(onDone) {
     }
 
     const criticalImages = [
-        'assets/images/logo.png',
-        'assets/images/dakar-burger-page-lite.jpg'
+        'assets/images/logo.png'
     ];
 
     const imagePromises = criticalImages.map((src) => new Promise((resolve) => {
