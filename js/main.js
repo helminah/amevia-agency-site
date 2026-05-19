@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Année dynamique footer
+    const yearEl = document.getElementById('footerYear');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
     initPreloader(() => {
         const navbar = document.getElementById('navbar');
         const navToggle = document.getElementById('navToggle');
@@ -94,6 +98,8 @@ function initCursor() {
     let mouseY = window.innerHeight / 2;
     let ringX = mouseX;
     let ringY = mouseY;
+
+    document.body.classList.add('no-native-cursor');
 
     window.addEventListener('mousemove', (event) => {
         mouseX = event.clientX;

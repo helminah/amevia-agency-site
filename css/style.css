@@ -38,6 +38,9 @@ body {
         radial-gradient(circle at 86% 12%, rgba(243, 93, 79, 0.2), transparent 26rem),
         radial-gradient(circle at 56% 86%, rgba(133, 200, 62, 0.18), transparent 34rem);
     overflow-x: hidden;
+}
+
+body.no-native-cursor {
     cursor: none;
 }
 
