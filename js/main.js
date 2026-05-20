@@ -363,7 +363,7 @@ function initMobileMenu() {
 }
 
 /* ═══════════════════════════════════════════════
-   11. CUSTOM CURSOR — with quickTo smooth follow
+   11. CUSTOM CURSOR — smooth follow (sans quickTo)
    ═══════════════════════════════════════════════ */
 function initCursor() {
     if (prefersReduced || isTouchDevice) return;
@@ -371,19 +371,32 @@ function initCursor() {
     const trail = document.getElementById('cursorTrail');
     if (!cursor || !trail) return;
 
-    const qx = gsap.quickTo(cursor, 'x', { duration: 0.08, ease: 'power3' });
-    const qy = gsap.quickTo(cursor, 'y', { duration: 0.08, ease: 'power3' });
-    const tx = gsap.quickTo(trail, 'x', { duration: 0.4, ease: 'power3' });
-    const ty = gsap.quickTo(trail, 'y', { duration: 0.4, ease: 'power3' });
-
+    let cx = 0, cy = 0, tx = 0, ty = 0;
     document.addEventListener('mousemove', e => {
-        qx(e.clientX - 4);
-        qy(e.clientY - 4);
-        tx(e.clientX - 20);
-        ty(e.clientY - 20);
+        cx = e.clientX - 4;
+        cy = e.clientY - 4;
+        tx = e.clientX - 20;
+        ty = e.clientY - 20;
         state.mouse.x = e.clientX;
         state.mouse.y = e.clientY;
     });
+
+    function loop() {
+        const cxNow = parseFloat(cursor.style.left || 0);
+        const cyNow = parseFloat(cursor.style.top || 0);
+        const txNow = parseFloat(trail.style.left || 0);
+        const tyNow = parseFloat(trail.style.top || 0);
+        const nx = cxNow + (cx - cxNow) * 0.35;
+        const ny = cyNow + (cy - cyNow) * 0.35;
+        const ntx = txNow + (tx - txNow) * 0.08;
+        const nty = tyNow + (ty - tyNow) * 0.08;
+        cursor.style.left = nx + 'px';
+        cursor.style.top = ny + 'px';
+        trail.style.left = ntx + 'px';
+        trail.style.top = nty + 'px';
+        requestAnimationFrame(loop);
+    }
+    requestAnimationFrame(loop);
 
     document.querySelectorAll('a, button, [data-tilt]').forEach(el => {
         el.addEventListener('mouseenter', () => trail.classList.add('hover'));

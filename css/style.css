@@ -321,8 +321,8 @@ button { font: inherit; border: none; background: none; cursor: none; }
 .hero-title {
     font-size: clamp(40px, 7vw, 88px);
     font-weight: 900;
-    letter-spacing: -0.04em;
-    line-height: 1.05;
+    letter-spacing: -0.03em;
+    line-height: 1.12;
     margin-bottom: 32px;
     perspective: 1000px;
 }
