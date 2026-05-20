@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Film grain noise overlay -->
+    <div class="noise-overlay"></div>
+
     <!-- Preloader -->
     <div class="preloader" id="preloader">
         <div class="preloader-track">
@@ -40,10 +43,10 @@
                     <span>AMEVIA</span>
                 </a>
                 <div class="nav-links">
-                    <a href="#work" class="nav-link"><span data-text="Réalisations">Réalisations</span></a>
-                    <a href="#services" class="nav-link"><span data-text="Services">Services</span></a>
-                    <a href="#method" class="nav-link"><span data-text="Méthode">Méthode</span></a>
-                    <a href="#contact" class="nav-link"><span data-text="Contact">Contact</span></a>
+                    <a href="#work" class="nav-link"><span class="scramble-text" data-scramble="Réalisations">Réalisations</span></a>
+                    <a href="#services" class="nav-link"><span class="scramble-text" data-scramble="Services">Services</span></a>
+                    <a href="#method" class="nav-link"><span class="scramble-text" data-scramble="Méthode">Méthode</span></a>
+                    <a href="#contact" class="nav-link"><span class="scramble-text" data-scramble="Contact">Contact</span></a>
                 </div>
                 <a href="#contact" class="nav-cta">Demander un brief</a>
                 <button class="nav-toggle" id="navToggle" aria-label="Menu">
@@ -54,6 +57,8 @@
             <!-- Hero -->
             <section class="hero" id="hero" data-pin="true">
                 <div class="hero-bg">
+                    <canvas id="particleCanvas" class="hero-particle-canvas"></canvas>
+                    <div class="hero-spotlight" id="heroSpotlight"></div>
                     <video autoplay muted loop playsinline preload="auto" class="hero-video" aria-label="Vidéo d’arrière-plan AMEVIA">
                         <source src="assets/videos/amevia-reveal-10s.mp4" type="video/mp4">
                     </video>
@@ -69,8 +74,8 @@
                     </h1>
                     <p class="hero-desc" data-reveal="fade-up">AMEVIA conçoit des expériences digitales sur mesure pour les entreprises qui veulent inspirer confiance et générer des demandes.</p>
                     <div class="hero-actions" data-reveal="fade-up">
-                        <a href="#work" class="btn-primary">Voir nos réalisations</a>
-                        <a href="#contact" class="btn-ghost">Discuter d'un projet</a>
+                        <a href="#work" class="btn-primary magnetic">Voir nos réalisations</a>
+                        <a href="#contact" class="btn-ghost magnetic">Discuter d'un projet</a>
                     </div>
                 </div>
                 <div class="hero-scroll" data-reveal="fade">
