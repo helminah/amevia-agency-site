@@ -3,547 +3,292 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMEVIA - Studio Web & Marque Digitale</title>
-    <meta name="description" content="AMEVIA crée des sites web, des identités digitales et des parcours d'acquisition pour aider les marques à inspirer confiance et générer des demandes.">
-    <meta name="robots" content="index, follow">
-    <meta name="google-site-verification" content="pte_zAUiEpm__wkg13Pkywwc0WsiGzc8TBUDUkTKWvM" />
+    <title>AMEVIA — Studio Web & Marque Digitale</title>
+    <meta name="description" content="AMEVIA crée des sites web, des identités digitales et des parcours d'acquisition pour les marques qui veulent paraître solides dès le premier clic.">
     <link rel="canonical" href="https://ameviaagency.com/">
-    <link rel="preload" as="video" href="assets/videos/amevia-reveal-10s.mp4" type="video/mp4">
     <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=wow-15">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ameviaagency.com/">
-    <meta property="og:title" content="AMEVIA - Studio Web & Marque Digitale">
-    <meta property="og:description" content="Sites web, identité digitale, contenus et acquisition pour les marques qui veulent paraître solides dès le premier clic.">
-    <meta property="og:image" content="https://ameviaagency.com/assets/images/amevia-web-branding.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://ameviaagency.com/">
-    <meta name="twitter:title" content="AMEVIA - Studio Web & Marque Digitale">
-    <meta name="twitter:description" content="Sites web, identité digitale, contenus et acquisition pour les marques qui veulent paraître solides dès le premier clic.">
-    <meta name="twitter:image" content="https://ameviaagency.com/assets/images/amevia-web-branding.png">
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "AMEVIA",
-        "url": "https://ameviaagency.com",
-        "logo": "https://ameviaagency.com/assets/images/logo.png",
-        "sameAs": [
-            "https://www.linkedin.com/in/helminah-rm"
-        ],
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+221-77-504-3006",
-            "contactType": "customer service",
-            "areaServed": ["SN", "Africa", "Worldwide"],
-            "availableLanguage": ["French", "English"]
-        }
-    }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="noise-overlay" aria-hidden="true"></div>
-    <div class="preloader" id="preloader" aria-hidden="true">
-        <div class="preloader-inner">
-            <span class="preloader-letter">A</span>
-            <span class="preloader-letter">M</span>
-            <span class="preloader-letter">E</span>
-            <span class="preloader-letter">V</span>
-            <span class="preloader-letter">I</span>
-            <span class="preloader-letter">A</span>
-            <div class="preloader-percent" id="preloaderPercent">0%</div>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-track">
+            <span class="preloader-char" style="--i:0">A</span>
+            <span class="preloader-char" style="--i:1">M</span>
+            <span class="preloader-char" style="--i:2">E</span>
+            <span class="preloader-char" style="--i:3">V</span>
+            <span class="preloader-char" style="--i:4">I</span>
+            <span class="preloader-char" style="--i:5">A</span>
         </div>
-        <div class="preloader-bar">
-            <div class="preloader-bar-fill" id="preloaderBarFill"></div>
+        <div class="preloader-line">
+            <div class="preloader-line-fill" id="preloaderFill"></div>
         </div>
     </div>
-    <a href="#main" class="skip-link">Aller au contenu</a>
-    <div class="cursor" aria-hidden="true"></div>
-    <div class="cursor-ring" aria-hidden="true"></div>
-    <div class="page-glow" aria-hidden="true"></div>
-    <canvas class="shader-canvas" id="shaderCanvas" aria-hidden="true"></canvas>
-    <div class="scroll-progress" aria-hidden="true"></div>
 
-    <nav class="nav" id="navbar">
-        <a class="brand" href="#hero" aria-label="AMEVIA accueil">
-            <img src="assets/images/logo.png" alt="" class="brand-mark" fetchpriority="high">
-            <span>AMEVIA</span>
-        </a>
-        <div class="nav-links" aria-label="Navigation principale">
-            <a href="#work">Réalisations</a>
-            <a href="#services">Offres</a>
-            <a href="#method">Méthode</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <a class="nav-action" href="#contact">Demander un brief</a>
-        <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu">
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
+    <!-- Smooth scroll wrapper -->
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
 
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#work">Réalisations</a>
-        <a href="#services">Offres</a>
-        <a href="#method">Méthode</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-    </div>
-
-    <main id="main">
-        <section class="hero" id="hero">
-            <div class="section-number">01</div><video class="hero-video" autoplay muted loop playsinline preload="auto" aria-label="Vidéo décorative d'arrière-plan AMEVIA">
-                <source src="assets/videos/amevia-reveal-10s.mp4" type="video/mp4">
-            </video>
-            <div class="hero-copy">
-                <p class="eyebrow" data-scramble><span></span> Studio web & marque digitale</p>
-                <h1 class="kinetic-title" data-split="words">Votre site doit inspirer confiance avant même le premier message.</h1>
-                <p>AMEVIA conçoit des sites vitrines, pages de vente et boutiques en ligne clairs, rapides et premium, avec une expérience mobile soignée et des effets au scroll quand ils servent vraiment votre image.</p>
-                <div class="hero-proof-list" aria-label="Promesses AMEVIA">
-                    <span>Site vitrine</span>
-                    <span>Page de vente</span>
-                    <span>E-commerce</span>
-                    <span>Identité digitale</span>
+            <!-- Navigation -->
+            <nav class="nav" id="nav">
+                <a href="#hero" class="nav-brand">
+                    <img src="assets/images/logo.png" alt="AMEVIA" class="nav-logo">
+                    <span>AMEVIA</span>
+                </a>
+                <div class="nav-links">
+                    <a href="#work" class="nav-link"><span data-text="Réalisations">Réalisations</span></a>
+                    <a href="#services" class="nav-link"><span data-text="Services">Services</span></a>
+                    <a href="#method" class="nav-link"><span data-text="Méthode">Méthode</span></a>
+                    <a href="#contact" class="nav-link"><span data-text="Contact">Contact</span></a>
                 </div>
-                <div class="hero-actions">
-                    <a class="btn btn-primary" href="#contact">Demander mon site</a>
-                    <a class="btn btn-secondary" href="#services">Voir les offres <span class="btn-arrow">→</span></a>
-                </div>
-                <div class="hero-trust-row" aria-label="Repères de confiance">
-                    <strong>À partir de 150 000 FCFA</strong>
-                    <span>Devis détaillé sous 24h</span>
-                    <span>Mobile, WhatsApp, formulaire, SEO de base</span>
-                </div>
-            </div>
-            <div class="hero-showcase device-stage" aria-label="Aperçus responsive AMEVIA">
-                <figure class="device device-mac mockup-card mockup-main">
-                    <div class="device-topbar" aria-hidden="true"><span></span><span></span><span></span></div>
-                    <img src="assets/images/lengor-desktop-fresh-lite.jpg" alt="Capture desktop du site restaurantlengor.sn" fetchpriority="high">
-                    <figcaption>Le Ngor sur ordinateur</figcaption>
-                </figure>
-                <figure class="device device-phone mockup-card mockup-small mockup-a">
-                    <div class="phone-speaker" aria-hidden="true"></div>
-                    <img src="assets/images/lengor-iphone-fresh-lite.jpg" alt="Capture iPhone du site restaurantlengor.sn" loading="lazy">
-                    <figcaption>iPhone</figcaption>
-                </figure>
-                <div class="motion-badge motion-badge-a">Site soigné</div>
-                <div class="motion-badge motion-badge-b">Parcours clair</div>
-                <div class="motion-badge motion-badge-c">Mobile ready</div>
-                <div class="hero-impact-panel">
-                    <span>Projet en ligne</span>
-                    <strong>Restaurant Le Ngor</strong>
-                </div>
-            </div>
-        <div class="hero-curve" aria-hidden="true">
-                <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,0 L0,80 Q720,120 1440,80 L1440,0 Z" fill="var(--bg)"/></svg>
-            </div>
-        </section>
-
-        <section class="site-offer" aria-label="Création de site web AMEVIA">
-            <div class="section-number">03</div><div class="site-offer-copy">
-                <p class="eyebrow" data-scramble><span></span> Ce que le client voit vraiment</p>
-                <h2 class="kinetic-title" data-split="words">Un bon site doit répondre avant même qu'on vous écrive.</h2>
-                <p>Le visiteur doit comprendre ce que vous proposez, pourquoi vous êtes crédible, comment vous contacter et si votre marque est au niveau qu'il attend.</p>
-            </div>
-            <div class="site-feature-grid">
-                <article class="site-feature">
-                    <span>01</span>
-                    <h3>Une offre lisible</h3>
-                    <p>Des titres, sections et appels à l'action qui expliquent votre activité sans forcer le visiteur à deviner.</p>
-                </article>
-                <article class="site-feature">
-                    <span>02</span>
-                    <h3>Un affichage responsive</h3>
-                    <p>Le site est pensé pour l'ordinateur et le téléphone, parce qu'une grande partie des prospects découvre d'abord votre marque sur mobile.</p>
-                </article>
-                <article class="site-feature">
-                    <span>03</span>
-                    <h3>Un scroll vivant</h3>
-                    <p>Transitions, apparitions et micro-animations donnent une sensation moderne et fluide, façon Apple-like, sans rendre le parcours confus.</p>
-                </article>
-                <article class="project-card motion-preview-card">
-                    <a href="#contact" aria-label="Exemple de section web réactive au scroll">
-                        <div class="project-media">
-                            <video src="assets/videos/apple-scroll-reactive-demo.mp4" autoplay loop muted playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;"></video>
-                            <div class="project-stamp">Scroll Apple-like</div>
-                        </div>
-                    </a>
-                    <div>
-                        <span>Exemple motion - Apple-like</span>
-                        <h3>Scroll réactif premium</h3>
-                        <p>Une démonstration de section web qui réagit au scroll : transitions fluides, profondeur visuelle et sensation haut de gamme.</p>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section class="work" id="work">
-            <div class="section-number">04</div><div class="section-heading">
-                <p class="eyebrow" data-scramble><span></span> Réalisations réelles</p>
-                <h2 class="kinetic-title" data-split="words">Des réalisations et concepts montrés comme vos prospects les verront.</h2>
-                <p>Desktop, mobile, restaurant, personal brand ou boutique : l'objectif reste le même, donner une impression professionnelle et rendre l'action évidente.</p>
-            </div>
-            <div class="case-grid">
-                <article class="case-card project-card">
-                    <div class="case-media">
-                        <figure class="device device-mac">
-                            <div class="device-topbar" aria-hidden="true"><span></span><span></span><span></span></div>
-                            <img src="assets/images/lengor-desktop-fresh-lite.jpg" alt="Capture desktop du site restaurantlengor.sn" loading="lazy">
-                        </figure>
-                        <figure class="device device-phone">
-                            <div class="phone-speaker" aria-hidden="true"></div>
-                            <img src="assets/images/lengor-iphone-fresh-lite.jpg" alt="Capture iPhone du site restaurantlengor.sn" loading="lazy">
-                        </figure>
-                    </div>
-                    <div class="case-copy">
-                        <span>Restaurant - Site vitrine</span>
-                        <h3>Le Ngor</h3>
-                        <p>Une vitrine claire pour présenter le restaurant, rassurer les clients et faciliter la réservation depuis mobile.</p>
-                        <a href="https://restaurantlengor.sn" target="_blank" rel="noreferrer">Voir restaurantlengor.sn</a>
-                    </div>
-                </article>
-
-                <article class="case-card project-card">
-                    <div class="case-media">
-                        <figure class="device device-mac">
-                            <div class="device-topbar" aria-hidden="true"><span></span><span></span><span></span></div>
-                            <img src="assets/images/real-drhelminah-screen.jpg" alt="Capture du site drhelminah.com" loading="lazy">
-                        </figure>
-                        <figure class="device device-phone">
-                            <div class="phone-speaker" aria-hidden="true"></div>
-                            <img src="assets/images/portfolio-drhelminah.jpg" alt="Capture mobile longue du site drhelminah.com" loading="lazy">
-                        </figure>
-                    </div>
-                    <div class="case-copy">
-                        <span>Personal brand - Expertise</span>
-                        <h3>Dr Helminah</h3>
-                        <p>Une présence professionnelle pour structurer une parole experte, clarifier l'autorité et guider vers la prise de contact.</p>
-                        <a href="https://drhelminah.com" target="_blank" rel="noreferrer">Voir drhelminah.com</a>
-                    </div>
-                </article>
-
-                <article class="case-card project-card">
-                    <div class="case-media">
-                        <figure class="device device-mac">
-                            <div class="device-topbar" aria-hidden="true"><span></span><span></span><span></span></div>
-                            <img src="assets/images/ecommerce-senegal-mockup-lite.jpg" alt="Aperçu desktop d'une boutique e-commerce adaptée au marché sénégalais" loading="lazy">
-                        </figure>
-                        <figure class="device device-phone">
-                            <div class="phone-speaker" aria-hidden="true"></div>
-                            <img src="assets/images/portfolio-suavecomfort.jpg" alt="Aperçu mobile d'une boutique e-commerce avec produits, panier et prix en FCFA" loading="lazy">
-                        </figure>
-                    </div>
-                    <div class="case-copy">
-                        <span>E-commerce - Parcours d'achat</span>
-                        <h3>Suave Comfort</h3>
-                        <p>Un univers e-commerce pensé pour rendre l'offre lisible, rassurer avant l'achat et soutenir les contenus d'acquisition.</p>
-                        <a href="https://suavecomfort.com" target="_blank" rel="noreferrer">Voir le site</a>
-                    </div>
-                </article>
-            </div>
-
-            <div class="category-showcase" aria-label="Directions créatives par catégorie">
-                <div class="category-heading">
-                    <p class="eyebrow" data-scramble><span></span> Concepts par catégorie</p>
-                    <h3>Des directions visuelles adaptées à chaque activité.</h3>
-                    <p>Ces pistes complètent les réalisations en ligne : elles montrent le niveau d'ambition possible pour une marque qui veut vendre, rassurer et se différencier.</p>
-                </div>
-                <div class="category-grid">
-                    <article class="project-card category-card category-card-large">
-                        <a href="#contact" aria-label="Concept de site premium avec scroll animé">
-                            <div class="project-media category-media">
-                                <video src="assets/videos/apple-scroll-reactive-demo.mp4" autoplay loop muted playsinline preload="metadata"></video>
-                                <div class="project-stamp">Scroll réactif</div>
-                            </div>
-                        </a>
-                        <div>
-                            <span>Motion premium</span>
-                            <h3>Site façon Apple</h3>
-                            <p>Une animation pensée pour accompagner le scroll, mettre en valeur un produit ou une offre et créer une sensation premium.</p>
-                        </div>
-                    </article>
-                    <article class="project-card category-card">
-                        <a href="#contact" aria-label="Concept site chicken">
-                            <div class="project-media category-media">
-                                <img src="assets/images/liberte-chicken-page-lite.jpg" alt="Concept de site fast-food chicken inspiré de Dakar" loading="lazy">
-                                <div class="project-stamp">Food brand</div>
-                            </div>
-                        </a>
-                        <div>
-                            <span>Fast-food - Chicken</span>
-                            <h3>Liberté Chicken</h3>
-                            <p>Une direction plus sombre, plus publicitaire, pensée pour une marque food qui veut paraître solide et mémorable.</p>
-                        </div>
-                    </article>
-                    <article class="project-card category-card">
-                        <a href="#contact" aria-label="Concept boutique e-commerce">
-                            <div class="project-media category-media">
-                                <img src="assets/images/ecommerce-senegal-mockup-lite.jpg" alt="Concept boutique e-commerce avec produits, prix FCFA et panier" loading="lazy">
-                                <div class="project-stamp">E-commerce</div>
-                            </div>
-                        </a>
-                        <div>
-                            <span>Boutique en ligne</span>
-                            <h3>Panier, prix, livraison</h3>
-                            <p>Un parcours d'achat lisible avec catégories, produits, preuves de confiance et commande pensée mobile.</p>
-                        </div>
-                    </article>
-                    <article class="project-card category-card">
-                        <a href="#contact" aria-label="Concept restaurant local">
-                            <div class="project-media category-media">
-                                <img src="assets/images/lengor-desktop-fresh-lite.jpg" alt="Aperçu restaurant local sur ordinateur" loading="lazy">
-                                <div class="project-stamp">Restaurant</div>
-                            </div>
-                        </a>
-                        <div>
-                            <span>Restaurant local</span>
-                            <h3>Menu, réservation, domaine .sn</h3>
-                            <p>Une vitrine claire pour présenter le lieu, les plats, la localisation et transformer une visite en réservation.</p>
-                        </div>
-                    </article>
-                    <article class="project-card category-card">
-                        <a href="#contact" aria-label="Concept personal brand">
-                            <div class="project-media category-media">
-                                <img src="assets/images/real-drhelminah-screen.jpg" alt="Aperçu personal brand et expertise" loading="lazy">
-                                <div class="project-stamp">Expertise</div>
-                            </div>
-                        </a>
-                        <div>
-                            <span>Personal brand</span>
-                            <h3>Autorité et confiance</h3>
-                            <p>Une structure qui clarifie le parcours, les preuves, l'expertise et la prise de contact sans surcharger le visiteur.</p>
-                        </div>
-                    </article>
-            </div>
-
-            </div>
-
-            <div class="portfolio-gallery-inline">
-                <div class="section-heading" style="margin-top:clamp(56px,8vw,96px);">
-                    <p class="eyebrow" data-scramble><span></span> Galerie</p>
-                    <h2 class="kinetic-title" data-split="words">Des directions visuelles pensées pour chaque marque.</h2>
-                </div>
-                <div class="gallery-scroll">
-                    <div class="gallery-track">
-                    <figure class="gallery-item"><img src="assets/images/portfolio-20-16-21.png" alt="Concept de site web AMEVIA" loading="lazy"></figure>
-                    <figure class="gallery-item"><img src="assets/images/portfolio-20-16-35.png" alt="Direction créative AMEVIA" loading="lazy"></figure>
-                    <figure class="gallery-item"><img src="assets/images/portfolio-20-20-15.png" alt="Design de marque digitale" loading="lazy"></figure>
-                    <figure class="gallery-item"><img src="assets/images/portfolio-20-20-26.png" alt="Identité visuelle AMEVIA" loading="lazy"></figure>
-                    <figure class="gallery-item"><img src="assets/images/portfolio-20-20-47.png" alt="Concept de page web premium" loading="lazy"></figure>
-                    <figure class="gallery-item"><img src="assets/images/portfolio-20-23-37.png" alt="Site vitrine professionnel" loading="lazy"></figure>
-                    <figure class="gallery-item"><img src="assets/images/portfolio-20-24-36.png" alt="Direction artistique web" loading="lazy"></figure>
-                    <figure class="gallery-item"><img src="assets/images/portfolio-20-25-54.png" alt="Design responsive mobile" loading="lazy"></figure>
-                    <figure class="gallery-item"><img src="assets/images/portfolio-20-26-07.png" alt="Création de boutique en ligne" loading="lazy"></figure>
-                    <figure class="gallery-item"><img src="assets/images/portfolio-20-26-22.png" alt="Mockup de site e-commerce" loading="lazy"></figure>
-                </div>
-            </div>
-            </div>
-        </section>
-
-        <section class="testimonials" aria-label="Témoignages clients">
-            <div class="section-number">05</div><div class="section-heading">
-                <p class="eyebrow" data-scramble><span></span> Confiance</p>
-                <h2 class="kinetic-title" data-split="words">Ce qu'un prospect doit sentir en arrivant.</h2>
-            </div>
-            <div class="testimonial-grid">
-                <article class="testimonial-card">
-                    <p>Le site doit être beau, mais surtout compréhensible : activité, bénéfice, preuves, contact.</p>
-                    <footer><strong>Clarté</strong><span>Le visiteur comprend en quelques secondes</span></footer>
-                </article>
-                <article class="testimonial-card">
-                    <p>Le rendu doit être sérieux sur ordinateur et impeccable sur téléphone, pas seulement joli sur une capture.</p>
-                    <footer><strong>Responsive</strong><span>Mac, iPhone, tablette et petits écrans</span></footer>
-                </article>
-                <article class="testimonial-card">
-                    <p>Le domaine, l'adresse, WhatsApp, le formulaire et les liens publics doivent renforcer la crédibilité.</p>
-                    <footer><strong>Crédibilité</strong><span>Présence claire et parcours de contact</span></footer>
-                </article>
-            </div>
-        </section>
-
-        
-
-        
-
-        
-
-
-        <section class="services offers" id="services">
-            <div class="section-number">06</div><div class="section-heading">
-                <p class="eyebrow" data-scramble><span></span> Offres</p>
-                <h2 class="kinetic-title" data-split="words">Des offres simples, adaptées au niveau d'ambition du site.</h2>
-                <p>Vous savez par où commencer. Le devis final dépend du nombre de pages, des contenus à produire, des fonctionnalités et du niveau de motion design souhaité.</p>
-            </div>
-            <div class="service-grid offer-grid">
-                <article class="service-card offer-card">
-                    <span>À partir de 150 000 FCFA</span>
-                    <h3>Site Essentiel</h3>
-                    <p>Pour avoir une présence claire et professionnelle rapidement.</p>
-                    <ul>
-                        <li>1 page claire et responsive</li>
-                        <li>Présentation, services, contact</li>
-                        <li>WhatsApp et formulaire</li>
-                    </ul>
-                    <strong>Idéal pour démarrer</strong>
-                </article>
-                <article class="service-card offer-card is-featured">
-                    <span>À partir de 250 000 FCFA</span>
-                    <h3>Site Vitrine Pro</h3>
-                    <p>Pour présenter votre activité avec plus de structure et de crédibilité.</p>
-                    <ul>
-                        <li>Jusqu'à 5 sections ou pages</li>
-                        <li>Textes, responsive, SEO de base</li>
-                        <li>Design soigné et scroll réactif</li>
-                    </ul>
-                    <strong>Le choix le plus demandé</strong>
-                </article>
-                <article class="service-card offer-card">
-                    <span>À partir de 350 000 FCFA</span>
-                    <h3>Site Signature</h3>
-                    <p>Pour construire une image plus forte avec direction artistique et message.</p>
-                    <ul>
-                        <li>Positionnement et structure</li>
-                        <li>Design avancé et animations réactives au scroll</li>
-                        <li>Déclinaisons pour réseaux sociaux</li>
-                    </ul>
-                    <strong>Pour paraître plus solide</strong>
-                </article>
-                <article class="service-card offer-card">
-                    <span>E-commerce sur devis</span>
-                    <h3>Boutique en ligne</h3>
-                    <p>Pour vendre avec des fiches produits, un parcours clair et des éléments de réassurance.</p>
-                    <ul>
-                        <li>Catalogue et fiches produits</li>
-                        <li>Paiement, livraison, contact</li>
-                        <li>Formation à la gestion</li>
-                    </ul>
-                    <strong>Chiffré selon le catalogue</strong>
-                </article>
-            </div>
-        </section>
-
-        <section class="method" id="method">
-            <div class="section-number">07</div><div class="method-copy">
-                <p class="eyebrow" data-scramble><span></span> Méthode</p>
-                <h2 class="kinetic-title" data-split="words">La méthode reste simple : clarifier, designer, publier.</h2>
-                <p>Le design et les animations viennent renforcer le message. Ils ne remplacent jamais la clarté de l'offre, les preuves et le parcours de contact.</p>
-            </div>
-            <div class="method-steps">
-                <article>
-                    <span>Diagnostiquer</span>
-                    <p>Objectif, audience, offre, preuves et points de friction.</p>
-                </article>
-                <article>
-                    <span>Designer</span>
-                    <p>Structure, direction artistique, textes, motion design et expérience mobile.</p>
-                </article>
-                <article>
-                    <span>Lancer</span>
-                    <p>Mise en ligne, formulaire, WhatsApp, SEO de base, suivi et optimisations.</p>
-                </article>
-            </div>
-        </section>
-
-
-        <section class="faq" id="faq" aria-label="Questions fréquentes">
-            <div class="section-number">09</div><div class="section-heading">
-                <p class="eyebrow" data-scramble><span></span> FAQ</p>
-                <h2 class="kinetic-title" data-split="words">Les questions qu'on nous pose le plus souvent.</h2>
-            </div>
-            <div class="faq-list">
-                <details class="faq-item">
-                    <summary>Combien coûte un site web ?</summary>
-                    <p>Le site essentiel commence à 150 000 FCFA. Les sites vitrines plus complets commencent à 250 000 FCFA. Les boutiques en ligne sont chiffrées après brief selon le catalogue, les paiements, la livraison et les intégrations.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>En combien de temps est livré un site ?</summary>
-                    <p>Sites vitrines livrés à partir de 3 jours ouvrés si les éléments sont prêts. Les projets e-commerce ou plus complexes demandent généralement 7 à 21 jours ouvrés selon le catalogue et les intégrations.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>Vous faites aussi le logo et l'identité visuelle ?</summary>
-                    <p>Oui. AMEVIA accompagne la direction artistique complète : positionnement, charte graphique, typographie, palette et déclinaisons réseaux sociaux.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>Le site sera-t-il visible sur Google ?</summary>
-                    <p>Chaque site est livré avec une base SEO technique : balises, schémas, vitesse, responsive, sitemap et structure de contenu claire.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>Proposez-vous la maintenance après le lancement ?</summary>
-                    <p>Oui. AMEVIA propose des formules mensuelles pour les mises à jour, modifications de contenu, campagnes, reporting et optimisations continues.</p>
-                </details>
-            </div>
-        </section>
-
-        <section class="contact" id="contact">
-            <div class="section-number">10</div><div class="contact-copy">
-                <p class="eyebrow" data-scramble><span></span> Contact</p>
-                <h2 class="kinetic-title" data-split="words">Expliquez l'objectif. AMEVIA construit le chemin.</h2>
-                <p>Site, repositionnement, contenus ou campagne : envoyez les bases, on vous répond avec une première direction claire.</p>
-                <a href="mailto:contact@ameviaagency.com">contact@ameviaagency.com</a>
-                <a href="tel:+221775043006">+221 77 504 30 06</a>
-                <a href="https://wa.me/221775043006" class="whatsapp-link" target="_blank" rel="noreferrer">WhatsApp</a>
-            </div>
-            <form class="contact-form" id="contactForm">
-                <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;opacity:0;pointer-events:none;height:0;width:0;">
-                <label>
-                    <span>Nom</span>
-                    <input type="text" name="name" autocomplete="name" required>
-                </label>
-                <label>
-                    <span>Email</span>
-                    <input type="email" name="email" autocomplete="email" required>
-                </label>
-                <label>
-                    <span>Service</span>
-                    <select name="service" required>
-                        <option value="">Choisir un service</option>
-                        <option value="Site Essentiel">Site Essentiel</option>
-                        <option value="Site Vitrine Pro">Site Vitrine Pro</option>
-                        <option value="Site Signature">Site Signature</option>
-                        <option value="Boutique en ligne">Boutique en ligne</option>
-                    </select>
-                </label>
-                <label>
-                    <span>Projet</span>
-                    <textarea name="message" rows="5" required></textarea>
-                </label>
-                <button class="btn btn-primary" type="submit">
-                    <span class="btn-text">Envoyer le brief</span>
-                    <span class="btn-loader"></span>
+                <a href="#contact" class="nav-cta">Demander un brief</a>
+                <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                    <span></span><span></span>
                 </button>
-                <p class="form-status" id="formStatus" aria-live="polite"></p>
-            </form>
-        </section>
-    </main>
+            </nav>
 
-    <footer class="footer">
-        <div>
-            <img src="assets/images/logo.png" alt="" class="footer-logo" loading="lazy">
-            <strong>AMEVIA</strong>
+            <!-- Hero -->
+            <section class="hero" id="hero" data-pin="true">
+                <div class="hero-bg">
+                    <video autoplay muted loop playsinline preload="auto" class="hero-video">
+                        <source src="assets/videos/amevia-reveal-10s.mp4" type="video/mp4">
+                    </video>
+                    <div class="hero-vignette"></div>
+                </div>
+                <div class="hero-content">
+                    <div class="hero-eyebrow" data-reveal="chars">Studio Web & Marque Digitale</div>
+                    <h1 class="hero-title">
+                        <span class="line" data-reveal="words">Des sites qui</span>
+                        <span class="line" data-reveal="words">convertissent.</span>
+                        <span class="line" data-reveal="words">Des marques qui</span>
+                        <span class="line accent" data-reveal="words">durent.</span>
+                    </h1>
+                    <p class="hero-desc" data-reveal="fade-up">AMEVIA conçoit des expériences digitales sur mesure pour les entreprises qui veulent inspirer confiance et générer des demandes.</p>
+                    <div class="hero-actions" data-reveal="fade-up">
+                        <a href="#work" class="btn-primary">Voir nos réalisations</a>
+                        <a href="#contact" class="btn-ghost">Discuter d'un projet</a>
+                    </div>
+                </div>
+                <div class="hero-scroll" data-reveal="fade">
+                    <div class="scroll-indicator">
+                        <span>Scroll</span>
+                        <div class="scroll-line"><div class="scroll-line-fill"></div></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Work / Horizontal Gallery -->
+            <section class="work" id="work">
+                <div class="work-header">
+                    <span class="section-eyebrow" data-reveal="chars">01 — Réalisations</span>
+                    <h2 class="section-title" data-reveal="words">Projets sélectionnés</h2>
+                </div>
+                <div class="work-horizontal" id="workHorizontal">
+                    <div class="work-track" id="workTrack">
+                        <article class="work-card" data-tilt>
+                            <div class="work-card-media">
+                                <img src="assets/images/real-lengor-screen.jpg" alt="Le Ngor Restaurant" loading="lazy">
+                                <div class="work-card-overlay"></div>
+                            </div>
+                            <div class="work-card-content">
+                                <span class="work-card-tag">Site web + Branding</span>
+                                <h3 class="work-card-title">Le Ngor</h3>
+                                <p class="work-card-desc">Restaurant pieds dans l'eau — site vitrine, réservation et identité visuelle complète.</p>
+                            </div>
+                        </article>
+                        <article class="work-card" data-tilt>
+                            <div class="work-card-media">
+                                <img src="assets/images/real-drhelminah-screen.jpg" alt="Fitcam Health" loading="lazy">
+                                <div class="work-card-overlay"></div>
+                            </div>
+                            <div class="work-card-content">
+                                <span class="work-card-tag">Funnel + Contenu</span>
+                                <h3 class="work-card-title">Fitcam Health</h3>
+                                <p class="work-card-desc">Tunnel d'acquisition et stratégie contenu pour une clinique digitale.</p>
+                            </div>
+                        </article>
+                        <article class="work-card" data-tilt>
+                            <div class="work-card-media">
+                                <img src="assets/images/dakar-burger-page-lite.jpg" alt="ESSR" loading="lazy">
+                                <div class="work-card-overlay"></div>
+                            </div>
+                            <div class="work-card-content">
+                                <span class="work-card-tag">Identité digitale</span>
+                                <h3 class="work-card-title">ESSR Suisse</h3>
+                                <p class="work-card-desc">Refonte de l'identité visuelle et présence digitale pour un client institutionnel.</p>
+                            </div>
+                        </article>
+                        <article class="work-card" data-tilt>
+                            <div class="work-card-media">
+                                <img src="assets/images/real-suavecomfort-screen.jpg" alt="Amezian Nutrition" loading="lazy">
+                                <div class="work-card-overlay"></div>
+                            </div>
+                            <div class="work-card-content">
+                                <span class="work-card-tag">E-commerce</span>
+                                <h3 class="work-card-title">Amezian Nutrition</h3>
+                                <p class="work-card-desc">Boutique en ligne et stratégie produit pour une marque de compléments.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services -->
+            <section class="services" id="services">
+                <div class="services-header">
+                    <span class="section-eyebrow" data-reveal="chars">02 — Services</span>
+                    <h2 class="section-title" data-reveal="words">Ce que nous créons</h2>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card" data-reveal="fade-up" data-tilt>
+                        <div class="service-number">01</div>
+                        <div class="service-icon">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 40L20 16l8 12 12-20"/><circle cx="40" cy="8" r="3"/></svg>
+                        </div>
+                        <h3 class="service-title">Sites web & Funnels</h3>
+                        <p class="service-desc">Sites vitrines, landing pages et tunnels de conversion optimisés pour transformer les visiteurs en clients.</p>
+                    </div>
+                    <div class="service-card" data-reveal="fade-up" data-tilt>
+                        <div class="service-number">02</div>
+                        <div class="service-icon">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><circle cx="24" cy="24" r="16"/><path d="M24 12v12l8 4"/></svg>
+                        </div>
+                        <h3 class="service-title">Identité visuelle</h3>
+                        <p class="service-desc">Logo, charte graphique et direction artistique pour une marque cohérente et mémorable.</p>
+                    </div>
+                    <div class="service-card" data-reveal="fade-up" data-tilt>
+                        <div class="service-number">03</div>
+                        <div class="service-icon">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="10" width="36" height="28" rx="3"/><path d="M6 18h36M16 28h16"/></svg>
+                        </div>
+                        <h3 class="service-title">Contenu & Social</h3>
+                        <p class="service-desc">Stratégie éditoriale, création de contenus et gestion des réseaux sociaux pour capter l'attention.</p>
+                    </div>
+                    <div class="service-card" data-reveal="fade-up" data-tilt>
+                        <div class="service-number">04</div>
+                        <div class="service-icon">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M24 4v8M24 36v8M4 24h8M36 24h8M12.7 12.7l5.6 5.6M29.7 29.7l5.6 5.6M12.7 35.3l5.6-5.6M29.7 18.3l5.6-5.6"/></svg>
+                        </div>
+                        <h3 class="service-title">Acquisition</h3>
+                        <p class="service-desc">SEO, campagnes publicitaires et automations pour générer un flux continu de prospects qualifiés.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Method -->
+            <section class="method" id="method">
+                <div class="method-header">
+                    <span class="section-eyebrow" data-reveal="chars">03 — Méthode</span>
+                    <h2 class="section-title" data-reveal="words">Comment nous travaillons</h2>
+                </div>
+                <div class="method-timeline">
+                    <div class="timeline-line" id="timelineLine">
+                        <div class="timeline-line-progress" id="timelineProgress"></div>
+                    </div>
+                    <div class="timeline-steps">
+                        <div class="timeline-step" data-reveal="fade-right">
+                            <div class="step-marker"><span>1</span></div>
+                            <div class="step-content">
+                                <h3>Discovery</h3>
+                                <p>On comprend ton marché, tes clients et tes objectifs. Pas de template sans stratégie.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-step" data-reveal="fade-left">
+                            <div class="step-marker"><span>2</span></div>
+                            <div class="step-content">
+                                <h3>Design</h3>
+                                <p>Direction artistique, wireframes et maquettes haute fidélité. Chaque pixel a un sens.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-step" data-reveal="fade-right">
+                            <div class="step-marker"><span>3</span></div>
+                            <div class="step-content">
+                                <h3>Développement</h3>
+                                <p>Code propre, performant et scalable. Animations fluides, responsive impeccable.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-step" data-reveal="fade-left">
+                            <div class="step-marker"><span>4</span></div>
+                            <div class="step-content">
+                                <h3>Lancement & Growth</h3>
+                                <p>SEO, analytics, optimisations. On reste à tes côtés pour faire grimper les résultats.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact -->
+            <section class="contact" id="contact">
+                <div class="contact-bg"></div>
+                <div class="contact-content">
+                    <span class="section-eyebrow" data-reveal="chars">04 — Contact</span>
+                    <h2 class="section-title" data-reveal="words">Parlons de ton projet</h2>
+                    <p class="contact-desc" data-reveal="fade-up">Disponible pour des missions ponctuelles ou des collaborations long terme. Réponse sous 24h.</p>
+                    <form class="contact-form" id="contactForm" data-reveal="fade-up">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <input type="text" id="name" name="name" placeholder=" " required>
+                                <label for="name">Nom</label>
+                            </div>
+                            <div class="form-field">
+                                <input type="email" id="email" name="email" placeholder=" " required>
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <input type="text" id="subject" name="subject" placeholder=" ">
+                            <label for="subject">Sujet</label>
+                        </div>
+                        <div class="form-field">
+                            <textarea id="message" name="message" rows="4" placeholder=" " required></textarea>
+                            <label for="message">Message</label>
+                        </div>
+                        <button type="submit" class="btn-primary btn-large">
+                            <span>Envoyer</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer-inner">
+                    <div class="footer-brand">
+                        <img src="assets/images/logo.png" alt="AMEVIA" class="footer-logo">
+                        <p>Studio Web & Marque Digitale<br>Conçu avec soin à Dakar.</p>
+                    </div>
+                    <div class="footer-links">
+                        <a href="#work">Réalisations</a>
+                        <a href="#services">Services</a>
+                        <a href="#method">Méthode</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/helminah-rm" target="_blank" rel="noopener">LinkedIn</a>
+                        <a href="mailto:hello@ameviaagency.com">Email</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; <span id="footerYear">2026</span> AMEVIA. Tous droits réservés.</p>
+                </div>
+            </footer>
+
         </div>
-        <p class="footer-tagline">Créer. Connecter. Marquer les esprits.</p>
-        <div style="display:flex; gap:18px; align-items:center;">
-            <a href="mentions-legales.html" style="color:var(--muted); text-decoration:none; font-size:0.82rem; font-weight:600;">Mentions légales</a>
-            <span id="footerYear">2026</span>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/221775043006" class="whatsapp-float" target="_blank" rel="noreferrer" aria-label="Contacter AMEVIA sur WhatsApp">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    </a>
-
-    <div class="sticky-cta-mobile">
-        <a href="#contact" class="btn btn-primary">Demander mon site</a>
     </div>
 
-    <a href="#contact" class="floating-cta-desktop" id="floatingCta">Demander mon site</a>
+    <!-- Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-trail" id="cursorTrail"></div>
 
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="js/main.js?v=wow-15"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
