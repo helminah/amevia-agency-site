@@ -80,10 +80,10 @@ function splitText(element, mode = 'words') {
             inner.textContent = word;
             inner.style.display = 'inline-block';
             wrap.appendChild(inner);
+            element.appendChild(wrap);
             if (i < words.length - 1) {
                 element.appendChild(document.createTextNode(' '));
             }
-            element.appendChild(wrap);
         });
     }
     element.dataset.splitted = 'true';
