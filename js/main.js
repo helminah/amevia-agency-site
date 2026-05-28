@@ -60,11 +60,6 @@ function getInners(el, mode) {
 function initLenis() {
     if (prefersReduced) return;
     state.lenis = new Lenis({ duration: 1.2, easing: t => Math.min(1, 1 - Math.pow(2, -10 * t)), smoothWheel: true });
-    function raf(time) {
-        state.lenis.raf(time);
-        requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
     state.lenis.on('scroll', ScrollTrigger.update);
     gsap.ticker.add(time => state.lenis.raf(time * 1000));
     gsap.ticker.lagSmoothing(0);
@@ -360,6 +355,12 @@ function initMobileMenu() {
         document.body.classList.toggle('menu-open');
         toggle.classList.toggle('active');
     });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.body.classList.remove('menu-open');
+            toggle.classList.remove('active');
+        });
+    });
 }
 
 /* ═══════════════════════════════════════════════
@@ -590,13 +591,34 @@ function initContact() {
         e.preventDefault();
         const btn = form.querySelector('button[type="submit"]');
         const original = btn.innerHTML;
-        btn.innerHTML = '<span>Message envoyé !</span>';
-        btn.style.background = 'var(--lime)';
-        setTimeout(() => {
-            btn.innerHTML = original;
-            btn.style.background = '';
+        btn.disabled = true;
+        btn.innerHTML = '<span>Envoi en cours...</span>';
+        fetch('https://formsubmit.co/ajax/hello@ameviaagency.com', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({
+                ...Object.fromEntries(new FormData(form)),
+                _subject: 'Nouveau message AMEVIA Agency',
+                _template: 'table'
+            })
+        })
+        .then(r => r.ok ? r.json() : Promise.reject())
+        .then(() => {
+            btn.innerHTML = '<span>Message envoyé !</span>';
+            btn.style.background = 'var(--lime)';
             form.reset();
-        }, 2500);
+        })
+        .catch(() => {
+            btn.innerHTML = '<span>Erreur. Réessaie.</span>';
+            btn.style.background = 'var(--coral)';
+        })
+        .finally(() => {
+            setTimeout(() => {
+                btn.innerHTML = original;
+                btn.style.background = '';
+                btn.disabled = false;
+            }, 3000);
+        });
     });
 
     // Focus glow
@@ -637,21 +659,6 @@ function initServiceCardGlow() {
 }
 
 /* ═══════════════════════════════════════════════
-   19. HERO SECTION PIN
-   ═══════════════════════════════════════════════ */
-function initHeroPin() {
-    const hero = document.getElementById('hero');
-    if (!hero || !hero.dataset.pin) return;
-    ScrollTrigger.create({
-        trigger: hero,
-        start: 'top top',
-        end: '+=100%',
-        pin: true,
-        pinSpacing: true
-    });
-}
-
-/* ═══════════════════════════════════════════════
    BOOT
    ═══════════════════════════════════════════════ */
 window.addEventListener('DOMContentLoaded', () => {
@@ -665,13 +672,10 @@ window.addEventListener('DOMContentLoaded', () => {
     initMagneticButtons();
     initTextScramble();
     initScrollColorShift();
-    initHeroPin();
     initHorizontalScroll();
     initTiltCards();
     initTimelineScroll();
     initContact();
     initFooter();
-    initServiceCardGlow();
-    // Reveals run last
-    setTimeout(() => initReveals(), 100);
+    initReveals();
 });
