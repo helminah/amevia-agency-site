@@ -2,7 +2,7 @@
   "id": "FEAT-002",
   "type": "feat",
   "description": "Elevate the hero title animation to be more dramatic with staggered 3D word reveals (perspective rotation + scale), add a 'Why AMEVIA' differentiators section with large editorial typography, and add premium micro-interactions/hover states across all interactive elements",
-  "status": "in_progress",
+  "status": "completed",
   "steps": [
     "In js/main.js, rewrite the initHeroReveal() function to use a more dramatic hero title animation: instead of simple clip-path reveals, split each .line into words, then animate each word with rotateX(90deg) + translateY(100%) + scale(0.8) to rotateX(0) + translateY(0) + scale(1) with staggered timing and perspective. Add a subtle blur(4px) to 0 transition on each word. Keep the existing video parallax and content fade.",
     "In css/style.css, update .hero-title .line styles to support 3D word animation: add perspective(1000px) on the container, transform-style: preserve-3d on lines, overflow: hidden on each line wrapper.",
@@ -26,5 +26,5 @@
     "Grep css/style.css for shimmer, .why, and micro-interaction styles"
   ],
   "blocked_reason": null,
-  "findings": ""
+  "findings": "All acceptance criteria met: Hero title uses dramatic 3D word animation (rotateX + scale + blur stagger), Why AMEVIA section with 3 editorial blocks added between Method and FAQ, button shimmer effect on hover, work card arrow animation, nav link pill hover, FAQ left cyan accent border, form gradient focus, footer underline animation. Sections renumbered: FAQ is now 05, Contact is 06. JS syntax check passes with NODE_OPTIONS='' prefix. Reduced motion fully handled for new elements."
 }
