@@ -1,0 +1,29 @@
+{
+  "id": "FEAT-001",
+  "type": "feat",
+  "description": "Add a cinematic animated aurora/gradient mesh background to the hero section using pure CSS (keyframed multi-color radial gradients that shift slowly), add an infinite horizontal marquee/ticker strip below the trust section with looping brand words, and add a testimonials/social-proof section with large editorial quotes",
+  "status": "in_progress",
+  "steps": [
+    "In css/style.css, add a .hero-aurora class with multiple radial-gradient layers that animate position/scale via @keyframes (colors: cyan, coral, lime from the design system at very low opacity). This sits behind the video but above the base background. Use will-change: transform and composite-friendly properties.",
+    "In index.html, add a <div class='hero-aurora' aria-hidden='true'></div> inside .hero-bg, before the canvas element.",
+    "In css/style.css, add styles for a .marquee section: overflow hidden, .marquee-track uses @keyframes translateX loop, duplicate content for seamless infinite scroll. Typography: font-display, large (clamp 40px-80px), very light opacity (0.08-0.12), uppercase. Add a subtle gradient fade on edges.",
+    "In index.html, add a <section class='marquee' aria-hidden='true'> between the trust strip and the work section. Content: repeated words like 'DESIGN / BRANDING / WEB / IDENTITE / STRATEGIE / DAKAR / ACQUISITION' duplicated for seamless loop.",
+    "In css/style.css, add styles for .testimonials section: editorial layout with large opening quote marks (font-serif, 120px+), quote text in font-display at clamp(24px, 3.5vw, 42px), author name smaller. Cards should have a glassmorphism border and subtle gradient background.",
+    "In index.html, add a <section class='testimonials' id='testimonials'> between the clients strip and the services section. Include 3 testimonial quotes with author names and roles. Use realistic-sounding French quotes about working with AMEVIA.",
+    "In js/main.js, add initMarquee() function that pauses the marquee animation on hover (CSS animation-play-state toggled via class). Also add scroll-triggered reveal for testimonials. Call both in boot().",
+    "Ensure all new animations are guarded with prefersReduced check - marquee should be static, aurora should not animate, testimonials should be visible without motion."
+  ],
+  "acceptance_criteria": [
+    "Hero section has a slowly animating multi-color aurora gradient visible behind/around the video",
+    "An infinite horizontal text marquee scrolls between trust strip and work section",
+    "A testimonials section with 3 quotes appears between clients and services",
+    "All animations respect prefers-reduced-motion",
+    "No JS syntax errors (node --check js/main.js passes)"
+  ],
+  "verification": [
+    "Run: node --check /projects/sandbox/amevia-agency-site/js/main.js",
+    "Visually confirm aurora, marquee, and testimonials sections exist in index.html"
+  ],
+  "blocked_reason": null,
+  "findings": ""
+}

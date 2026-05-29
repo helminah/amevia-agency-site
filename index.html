@@ -3,33 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMEVIA — Studio Web & Marque Digitale</title>
-    <meta name="description" content="AMEVIA crée des sites web, des identités digitales et des parcours d'acquisition pour les marques qui veulent paraître solides dès le premier clic.">
-    <meta property="og:title" content="AMEVIA — Studio Web & Marque Digitale">
-    <meta property="og:description" content="Sites web, identité visuelle et acquisition digitale. Conçu à Dakar, pour le monde.">
+    <title>AMEVIA — Studio Web & Identité de Marque à Dakar</title>
+    <meta name="description" content="AMEVIA est un studio digital basé à Dakar. Nous concevons des sites web, des identités de marque et des tunnels d'acquisition sur mesure pour les entreprises qui veulent inspirer confiance et générer des demandes.">
+    <meta name="keywords" content="création site web Dakar, agence web Sénégal, identité visuelle, branding, landing page, SEO, studio digital">
+    <meta name="author" content="AMEVIA LLC">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="AMEVIA">
+    <meta property="og:title" content="AMEVIA — Studio Web & Identité de Marque">
+    <meta property="og:description" content="Sites web, identité visuelle et acquisition digitale, sur mesure. Conçu à Dakar, pensé pour le monde.">
     <meta property="og:image" content="https://ameviaagency.com/assets/images/logo.png">
     <meta property="og:url" content="https://ameviaagency.com/">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AMEVIA — Studio Web & Marque Digitale">
-    <meta name="twitter:description" content="Sites web, identité visuelle et acquisition digitale. Conçu à Dakar, pour le monde.">
+    <meta name="twitter:title" content="AMEVIA — Studio Web & Identité de Marque">
+    <meta name="twitter:description" content="Sites web, identité visuelle et acquisition digitale, sur mesure. Conçu à Dakar, pensé pour le monde.">
     <meta name="twitter:image" content="https://ameviaagency.com/assets/images/logo.png">
+
     <meta name="theme-color" content="#f5f7f3">
     <link rel="canonical" href="https://ameviaagency.com/">
     <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link rel="preload" as="video" href="assets/videos/amevia-reveal-10s.mp4" type="video/mp4">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=4">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=5">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "AMEVIA",
+        "legalName": "AMEVIA LLC",
+        "description": "Studio digital spécialisé en création de sites web, identité de marque et acquisition digitale.",
+        "url": "https://ameviaagency.com/",
+        "logo": "https://ameviaagency.com/assets/images/logo.png",
+        "image": "https://ameviaagency.com/assets/images/logo.png",
+        "email": "hello@ameviaagency.com",
+        "areaServed": ["SN", "Worldwide"],
+        "knowsLanguage": ["fr", "en"],
+        "founder": { "@type": "Person", "name": "Dr Helminah RM" },
+        "address": { "@type": "PostalAddress", "addressLocality": "Dakar", "addressCountry": "SN" },
+        "sameAs": ["https://www.linkedin.com/in/helminah-rm"]
+    }
+    </script>
 </head>
 <body>
-    <!-- Cache buster & anti-cache meta injected server-side ideally; force reload via query strings -->
+    <a href="#main" class="skip-link">Aller au contenu principal</a>
+
     <!-- Film grain noise overlay -->
-    <div class="noise-overlay"></div>
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <!-- Scroll progress bar -->
+    <div class="scroll-progress" aria-hidden="true"><span id="scrollProgressBar"></span></div>
 
     <!-- Preloader -->
-    <div class="preloader" id="preloader">
+    <div class="preloader" id="preloader" aria-hidden="true">
         <div class="preloader-track">
             <span class="preloader-char" style="--i:0">A</span>
             <span class="preloader-char" style="--i:1">M</span>
@@ -48,48 +82,55 @@
         <div id="smooth-content">
 
             <!-- Navigation -->
-            <nav class="nav" id="nav">
-                <a href="#hero" class="nav-brand">
-                    <img src="assets/images/logo.png" alt="AMEVIA" class="nav-logo">
-                    <span>AMEVIA</span>
-                </a>
-                <div class="nav-links">
-                    <a href="#work" class="nav-link"><span class="scramble-text" data-scramble="Réalisations">Réalisations</span></a>
-                    <a href="#services" class="nav-link"><span class="scramble-text" data-scramble="Services">Services</span></a>
-                    <a href="#method" class="nav-link"><span class="scramble-text" data-scramble="Méthode">Méthode</span></a>
-                    <a href="#contact" class="nav-link"><span class="scramble-text" data-scramble="Contact">Contact</span></a>
-                </div>
-                <a href="#contact" class="nav-cta">Demander un brief</a>
-                <button class="nav-toggle" id="navToggle" aria-label="Menu">
-                    <span></span><span></span>
-                </button>
-            </nav>
+            <header>
+                <nav class="nav" id="nav" aria-label="Navigation principale">
+                    <a href="#hero" class="nav-brand" aria-label="AMEVIA — accueil">
+                        <img src="assets/images/logo.png" alt="" class="nav-logo">
+                        <span>AMEVIA</span>
+                    </a>
+                    <div class="nav-links" id="navLinks">
+                        <a href="#work" class="nav-link"><span class="scramble-text" data-scramble="Réalisations">Réalisations</span></a>
+                        <a href="#services" class="nav-link"><span class="scramble-text" data-scramble="Services">Services</span></a>
+                        <a href="#method" class="nav-link"><span class="scramble-text" data-scramble="Méthode">Méthode</span></a>
+                        <a href="#faq" class="nav-link"><span class="scramble-text" data-scramble="FAQ">FAQ</span></a>
+                        <a href="#contact" class="nav-link"><span class="scramble-text" data-scramble="Contact">Contact</span></a>
+                    </div>
+                    <a href="#contact" class="nav-cta">Démarrer un projet</a>
+                    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
+                        <span></span><span></span>
+                    </button>
+                </nav>
+            </header>
+
+            <main id="main">
 
             <!-- Hero -->
-            <section class="hero" id="hero" data-pin="true">
-                <div class="hero-bg">
+            <section class="hero" id="hero" data-pin="true" aria-label="Présentation AMEVIA">
+                <div class="hero-bg" aria-hidden="true">
+                    <div class="hero-aurora" aria-hidden="true"></div>
                     <canvas id="particleCanvas" class="hero-particle-canvas"></canvas>
                     <div class="hero-spotlight" id="heroSpotlight"></div>
-                    <video autoplay muted loop playsinline preload="auto" class="hero-video" aria-label="Vidéo d’arrière-plan AMEVIA">
+                    <video autoplay muted loop playsinline preload="auto" class="hero-video">
                         <source src="assets/videos/amevia-reveal-10s.mp4" type="video/mp4">
                     </video>
                     <div class="hero-vignette"></div>
                 </div>
                 <div class="hero-content">
-                    <div class="hero-eyebrow" data-reveal="chars">Studio Web & Marque Digitale</div>
+                    <p class="hero-eyebrow">Studio Web &amp; Identité de Marque · Dakar</p>
                     <h1 class="hero-title">
-                        <span class="line" data-reveal="words">Des sites qui</span>
-                        <span class="line" data-reveal="words">convertissent.</span>
-                        <span class="line" data-reveal="words">Des marques qui</span>
-                        <span class="line accent" data-reveal="words">durent.</span>
+                        <span class="line">Des sites qui</span>
+                        <span class="line">convertissent.</span>
+                        <span class="line">Des marques qui</span>
+                        <span class="line accent">durent.</span>
                     </h1>
-                    <p class="hero-desc" data-reveal="fade-up">AMEVIA conçoit des expériences digitales sur mesure pour les entreprises qui veulent inspirer confiance et générer des demandes.</p>
-                    <div class="hero-actions" data-reveal="fade-up">
+                    <p class="hero-desc">AMEVIA conçoit des expériences digitales sur mesure — sites, identités et tunnels d'acquisition — pour les entreprises qui veulent inspirer confiance dès le premier regard et transformer l'attention en demandes concrètes.</p>
+                    <div class="hero-actions">
                         <a href="#work" class="btn-primary magnetic">Voir nos réalisations</a>
-                        <a href="#contact" class="btn-ghost magnetic">Discuter d'un projet</a>
+                        <a href="#contact" class="btn-ghost magnetic">Démarrer un projet</a>
                     </div>
+                    <p class="hero-microcopy">Réponse sous 24 h · Premiers livrables dès 72 h</p>
                 </div>
-                <div class="hero-scroll" data-reveal="fade">
+                <div class="hero-scroll">
                     <div class="scroll-indicator">
                         <span>Scroll</span>
                         <div class="scroll-line"><div class="scroll-line-fill"></div></div>
@@ -97,166 +138,276 @@
                 </div>
             </section>
 
+            <!-- Trust strip -->
+            <section class="trust" aria-label="Nos engagements">
+                <ul class="trust-grid">
+                    <li class="trust-item" data-reveal="fade-up">
+                        <span class="trust-value">Dès 72 h</span>
+                        <span class="trust-label">Premiers livrables</span>
+                    </li>
+                    <li class="trust-item" data-reveal="fade-up">
+                        <span class="trust-value">Sous 24 h</span>
+                        <span class="trust-label">Temps de réponse</span>
+                    </li>
+                    <li class="trust-item" data-reveal="fade-up">
+                        <span class="trust-value">0 template</span>
+                        <span class="trust-label">100 % sur mesure</span>
+                    </li>
+                    <li class="trust-item" data-reveal="fade-up">
+                        <span class="trust-value">Dakar → Monde</span>
+                        <span class="trust-label">Local d'esprit, global de portée</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Marquee ticker -->
+            <section class="marquee" aria-hidden="true">
+                <div class="marquee-fade marquee-fade--left"></div>
+                <div class="marquee-track">
+                    <span class="marquee-content">DESIGN &middot; BRANDING &middot; WEB &middot; IDENTITE &middot; STRATEGIE &middot; DAKAR &middot; ACQUISITION &middot; DESIGN &middot; BRANDING &middot; WEB &middot; IDENTITE &middot; STRATEGIE &middot; DAKAR &middot; ACQUISITION &middot;&nbsp;</span>
+                    <span class="marquee-content">DESIGN &middot; BRANDING &middot; WEB &middot; IDENTITE &middot; STRATEGIE &middot; DAKAR &middot; ACQUISITION &middot; DESIGN &middot; BRANDING &middot; WEB &middot; IDENTITE &middot; STRATEGIE &middot; DAKAR &middot; ACQUISITION &middot;&nbsp;</span>
+                </div>
+                <div class="marquee-fade marquee-fade--right"></div>
+            </section>
+
             <!-- Work / Horizontal Gallery -->
-            <section class="work" id="work">
+            <section class="work" id="work" aria-label="Réalisations">
                 <div class="work-header">
                     <span class="section-eyebrow" data-reveal="chars">01 — Réalisations</span>
-                    <h2 class="section-title" data-reveal="words">Projets sélectionnés</h2>
+                    <h2 class="section-title" data-reveal="words">Des projets pensés pour durer</h2>
                 </div>
                 <div class="work-horizontal" id="workHorizontal">
                     <div class="work-track" id="workTrack">
                         <article class="work-card" data-tilt>
                             <div class="work-card-media">
-                                <img src="assets/images/lengor-desktop-fresh-lite.jpg" alt="Le Ngor Restaurant" loading="lazy">
+                                <img src="assets/images/lengor-desktop-fresh-lite.jpg" alt="Aperçu du site web du restaurant Le Ngor" loading="lazy">
                                 <div class="work-card-overlay"></div>
                             </div>
                             <div class="work-card-content">
                                 <span class="work-card-tag">Site web + Branding</span>
                                 <h3 class="work-card-title">Le Ngor</h3>
-                                <p class="work-card-desc">Restaurant pieds dans l'eau — site vitrine, réservation et identité visuelle complète.</p>
-                                <a href="https://restaurantlengor.sn" target="_blank" rel="noopener" class="work-card-link">Visiter le site →</a>
+                                <p class="work-card-desc">Restaurant pieds dans l'eau : site vitrine, réservation et identité visuelle complète.</p>
+                                <a href="https://restaurantlengor.sn" target="_blank" rel="noopener" class="work-card-link">Visiter le site<span aria-hidden="true"> →</span></a>
                             </div>
                         </article>
                         <article class="work-card" data-tilt>
                             <div class="work-card-media">
-                                <img src="assets/images/real-drhelminah-screen.jpg" alt="Dr Helminah" loading="lazy">
+                                <img src="assets/images/real-drhelminah-screen.jpg" alt="Aperçu du site professionnel du Dr Helminah" loading="lazy">
                                 <div class="work-card-overlay"></div>
                             </div>
                             <div class="work-card-content">
-                                <span class="work-card-tag">Personal Brand + Expertise</span>
+                                <span class="work-card-tag">Personal Branding</span>
                                 <h3 class="work-card-title">Dr Helminah</h3>
-                                <p class="work-card-desc">Présence professionnelle pour structurer une parole experte et guider vers la prise de contact.</p>
-                                <a href="https://drhelminah.com" target="_blank" rel="noopener" class="work-card-link">Visiter le site →</a>
+                                <p class="work-card-desc">Une présence professionnelle qui structure une parole experte et guide vers la prise de contact.</p>
+                                <a href="https://drhelminah.com" target="_blank" rel="noopener" class="work-card-link">Visiter le site<span aria-hidden="true"> →</span></a>
                             </div>
                         </article>
                         <article class="work-card" data-tilt>
                             <div class="work-card-media">
-                                <video src="assets/videos/portfolio-dakar-burger-preview.mp4" autoplay loop muted playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;"></video>
+                                <video src="assets/videos/portfolio-dakar-burger-preview.mp4" autoplay loop muted playsinline preload="metadata"></video>
                                 <div class="work-card-overlay"></div>
                             </div>
                             <div class="work-card-content">
                                 <span class="work-card-tag">Food Brand + Identité</span>
                                 <h3 class="work-card-title">Dakar Burger</h3>
-                                <p class="work-card-desc">Direction visuelle et présence digitale pour une marque fast-food locale.</p>
-                                <span class="work-card-link" style="opacity:.5">Projet interne</span>
+                                <p class="work-card-desc">Direction visuelle et présence digitale pour une marque fast-food locale qui sort du lot.</p>
+                                <span class="work-card-link work-card-link--muted">Projet interne</span>
                             </div>
                         </article>
                         <article class="work-card" data-tilt>
                             <div class="work-card-media">
-                                <img src="assets/images/ecommerce-senegal-mockup-lite.jpg" alt="Suave Comfort" loading="lazy">
+                                <img src="assets/images/ecommerce-senegal-mockup-lite.jpg" alt="Maquette de la boutique e-commerce Suave Comfort" loading="lazy">
                                 <div class="work-card-overlay"></div>
                             </div>
                             <div class="work-card-content">
                                 <span class="work-card-tag">E-commerce</span>
                                 <h3 class="work-card-title">Suave Comfort</h3>
-                                <p class="work-card-desc">Univers e-commerce pensé pour rendre l'offre lisible et rassurer avant l'achat.</p>
-                                <span class="work-card-link" style="opacity:.5">Projet interne</span>
+                                <p class="work-card-desc">Un univers e-commerce pensé pour rendre l'offre lisible et rassurer avant l'achat.</p>
+                                <span class="work-card-link work-card-link--muted">Projet interne</span>
                             </div>
                         </article>
                     </div>
                 </div>
             </section>
 
+            <!-- Clients strip -->
+            <section class="clients" aria-label="Ils nous font confiance">
+                <p class="clients-label" data-reveal="fade">Ils nous font confiance</p>
+                <ul class="clients-list" data-reveal="fade-up">
+                    <li>Le Ngor</li>
+                    <li aria-hidden="true">·</li>
+                    <li>Dr Helminah</li>
+                    <li aria-hidden="true">·</li>
+                    <li>Dakar Burger</li>
+                    <li aria-hidden="true">·</li>
+                    <li>Suave Comfort</li>
+                </ul>
+            </section>
+
+            <!-- Testimonials -->
+            <section class="testimonials" id="testimonials" aria-label="Temoignages clients">
+                <div class="testimonials-header">
+                    <span class="section-eyebrow" data-reveal="chars">Temoignages</span>
+                    <h2 class="section-title" data-reveal="words">Ce que nos clients disent</h2>
+                </div>
+                <div class="testimonials-grid">
+                    <article class="testimonial-card" data-reveal="fade-up">
+                        <span class="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
+                        <blockquote class="testimonial-text">AMEVIA a transforme notre presence en ligne. En 72 h, nous avions un site qui convertit vraiment.</blockquote>
+                        <footer class="testimonial-author">
+                            <span class="testimonial-name">Moussa D.</span>
+                            <span class="testimonial-role">Restaurateur</span>
+                        </footer>
+                    </article>
+                    <article class="testimonial-card" data-reveal="fade-up">
+                        <span class="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
+                        <blockquote class="testimonial-text">Un travail sur mesure, une reactivite rare. Notre identite visuelle est enfin a la hauteur de notre ambition.</blockquote>
+                        <footer class="testimonial-author">
+                            <span class="testimonial-name">Awa S.</span>
+                            <span class="testimonial-role">Fondatrice e-commerce</span>
+                        </footer>
+                    </article>
+                    <article class="testimonial-card" data-reveal="fade-up">
+                        <span class="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
+                        <blockquote class="testimonial-text">Professionnalisme et creativite. Ils comprennent les enjeux du marche senegalais tout en pensant global.</blockquote>
+                        <footer class="testimonial-author">
+                            <span class="testimonial-name">Ibrahima K.</span>
+                            <span class="testimonial-role">Directeur marketing</span>
+                        </footer>
+                    </article>
+                </div>
+            </section>
+
             <!-- Services -->
-            <section class="services" id="services">
+            <section class="services" id="services" aria-label="Services">
                 <div class="services-header">
                     <span class="section-eyebrow" data-reveal="chars">02 — Services</span>
                     <h2 class="section-title" data-reveal="words">Ce que nous créons</h2>
                 </div>
                 <div class="services-grid">
-                    <div class="service-card" data-reveal="fade-up" data-tilt>
-                        <div class="service-number">01</div>
-                        <div class="service-icon">
+                    <article class="service-card" data-reveal="fade-up" data-tilt>
+                        <div class="service-number" aria-hidden="true">01</div>
+                        <div class="service-icon" aria-hidden="true">
                             <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 40L20 16l8 12 12-20"/><circle cx="40" cy="8" r="3"/></svg>
                         </div>
-                        <h3 class="service-title">Sites web & Funnels</h3>
-                        <p class="service-desc">Sites vitrines, landing pages et tunnels de conversion optimisés pour transformer les visiteurs en clients.</p>
-                    </div>
-                    <div class="service-card" data-reveal="fade-up" data-tilt>
-                        <div class="service-number">02</div>
-                        <div class="service-icon">
+                        <h3 class="service-title">Sites web &amp; Tunnels</h3>
+                        <p class="service-desc">Sites vitrines, landing pages et tunnels de conversion pensés pour transformer les visiteurs en clients. Rapides, responsive et optimisés pour le référencement.</p>
+                    </article>
+                    <article class="service-card" data-reveal="fade-up" data-tilt>
+                        <div class="service-number" aria-hidden="true">02</div>
+                        <div class="service-icon" aria-hidden="true">
                             <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><circle cx="24" cy="24" r="16"/><path d="M24 12v12l8 4"/></svg>
                         </div>
                         <h3 class="service-title">Identité visuelle</h3>
-                        <p class="service-desc">Logo, charte graphique et direction artistique pour une marque cohérente et mémorable.</p>
-                    </div>
-                    <div class="service-card" data-reveal="fade-up" data-tilt>
-                        <div class="service-number">03</div>
-                        <div class="service-icon">
+                        <p class="service-desc">Logo, charte graphique et direction artistique pour une marque cohérente, mémorable et reconnaissable partout où elle apparaît.</p>
+                    </article>
+                    <article class="service-card" data-reveal="fade-up" data-tilt>
+                        <div class="service-number" aria-hidden="true">03</div>
+                        <div class="service-icon" aria-hidden="true">
                             <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="10" width="36" height="28" rx="3"/><path d="M6 18h36M16 28h16"/></svg>
                         </div>
-                        <h3 class="service-title">Contenu & Social</h3>
-                        <p class="service-desc">Stratégie éditoriale, création de contenus et gestion des réseaux sociaux pour capter l'attention.</p>
-                    </div>
-                    <div class="service-card" data-reveal="fade-up" data-tilt>
-                        <div class="service-number">04</div>
-                        <div class="service-icon">
+                        <h3 class="service-title">Contenu &amp; Réseaux sociaux</h3>
+                        <p class="service-desc">Stratégie éditoriale, création de contenus et gestion des réseaux sociaux pour capter l'attention et nourrir la relation avec votre audience.</p>
+                    </article>
+                    <article class="service-card" data-reveal="fade-up" data-tilt>
+                        <div class="service-number" aria-hidden="true">04</div>
+                        <div class="service-icon" aria-hidden="true">
                             <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M24 4v8M24 36v8M4 24h8M36 24h8M12.7 12.7l5.6 5.6M29.7 29.7l5.6 5.6M12.7 35.3l5.6-5.6M29.7 18.3l5.6-5.6"/></svg>
                         </div>
-                        <h3 class="service-title">Acquisition</h3>
-                        <p class="service-desc">SEO, campagnes publicitaires et automations pour générer un flux continu de prospects qualifiés.</p>
-                    </div>
+                        <h3 class="service-title">Acquisition &amp; SEO</h3>
+                        <p class="service-desc">Référencement naturel, campagnes publicitaires et automatisations pour générer un flux régulier de prospects qualifiés.</p>
+                    </article>
                 </div>
             </section>
 
             <!-- Method -->
-            <section class="method" id="method">
+            <section class="method" id="method" aria-label="Méthode">
                 <div class="method-header">
                     <span class="section-eyebrow" data-reveal="chars">03 — Méthode</span>
                     <h2 class="section-title" data-reveal="words">Comment nous travaillons</h2>
                 </div>
                 <div class="method-timeline">
-                    <div class="timeline-line" id="timelineLine">
+                    <div class="timeline-line" id="timelineLine" aria-hidden="true">
                         <div class="timeline-line-progress" id="timelineProgress"></div>
                     </div>
                     <div class="timeline-steps">
                         <div class="timeline-step" data-reveal="fade-right">
-                            <div class="step-marker"><span>1</span></div>
+                            <div class="step-marker" aria-hidden="true"><span>1</span></div>
                             <div class="step-content">
-                                <h3>Discovery</h3>
-                                <p>On comprend ton marché, tes clients et tes objectifs. Pas de template sans stratégie.</p>
+                                <h3>Découverte</h3>
+                                <p>On analyse votre marché, vos clients et vos objectifs. Aucune ligne de code sans stratégie derrière.</p>
                             </div>
                         </div>
                         <div class="timeline-step" data-reveal="fade-left">
-                            <div class="step-marker"><span>2</span></div>
+                            <div class="step-marker" aria-hidden="true"><span>2</span></div>
                             <div class="step-content">
                                 <h3>Design</h3>
-                                <p>Direction artistique, wireframes et maquettes haute fidélité. Chaque pixel a un sens.</p>
+                                <p>Direction artistique, wireframes et maquettes haute-fidélité. Chaque pixel sert un objectif précis.</p>
                             </div>
                         </div>
                         <div class="timeline-step" data-reveal="fade-right">
-                            <div class="step-marker"><span>3</span></div>
+                            <div class="step-marker" aria-hidden="true"><span>3</span></div>
                             <div class="step-content">
                                 <h3>Développement</h3>
-                                <p>Code propre, performant et scalable. Animations fluides, responsive impeccable.</p>
+                                <p>Code propre, rapide et évolutif. Animations fluides et responsive irréprochable sur tous les écrans.</p>
                             </div>
                         </div>
                         <div class="timeline-step" data-reveal="fade-left">
-                            <div class="step-marker"><span>4</span></div>
+                            <div class="step-marker" aria-hidden="true"><span>4</span></div>
                             <div class="step-content">
-                                <h3>Lancement & Growth</h3>
-                                <p>SEO, analytics, optimisations. On reste à tes côtés pour faire grimper les résultats.</p>
+                                <h3>Lancement &amp; Croissance</h3>
+                                <p>Mise en ligne, analytics, SEO et optimisations continues. On reste à vos côtés pour faire grimper les résultats.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
+            <!-- FAQ -->
+            <section class="faq" id="faq" aria-label="Questions fréquentes">
+                <div class="faq-header">
+                    <span class="section-eyebrow" data-reveal="chars">04 — FAQ</span>
+                    <h2 class="section-title" data-reveal="words">Questions fréquentes</h2>
+                </div>
+                <div class="faq-list" data-reveal="fade-up">
+                    <details class="faq-item">
+                        <summary>Combien de temps faut-il pour livrer un site ?</summary>
+                        <div class="faq-answer"><p>Comptez à partir de 72 h pour un site vitrine, une fois le brief validé et les éléments reçus. Les projets plus complets (e-commerce, identité de marque complète) s'étalent sur quelques semaines.</p></div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Travaillez-vous à distance ?</summary>
+                        <div class="faq-answer"><p>Oui. Basés à Dakar, nous accompagnons des clients au Sénégal comme à l'international, en visioconférence et par email, sans contrainte de fuseau.</p></div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Combien coûte un projet ?</summary>
+                        <div class="faq-answer"><p>Chaque projet est établi sur devis, selon vos besoins et vos objectifs. Vous recevez une proposition claire et détaillée avant tout engagement, sans surprise.</p></div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>De quoi avez-vous besoin pour démarrer ?</summary>
+                        <div class="faq-answer"><p>Un brief de vos objectifs, vos textes et visuels si vous en disposez, et vos accès techniques le cas échéant. On vous guide à chaque étape, même en partant de zéro.</p></div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Assurez-vous le suivi après le lancement ?</summary>
+                        <div class="faq-answer"><p>Oui. Nous proposons un accompagnement post-lancement : mises à jour, optimisations SEO et améliorations continues pour faire évoluer votre présence dans le temps.</p></div>
+                    </details>
+                </div>
+            </section>
+
             <!-- Contact -->
-            <section class="contact" id="contact">
-                <div class="contact-bg"></div>
+            <section class="contact" id="contact" aria-label="Contact">
+                <div class="contact-bg" aria-hidden="true"></div>
                 <div class="contact-content">
-                    <span class="section-eyebrow" data-reveal="chars">04 — Contact</span>
-                    <h2 class="section-title" data-reveal="words">Parlons de ton projet</h2>
-                    <p class="contact-desc" data-reveal="fade-up">Disponible pour des missions ponctuelles ou des collaborations long terme. Réponse sous 24h.</p>
-                    <form class="contact-form" id="contactForm" data-reveal="fade-up">
+                    <span class="section-eyebrow" data-reveal="chars">05 — Contact</span>
+                    <h2 class="section-title" data-reveal="words">Parlons de votre projet</h2>
+                    <p class="contact-desc" data-reveal="fade-up">Disponibles pour des missions ponctuelles ou des collaborations long terme. Décrivez-nous votre projet : nous revenons vers vous sous 24 h.</p>
+                    <form class="contact-form" id="contactForm" data-reveal="fade-up" novalidate>
                         <div class="form-row">
                             <div class="form-field">
-                                <input type="text" id="name" name="name" placeholder=" " required>
+                                <input type="text" id="name" name="name" placeholder=" " autocomplete="name" required>
                                 <label for="name">Nom</label>
                             </div>
                             <div class="form-field">
-                                <input type="email" id="email" name="email" placeholder=" " required>
+                                <input type="email" id="email" name="email" placeholder=" " autocomplete="email" required>
                                 <label for="email">Email</label>
                             </div>
                         </div>
@@ -266,36 +417,42 @@
                         </div>
                         <div class="form-field">
                             <textarea id="message" name="message" rows="4" placeholder=" " required></textarea>
-                            <label for="message">Message</label>
+                            <label for="message">Votre message</label>
                         </div>
                         <button type="submit" class="btn-primary btn-large">
-                            <span>Envoyer</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            <span>Envoyer le message</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </button>
+                        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
                     </form>
                 </div>
             </section>
+
+            </main>
 
             <!-- Footer -->
             <footer class="footer">
                 <div class="footer-inner">
                     <div class="footer-brand">
-                        <img src="assets/images/logo.png" alt="AMEVIA" class="footer-logo">
-                        <p>Studio Web & Marque Digitale<br>Conçu avec soin à Dakar.</p>
+                        <img src="assets/images/logo.png" alt="" class="footer-logo">
+                        <p>Studio Web &amp; Identité de Marque.<br>Créer. Connecter. Marquer les esprits.</p>
                     </div>
-                    <div class="footer-links">
+                    <nav class="footer-links" aria-label="Liens du site">
                         <a href="#work">Réalisations</a>
                         <a href="#services">Services</a>
                         <a href="#method">Méthode</a>
+                        <a href="#faq">FAQ</a>
                         <a href="#contact">Contact</a>
-                    </div>
+                    </nav>
                     <div class="footer-social">
                         <a href="https://www.linkedin.com/in/helminah-rm" target="_blank" rel="noopener">LinkedIn</a>
-                        <a href="mailto:hello@ameviaagency.com">Email</a>
+                        <a href="mailto:hello@ameviaagency.com">hello@ameviaagency.com</a>
+                        <a href="mentions-legales.html">Mentions légales</a>
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    <p>&copy; <span id="footerYear">2026</span> AMEVIA. Tous droits réservés.</p>
+                    <p>&copy; <span id="footerYear">2026</span> AMEVIA LLC. Tous droits réservés.</p>
+                    <p>Conçu avec soin à Dakar.</p>
                 </div>
             </footer>
 
@@ -303,13 +460,13 @@
     </div>
 
     <!-- Cursor -->
-    <div class="cursor" id="cursor"></div>
-    <div class="cursor-trail" id="cursorTrail"></div>
+    <div class="cursor" id="cursor" aria-hidden="true"></div>
+    <div class="cursor-trail" id="cursorTrail" aria-hidden="true"></div>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="js/main.js?v=4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="js/main.js?v=5" defer></script>
 </body>
 </html>
