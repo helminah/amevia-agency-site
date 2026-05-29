@@ -262,18 +262,38 @@ function initHeroReveal() {
     const micro = document.querySelector('.hero-microcopy');
     const scrollInd = document.querySelector('.hero-scroll');
 
-    gsap.set(lines, { clipPath: 'inset(0 100% 0 0)', opacity: 1 });
+    // Split each line into words for 3D animation
+    lines.forEach(line => splitText(line, 'words'));
+
     gsap.set([eyebrow, desc, actions, micro], { y: 30, opacity: 0 });
     if (scrollInd) gsap.set(scrollInd, { opacity: 0, y: 20 });
     if (video) gsap.set(video, { scale: 1.3, filter: 'blur(20px)' });
 
+    // Set initial state for all word-inners
+    const allWordInners = document.querySelectorAll('.hero-title .word-inner');
+    gsap.set(allWordInners, { rotateX: 90, y: '100%', scale: 0.8, opacity: 0, filter: 'blur(4px)' });
+
     tl.to(video, { scale: 1.05, filter: 'blur(0px)', duration: 1.8, ease: 'power3.out' }, 0)
-      .to(eyebrow, { y: 0, opacity: 1 }, 0.2)
-      .to(lines[0], { clipPath: 'inset(0 0% 0 0)', duration: 0.9 }, 0.35)
-      .to(lines[1], { clipPath: 'inset(0 0% 0 0)', duration: 0.9 }, 0.5)
-      .to(lines[2], { clipPath: 'inset(0 0% 0 0)', duration: 0.9 }, 0.65)
-      .to(lines[3], { clipPath: 'inset(0 0% 0 0)', duration: 0.9 }, 0.8)
-      .to(desc, { y: 0, opacity: 1 }, 1.0)
+      .to(eyebrow, { y: 0, opacity: 1 }, 0.2);
+
+    // Animate words per line with stagger
+    let lineDelay = 0.35;
+    lines.forEach((line, idx) => {
+        const words = line.querySelectorAll('.word-inner');
+        const isAccent = line.classList.contains('accent');
+        tl.to(words, {
+            rotateX: 0,
+            y: '0%',
+            scale: 1,
+            opacity: 1,
+            filter: 'blur(0px)',
+            duration: isAccent ? 1.4 : 1.0,
+            stagger: 0.08,
+            ease: isAccent ? 'back.out(1.4)' : 'expo.out'
+        }, lineDelay + idx * 0.18);
+    });
+
+    tl.to(desc, { y: 0, opacity: 1 }, 1.0)
       .to(actions, { y: 0, opacity: 1 }, 1.15)
       .to(micro, { y: 0, opacity: 1 }, 1.3)
       .to(scrollInd, { opacity: 1, y: 0 }, 1.45);
@@ -624,6 +644,32 @@ function initTestimonials() {
 }
 
 /* ───────────────────────────────────────────────
+   22. Why section — scroll-triggered reveal
+   ─────────────────────────────────────────────── */
+function initWhySection() {
+    if (prefersReduced) return;
+    const items = document.querySelectorAll('.why-item');
+    if (!items.length) return;
+    // Items already have data-reveal="fade-up" so initReveals() handles them.
+    // Add a special stagger for the numbers to scale in.
+    const numbers = document.querySelectorAll('.why-number');
+    if (numbers.length) {
+        gsap.from(numbers, {
+            scale: 0.5,
+            opacity: 0,
+            duration: 1.2,
+            stagger: 0.15,
+            ease: 'expo.out',
+            scrollTrigger: {
+                trigger: '.why-grid',
+                start: 'top 85%',
+                once: true
+            }
+        });
+    }
+}
+
+/* ───────────────────────────────────────────────
    BOOT
    ─────────────────────────────────────────────── */
 function boot() {
@@ -646,6 +692,7 @@ function boot() {
     initServiceCardGlow();
     initMarquee();
     initTestimonials();
+    initWhySection();
     initReveals();
 
     // Recalculate pinned/scroll positions once fonts & media settle

@@ -1,0 +1,30 @@
+{
+  "id": "FEAT-002",
+  "type": "feat",
+  "description": "Elevate the hero title animation to be more dramatic with staggered 3D word reveals (perspective rotation + scale), add a 'Why AMEVIA' differentiators section with large editorial typography, and add premium micro-interactions/hover states across all interactive elements",
+  "status": "in_progress",
+  "steps": [
+    "In js/main.js, rewrite the initHeroReveal() function to use a more dramatic hero title animation: instead of simple clip-path reveals, split each .line into words, then animate each word with rotateX(90deg) + translateY(100%) + scale(0.8) to rotateX(0) + translateY(0) + scale(1) with staggered timing and perspective. Add a subtle blur(4px) to 0 transition on each word. Keep the existing video parallax and content fade.",
+    "In css/style.css, update .hero-title .line styles to support 3D word animation: add perspective(1000px) on the container, transform-style: preserve-3d on lines, overflow: hidden on each line wrapper.",
+    "In index.html, add a new <section class='why' id='why'> section between the method section and the FAQ section. Structure: large editorial headline ('Pourquoi AMEVIA'), then 3 differentiator blocks each with a large number (01/02/03), a short bold headline, and a descriptive paragraph. Content should emphasize: 1) Sur mesure (no templates), 2) Rapidite (72h first deliverables), 3) Vision globale (Dakar-based, world-class).",
+    "In css/style.css, add styles for .why section: use massive display typography for the numbers (clamp(80px, 12vw, 180px), font-display, very light color like 0.04 opacity), headlines in font-display at 32-48px, alternating left/right layout for visual rhythm. Add a horizontal rule accent in gradient-accent color.",
+    "In css/style.css, add enhanced micro-interactions: (a) all .btn-primary and .btn-ghost get a shimmer/shine sweep effect on hover using a pseudo-element with translateX animation, (b) .work-card-link gets an arrow that slides right on hover, (c) .nav-link hover gets a subtle background pill highlight, (d) .faq-item summary gets a left border accent on hover/open, (e) form inputs get a gradient bottom-border on focus, (f) footer links get an underline slide-in from left on hover.",
+    "In js/main.js, add initWhySection() with a scroll-triggered counter animation for the large numbers (count from 0 to target) and staggered fade-in for each differentiator block. Guard with prefersReduced. Call in boot().",
+    "In css/style.css, add reduced-motion fallback for the .why section (opacity: 1, transform: none)."
+  ],
+  "acceptance_criteria": [
+    "Hero title words animate in with 3D perspective rotation effect (dramatic entrance)",
+    "A 'Pourquoi AMEVIA' section exists with 3 large-typography differentiator blocks",
+    "Buttons have a shimmer/shine hover effect",
+    "Work card links, nav links, FAQ items, form inputs, and footer links all have enhanced micro-interactions",
+    "All new animations respect prefers-reduced-motion",
+    "No JS syntax errors (node --check js/main.js passes)"
+  ],
+  "verification": [
+    "Run: node --check /projects/sandbox/amevia-agency-site/js/main.js",
+    "Grep index.html for 'why' section and 'Pourquoi AMEVIA' content",
+    "Grep css/style.css for shimmer, .why, and micro-interaction styles"
+  ],
+  "blocked_reason": null,
+  "findings": ""
+}
