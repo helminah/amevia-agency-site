@@ -269,7 +269,7 @@ function initHeroReveal() {
 
     // Set initial state for all word-inners
     const allWordInners = document.querySelectorAll('.hero-title .word-inner');
-    gsap.set(allWordInners, { rotateX: 90, y: '100%', scale: 0.8, opacity: 0, filter: 'blur(4px)' });
+    gsap.set(allWordInners, { y: '100%', opacity: 0 });
 
     tl.to(video, { scale: 1.05, filter: 'blur(0px)', duration: 1.8, ease: 'power3.out' }, 0)
       .to(eyebrow, { y: 0, opacity: 1 }, 0.2);
@@ -280,11 +280,8 @@ function initHeroReveal() {
         const words = line.querySelectorAll('.word-inner');
         const isAccent = line.classList.contains('accent');
         tl.to(words, {
-            rotateX: 0,
             y: '0%',
-            scale: 1,
             opacity: 1,
-            filter: 'blur(0px)',
             duration: isAccent ? 1.4 : 1.0,
             stagger: 0.08,
             ease: isAccent ? 'back.out(1.4)' : 'expo.out'

@@ -379,6 +379,9 @@ ul { list-style: none; }
     font-weight: 400;
     font-style: italic;
     letter-spacing: -0.01em;
+}
+.hero-title .accent,
+.hero-title .accent .word-inner {
     background: var(--gradient-accent);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -850,7 +853,7 @@ ul { list-style: none; }
 }
 .faq-item[open] summary::after { transform: rotate(135deg); }
 .faq-answer { padding: 0 28px; max-height: 0; overflow: hidden; transition: max-height 0.5s var(--ease-out-expo), padding 0.5s var(--ease-out-expo); }
-.faq-item[open] .faq-answer { padding: 0 28px 26px; max-height: 320px; }
+.faq-item[open] .faq-answer { padding: 0 28px 26px; max-height: 600px; }
 .faq-answer p { font-size: 15px; line-height: 1.65; color: var(--ink-secondary); }
 
 /* ═══════════════════════════════════════════════
@@ -878,7 +881,7 @@ ul { list-style: none; }
     resize: vertical;
 }
 .form-field input:focus,
-.form-field textarea:focus { border-color: transparent; background-image: linear-gradient(var(--bg), var(--bg)), linear-gradient(120deg, var(--cyan), var(--coral)); background-origin: border-box; background-clip: padding-box, border-box; border-bottom: 1px solid transparent; }
+.form-field textarea:focus { border-color: var(--cyan); box-shadow: 0 1px 0 0 var(--cyan); }
 .form-field label {
     position: absolute;
     left: 0;
