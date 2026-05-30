@@ -240,7 +240,12 @@ function initPreloader() {
             setTimeout(() => {
                 preloader.classList.add('done');
                 setTimeout(() => preloader.remove(), 900);
-                initHeroReveal();
+                try {
+                    initHeroReveal();
+                } catch (e) {
+                    console.error('[AMEVIA] initHeroReveal', e);
+                    document.documentElement.classList.add('reveal-all');
+                }
             }, 400);
         }
         fill.style.width = progress + '%';
@@ -492,28 +497,32 @@ function initTimelineScroll() {
    ─────────────────────────────────────────────── */
 function initReveals() {
     if (prefersReduced) return; // CSS makes [data-reveal] visible
-    const revealMap = {
-        'fade-up': { y: 40, opacity: 0 },
-        'fade-left': { x: 40, opacity: 0 },
-        'fade-right': { x: -40, opacity: 0 },
-        'fade': { opacity: 0 },
-    };
-    const defaults = { duration: 0.9, ease: 'expo.out' };
 
-    Object.keys(revealMap).forEach(attr => {
-        document.querySelectorAll(`[data-reveal="${attr}"]`).forEach(el => {
-            gsap.from(el, { ...defaults, ...revealMap[attr], scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
+    // Fade family — CSS (html.js) provides the hidden START state.
+    // We animate TO the visible state, so the element is ALWAYS visible at the end.
+    document.querySelectorAll('[data-reveal="fade-up"], [data-reveal="fade-left"], [data-reveal="fade-right"], [data-reveal="fade"]').forEach(el => {
+        gsap.to(el, {
+            x: 0, y: 0, opacity: 1, duration: 0.9, ease: 'expo.out',
+            scrollTrigger: { trigger: el, start: 'top 92%', once: true }
         });
     });
 
+    // Chars — explicit fromTo so the end state is guaranteed visible
     document.querySelectorAll('[data-reveal="chars"]').forEach(el => {
         splitText(el, 'chars');
-        gsap.from(getInners(el, 'char'), { y: '100%', opacity: 0, duration: 0.7, stagger: 0.025, ease: 'expo.out', scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
+        gsap.fromTo(getInners(el, 'char'),
+            { yPercent: 100, opacity: 0 },
+            { yPercent: 0, opacity: 1, duration: 0.7, stagger: 0.025, ease: 'expo.out', scrollTrigger: { trigger: el, start: 'top 92%', once: true } }
+        );
     });
 
+    // Words — explicit fromTo so the end state is guaranteed visible
     document.querySelectorAll('[data-reveal="words"]').forEach(el => {
         splitText(el, 'words');
-        gsap.from(getInners(el, 'word'), { y: '100%', opacity: 0, duration: 0.8, stagger: 0.04, ease: 'expo.out', scrollTrigger: { trigger: el, start: 'top 85%', once: true } });
+        gsap.fromTo(getInners(el, 'word'),
+            { yPercent: 100, opacity: 0 },
+            { yPercent: 0, opacity: 1, duration: 0.8, stagger: 0.04, ease: 'expo.out', scrollTrigger: { trigger: el, start: 'top 90%', once: true } }
+        );
     });
 }
 
@@ -618,27 +627,8 @@ function initMarquee() {
 }
 
 /* ───────────────────────────────────────────────
-   21. Testimonials — scroll-triggered reveal
+   21. Testimonials — handled by initReveals (data-reveal="fade-up")
    ─────────────────────────────────────────────── */
-function initTestimonials() {
-    const cards = document.querySelectorAll('.testimonial-card');
-    if (!cards.length) return;
-    if (prefersReduced) return; // CSS handles visibility
-    cards.forEach((card, i) => {
-        gsap.from(card, {
-            y: 50,
-            opacity: 0,
-            duration: 0.9,
-            delay: i * 0.12,
-            ease: 'expo.out',
-            scrollTrigger: {
-                trigger: card,
-                start: 'top 88%',
-                once: true
-            }
-        });
-    });
-}
 
 /* ───────────────────────────────────────────────
    22. Why section — scroll-triggered reveal
@@ -672,8 +662,11 @@ function initWhySection() {
 function safeInit(fn) { try { fn(); } catch(e) { console.error('[AMEVIA]', fn.name, e); } }
 
 function boot() {
-    if (typeof gsap === 'undefined') {
-        console.error('[AMEVIA] GSAP not available — aborting boot.');
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+        console.error('[AMEVIA] GSAP/ScrollTrigger indisponible — affichage sans animation.');
+        document.documentElement.classList.add('reveal-all');
+        const p = document.getElementById('preloader');
+        if (p) p.remove();
         return;
     }
     gsap.registerPlugin(ScrollTrigger);
@@ -696,7 +689,6 @@ function boot() {
     safeInit(initFooter);
     safeInit(initServiceCardGlow);
     safeInit(initMarquee);
-    safeInit(initTestimonials);
     safeInit(initWhySection);
     safeInit(initReveals);
 

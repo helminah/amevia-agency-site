@@ -1126,10 +1126,29 @@ ul { list-style: none; }
    ═══════════════════════════════════════════════ */
 .char, .word { display: inline-block; overflow: hidden; vertical-align: top; }
 .char-inner, .word-inner { display: inline-block; will-change: transform; }
-[data-reveal="fade-up"] { opacity: 0; transform: translateY(40px); }
-[data-reveal="fade-right"] { opacity: 0; transform: translateX(-40px); }
-[data-reveal="fade-left"] { opacity: 0; transform: translateX(40px); }
-[data-reveal="fade"] { opacity: 0; }
+/* Hidden start states apply ONLY when JS is active (html.js).
+   If JS is disabled or fails to load, content stays visible. */
+html.js [data-reveal="fade-up"] { opacity: 0; transform: translateY(40px); }
+html.js [data-reveal="fade-right"] { opacity: 0; transform: translateX(-40px); }
+html.js [data-reveal="fade-left"] { opacity: 0; transform: translateX(40px); }
+html.js [data-reveal="fade"] { opacity: 0; }
+/* Failsafe: if GSAP/ScrollTrigger fails, JS adds .reveal-all to force everything visible */
+html.reveal-all [data-reveal],
+html.reveal-all .hero-eyebrow,
+html.reveal-all .hero-desc,
+html.reveal-all .hero-actions,
+html.reveal-all .hero-microcopy,
+html.reveal-all .hero-scroll,
+html.reveal-all .hero-title .line,
+html.reveal-all .word-inner,
+html.reveal-all .char-inner,
+html.reveal-all .testimonial-card,
+html.reveal-all .why-item {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    clip-path: none !important;
+}
 .magnetic { display: inline-flex; transition: transform 0.3s var(--ease-out-expo); }
 
 /* ═══════════════════════════════════════════════
