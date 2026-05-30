@@ -4,8 +4,6 @@
    Performance-first · Accessible · 60fps
    ═══════════════════════════════════════════════ */
 
-gsap.registerPlugin(ScrollTrigger);
-
 const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
 
@@ -354,6 +352,8 @@ function initCursor() {
     const trail = document.getElementById('cursorTrail');
     if (!cursor || !trail) return;
 
+    document.body.classList.add('custom-cursor-active');
+
     let mx = 0, my = 0, cx = 0, cy = 0, tx = 0, ty = 0;
     document.addEventListener('mousemove', e => {
         mx = e.clientX; my = e.clientY;
@@ -672,28 +672,36 @@ function initWhySection() {
 /* ───────────────────────────────────────────────
    BOOT
    ─────────────────────────────────────────────── */
+function safeInit(fn) { try { fn(); } catch(e) { console.error('[AMEVIA]', fn.name, e); } }
+
 function boot() {
-    initLenis();
-    initPreloader();
-    initScrollProgress();
-    initNav();
-    initMobileMenu();
-    initCursor();
-    initParticles();
-    initHeroSpotlight();
-    initMagneticButtons();
-    initTextScramble();
-    initHorizontalScroll();
-    initTiltCards();
-    initTimelineScroll();
-    initFaq();
-    initContact();
-    initFooter();
-    initServiceCardGlow();
-    initMarquee();
-    initTestimonials();
-    initWhySection();
-    initReveals();
+    if (typeof gsap === 'undefined') {
+        console.error('[AMEVIA] GSAP not available — aborting boot.');
+        return;
+    }
+    gsap.registerPlugin(ScrollTrigger);
+
+    safeInit(initLenis);
+    safeInit(initPreloader);
+    safeInit(initScrollProgress);
+    safeInit(initNav);
+    safeInit(initMobileMenu);
+    safeInit(initCursor);
+    safeInit(initParticles);
+    safeInit(initHeroSpotlight);
+    safeInit(initMagneticButtons);
+    safeInit(initTextScramble);
+    safeInit(initHorizontalScroll);
+    safeInit(initTiltCards);
+    safeInit(initTimelineScroll);
+    safeInit(initFaq);
+    safeInit(initContact);
+    safeInit(initFooter);
+    safeInit(initServiceCardGlow);
+    safeInit(initMarquee);
+    safeInit(initTestimonials);
+    safeInit(initWhySection);
+    safeInit(initReveals);
 
     // Recalculate pinned/scroll positions once fonts & media settle
     window.addEventListener('load', () => ScrollTrigger.refresh());
