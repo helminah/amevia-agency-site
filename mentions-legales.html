@@ -4,119 +4,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mentions légales — AMEVIA</title>
-    <meta name="description" content="Mentions légales et informations juridiques de AMEVIA LLC.">
+    <meta name="description" content="Mentions légales et informations juridiques d'AMEVIA LLC : éditeur, hébergement, propriété intellectuelle, données personnelles et conditions de service.">
     <meta name="robots" content="noindex, follow">
+    <meta name="theme-color" content="#f5f7f3">
     <link rel="canonical" href="https://ameviaagency.com/mentions-legales.html">
     <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=wow-6">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=5">
 </head>
 <body>
-    <a href="#main" class="skip-link">Aller au contenu</a>
-    <div class="cursor" aria-hidden="true"></div>
-    <div class="cursor-ring" aria-hidden="true"></div>
-    <div class="page-glow" aria-hidden="true"></div>
-    <canvas class="shader-canvas" id="shaderCanvas" aria-hidden="true"></canvas>
-    <div class="scroll-progress" aria-hidden="true"></div>
+    <a href="#main" class="skip-link">Aller au contenu principal</a>
+    <div class="noise-overlay" aria-hidden="true"></div>
 
-    <nav class="nav" id="navbar">
-        <a class="brand" href="index.html#hero" aria-label="AMEVIA accueil">
-            <img src="assets/images/logo.png" alt="" class="brand-mark" fetchpriority="high">
-            <span>AMEVIA</span>
-        </a>
-        <div class="nav-links" aria-label="Navigation principale">
-            <a href="index.html#work">Réalisations</a>
-            <a href="index.html#services">Offres</a>
-            <a href="index.html#method">Méthode</a>
-            <a href="index.html#faq">FAQ</a>
-            <a href="index.html#contact">Contact</a>
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <header>
+                <nav class="nav scrolled" id="nav" aria-label="Navigation principale">
+                    <a href="index.html#hero" class="nav-brand" aria-label="AMEVIA — accueil">
+                        <img src="assets/images/logo.png" alt="" class="nav-logo">
+                        <span>AMEVIA</span>
+                    </a>
+                    <div class="nav-links" id="navLinks">
+                        <a href="index.html#work" class="nav-link"><span class="scramble-text" data-scramble="Réalisations">Réalisations</span></a>
+                        <a href="index.html#services" class="nav-link"><span class="scramble-text" data-scramble="Services">Services</span></a>
+                        <a href="index.html#method" class="nav-link"><span class="scramble-text" data-scramble="Méthode">Méthode</span></a>
+                        <a href="index.html#faq" class="nav-link"><span class="scramble-text" data-scramble="FAQ">FAQ</span></a>
+                        <a href="index.html#contact" class="nav-link"><span class="scramble-text" data-scramble="Contact">Contact</span></a>
+                    </div>
+                    <a href="index.html#contact" class="nav-cta">Démarrer un projet</a>
+                    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
+                        <span></span><span></span>
+                    </button>
+                </nav>
+            </header>
+
+            <main id="main">
+                <section class="legal" aria-label="Mentions légales">
+                    <span class="section-eyebrow">Informations juridiques</span>
+                    <h1 class="legal-title">Mentions légales</h1>
+                    <p class="legal-intro">Dernière mise à jour : 2026. Pour toute question relative à ces informations, contactez-nous via le <a href="index.html#contact">formulaire en ligne</a>.</p>
+
+                    <article class="legal-article">
+                        <span class="legal-num">01</span>
+                        <div>
+                            <h2>Éditeur du site</h2>
+                            <p><strong>AMEVIA LLC</strong><br>
+                            117 South Lexington Street, Ste 100<br>
+                            Harrisonville, MO 64701, USA<br><br>
+                            <strong>EIN (Employer Identification Number) :</strong> 35-2929507<br>
+                            <strong>Contact :</strong> via le formulaire en ligne sur la <a href="index.html#contact">page d'accueil</a>.</p>
+                        </div>
+                    </article>
+
+                    <article class="legal-article">
+                        <span class="legal-num">02</span>
+                        <div>
+                            <h2>Directrice de la publication</h2>
+                            <p>Dr Helminah RM, fondatrice et représentante légale d'AMEVIA LLC.</p>
+                        </div>
+                    </article>
+
+                    <article class="legal-article">
+                        <span class="legal-num">03</span>
+                        <div>
+                            <h2>Hébergement</h2>
+                            <!-- ⚠️ À COMPLÉTER : renseignez ici le nom et l'adresse exacts de votre hébergeur.
+                                 Le site est déployé par FTP vers ameviaagency.com (voir .github/workflows/deploy.yml),
+                                 il n'est donc PAS hébergé sur GitHub Pages. -->
+                            <p>Le site est hébergé par un prestataire d'hébergement web professionnel et distribué via un réseau de diffusion de contenu (CDN) sécurisé. Les coordonnées complètes de l'hébergeur sont disponibles sur demande via le <a href="index.html#contact">formulaire de contact</a>.</p>
+                        </div>
+                    </article>
+
+                    <article class="legal-article">
+                        <span class="legal-num">04</span>
+                        <div>
+                            <h2>Propriété intellectuelle</h2>
+                            <p>L'ensemble des éléments constituant le site AMEVIA (textes, graphismes, logos, images, vidéos, icônes, sons, logiciels) est la propriété exclusive d'AMEVIA LLC. Toute reproduction, représentation, modification ou adaptation, totale ou partielle, est interdite sans autorisation préalable écrite.</p>
+                        </div>
+                    </article>
+
+                    <article class="legal-article">
+                        <span class="legal-num">05</span>
+                        <div>
+                            <h2>Données personnelles</h2>
+                            <p>Les données collectées via le formulaire de contact sont traitées dans le seul but de répondre aux demandes des utilisateurs. Aucune donnée n'est vendue ni transmise à des tiers. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données en contactant AMEVIA via le <a href="index.html#contact">formulaire en ligne</a>.</p>
+                        </div>
+                    </article>
+
+                    <article class="legal-article">
+                        <span class="legal-num">06</span>
+                        <div>
+                            <h2>Cookies</h2>
+                            <p>Le site utilise uniquement des cookies strictement nécessaires à son fonctionnement (préférences utilisateur, session). Aucun cookie publicitaire ou de tracking tiers n'est déposé sans votre consentement explicite.</p>
+                        </div>
+                    </article>
+
+                    <article class="legal-article">
+                        <span class="legal-num">07</span>
+                        <div>
+                            <h2>Conditions de service</h2>
+                            <p>Les prestations de création de site web sont facturées selon devis validé par le client. Délai de livraison à partir de <strong>72 h</strong> pour les sites vitrines, sous réserve de réception de l'ensemble des éléments nécessaires (textes, images, accès, brief validé).</p>
+                        </div>
+                    </article>
+
+                    <a href="index.html" class="legal-back"><span aria-hidden="true">←</span> Retour à l'accueil</a>
+                </section>
+            </main>
+
+            <footer class="footer">
+                <div class="footer-inner">
+                    <div class="footer-brand">
+                        <img src="assets/images/logo.png" alt="" class="footer-logo">
+                        <p>Studio Web &amp; Identité de Marque.<br>Créer. Connecter. Marquer les esprits.</p>
+                    </div>
+                    <nav class="footer-links" aria-label="Liens du site">
+                        <a href="index.html#work">Réalisations</a>
+                        <a href="index.html#services">Services</a>
+                        <a href="index.html#method">Méthode</a>
+                        <a href="index.html#faq">FAQ</a>
+                        <a href="index.html#contact">Contact</a>
+                    </nav>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/helminah-rm" target="_blank" rel="noopener">LinkedIn</a>
+                        <a href="mailto:hello@ameviaagency.com">hello@ameviaagency.com</a>
+                        <a href="mentions-legales.html">Mentions légales</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; <span id="footerYear">2026</span> AMEVIA LLC. Tous droits réservés.</p>
+                    <p>Conçu avec soin à Dakar.</p>
+                </div>
+            </footer>
+
         </div>
-        <a class="nav-action" href="index.html#contact">Demander un brief</a>
-        <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu">
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
-
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="index.html#work">Réalisations</a>
-        <a href="index.html#services">Offres</a>
-        <a href="index.html#method">Méthode</a>
-        <a href="index.html#faq">FAQ</a>
-        <a href="index.html#contact">Contact</a>
     </div>
 
-    <main id="main" style="padding-top: 120px;">
-        <section class="site-offer" aria-label="Mentions légales" style="width: min(780px, calc(100% - 32px)); margin: 0 auto; padding: clamp(40px, 6vw, 80px) 0;">
-            <div class="site-offer-copy">
-                <p class="eyebrow"><span></span> Informations juridiques</p>
-                <h1 class="kinetic-title" data-split="words">Mentions légales</h1>
-            </div>
+    <div class="cursor" id="cursor" aria-hidden="true"></div>
+    <div class="cursor-trail" id="cursorTrail" aria-hidden="true"></div>
 
-            <article class="site-feature" style="margin-top: 48px;">
-                <span>01</span>
-                <h2>Éditeur du site</h2>
-                <p><strong>AMEVIA LLC</strong><br>
-                117 South Lexington Street, Ste 100<br>
-                Harrisonville, MO 64701, USA<br><br>
-                <strong>EIN (Employer Identification Number) :</strong> 35-2929507<br>
-                <strong>Contact :</strong> via le formulaire en ligne sur la <a href="index.html#contact">page d'accueil</a>.</p>
-            </article>
-
-            <article class="site-feature" style="margin-top: 32px;">
-                <span>02</span>
-                <h2>Directrice de la publication</h2>
-                <p>Dr Helminah RM, fondatrice et représentante légale d'AMEVIA LLC.</p>
-            </article>
-
-            <article class="site-feature" style="margin-top: 32px;">
-                <span>03</span>
-                <h2>Hébergement</h2>
-                <p>Le site est hébergé via <strong>GitHub Pages</strong> (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA) et distribué via un réseau CDN sécurisé.</p>
-            </article>
-
-            <article class="site-feature" style="margin-top: 32px;">
-                <span>04</span>
-                <h2>Propriété intellectuelle</h2>
-                <p>L'ensemble des éléments constituant le site AMEVIA (textes, graphismes, logos, images, vidéos, icônes, sons, logiciels) est la propriété exclusive d'AMEVIA LLC. Toute reproduction, représentation, modification ou adaptation, totale ou partielle, est interdite sans autorisation préalable écrite.</p>
-            </article>
-
-            <article class="site-feature" style="margin-top: 32px;">
-                <span>05</span>
-                <h2>Données personnelles</h2>
-                <p>Les données collectées via le formulaire de contact sont traitées dans le seul but de répondre aux demandes des utilisateurs. Aucune donnée n'est vendue ni transmise à des tiers. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données en contactant AMEVIA via le <a href="index.html#contact">formulaire en ligne</a>.</p>
-            </article>
-
-            <article class="site-feature" style="margin-top: 32px;">
-                <span>06</span>
-                <h2>Cookies</h2>
-                <p>Le site utilise des cookies strictement nécessaires à son fonctionnement (préférences utilisateur, session). Aucun cookie publicitaire ou de tracking tiers n'est déposé sans consentement explicite.</p>
-            </article>
-
-            <article class="site-feature" style="margin-top: 32px;">
-                <span>07</span>
-                <h2>Conditions de service</h2>
-                <p>Les prestations de création de site web sont facturées selon devis validé par le client. Délai de livraison à partir de <strong>72h</strong> pour les sites vitrines, sous réserve de réception de l'ensemble des éléments nécessaires (textes, images, accès, brief validé).</p>
-            </article>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div>
-            <img src="assets/images/logo.png" alt="" class="footer-logo" loading="lazy">
-            <strong>AMEVIA</strong>
-        </div>
-        <p>Créer. Connecter. Marquer les esprits.</p>
-        <div style="display:flex; gap:18px; align-items:center;">
-            <a href="mentions-legales.html" style="color:var(--muted); text-decoration:none; font-size:0.82rem; font-weight:600;">Mentions légales</a>
-            <span>2026</span>
-        </div>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="js/main.js?v=wow-6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="js/main.js?v=5" defer></script>
 </body>
 </html>
