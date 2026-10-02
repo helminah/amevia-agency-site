@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
     <title>AMEVIA — Studio Web & Identité de Marque à Dakar</title>
     <meta name="description" content="AMEVIA est un studio digital basé à Dakar. Nous concevons des sites web, des identités de marque et des tunnels d'acquisition sur mesure pour les entreprises qui veulent inspirer confiance et générer des demandes.">
     <meta name="keywords" content="création site web Dakar, agence web Sénégal, identité visuelle, branding, landing page, SEO, studio digital">
@@ -28,11 +27,11 @@
     <meta name="theme-color" content="#f5f7f3">
     <link rel="canonical" href="https://ameviaagency.com/">
     <link rel="icon" type="image/png" href="assets/images/logo.png">
-    <link rel="preload" as="video" href="assets/videos/amevia-reveal-10s.mp4" type="video/mp4">
+    <link rel="preload" as="image" href="assets/images/lengor-showcase.webp" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=7">
+    <link rel="stylesheet" href="css/style.css?v=8">
 
     <!-- Structured data -->
     <script type="application/ld+json">
@@ -71,21 +70,6 @@
     <!-- Scroll progress bar -->
     <div class="scroll-progress" aria-hidden="true"><span id="scrollProgressBar"></span></div>
 
-    <!-- Preloader -->
-    <div class="preloader" id="preloader" aria-hidden="true">
-        <div class="preloader-track">
-            <span class="preloader-char" style="--i:0">A</span>
-            <span class="preloader-char" style="--i:1">M</span>
-            <span class="preloader-char" style="--i:2">E</span>
-            <span class="preloader-char" style="--i:3">V</span>
-            <span class="preloader-char" style="--i:4">I</span>
-            <span class="preloader-char" style="--i:5">A</span>
-        </div>
-        <div class="preloader-line">
-            <div class="preloader-line-fill" id="preloaderFill"></div>
-        </div>
-    </div>
-
     <!-- Smooth scroll wrapper -->
     <div id="smooth-wrapper">
         <div id="smooth-content">
@@ -94,7 +78,7 @@
             <header>
                 <nav class="nav" id="nav" aria-label="Navigation principale">
                     <a href="#hero" class="nav-brand" aria-label="AMEVIA — accueil">
-                        <img src="assets/images/logo.png" alt="" class="nav-logo">
+                        <img src="assets/images/logo-mark.webp" alt="" class="nav-logo" width="96" height="96">
                         <span>AMEVIA</span>
                     </a>
                     <div class="nav-links" id="navLinks">
@@ -114,34 +98,47 @@
             <main id="main">
 
             <!-- Hero -->
-            <section class="hero" id="hero" data-pin="true" aria-label="Présentation AMEVIA">
+            <section class="hero" id="hero" aria-label="Présentation AMEVIA">
                 <div class="hero-bg" aria-hidden="true">
                     <div class="hero-aurora" aria-hidden="true"></div>
-                    <canvas id="particleCanvas" class="hero-particle-canvas"></canvas>
-                    <div class="hero-spotlight" id="heroSpotlight"></div>
-                    <video autoplay muted loop playsinline preload="auto" class="hero-video">
-                        <source src="assets/videos/amevia-reveal-10s.mp4" type="video/mp4">
-                    </video>
                     <div class="hero-vignette"></div>
                 </div>
+                <div class="hero-layout">
                 <div class="hero-content">
                     <p class="hero-eyebrow">Studio Web &amp; Identité de Marque · Dakar</p>
                     <h1 class="hero-title">
                         <span class="line">Des sites qui</span>
-                        <span class="line">convertissent.</span>
-                        <span class="line">Des marques qui</span>
-                        <span class="line accent">durent.</span>
+                        <span class="line accent">donnent envie.</span>
+                        <span class="line">Des marques qui durent.</span>
                     </h1>
-                    <p class="hero-desc">AMEVIA conçoit des expériences digitales sur mesure — sites, identités et tunnels d'acquisition — pour les entreprises qui veulent inspirer confiance dès le premier regard et transformer l'attention en demandes concrètes.</p>
+                    <p class="hero-desc">Nous créons des sites web et des identités de marque qui rendent votre offre claire, inspirent confiance et facilitent la prise de contact. Depuis Dakar, pour vos projets au Sénégal et à l’international.</p>
                     <div class="hero-actions">
-                        <a href="#work" class="btn-primary magnetic"><span>Voir nos réalisations</span></a>
-                        <a href="#contact" class="btn-ghost magnetic"><span>Démarrer un projet</span></a>
+                        <a href="#contact" class="btn-primary"><span>Parler de mon projet</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                        <a href="#work" class="btn-ghost"><span>Voir les réalisations</span></a>
                     </div>
-                    <p class="hero-microcopy">Réponse sous 24 h · Premiers livrables dès 72 h</p>
+                    <p class="hero-microcopy">Réponse sous 24 h · Proposition sur mesure, sans engagement</p>
+                    <button type="button" id="motionToggle" class="motion-toggle" aria-pressed="false" hidden>Mettre les animations en pause</button>
+                </div>
+                <div class="hero-showcase" aria-label="Aperçu de nos réalisations">
+                    <a class="showcase-main" href="#work" aria-label="Découvrir la réalisation Le Ngor">
+                        <div class="showcase-window">
+                            <div class="showcase-bar" aria-hidden="true"><span class="showcase-dots">● ● ●</span><span class="showcase-url">restaurantlengor.sn</span></div>
+                            <img src="assets/images/lengor-showcase.webp" alt="Site Le Ngor : restaurant face à l’océan à Dakar" width="1000" height="694" fetchpriority="high" decoding="async">
+                        </div>
+                        <p class="showcase-caption"><span>Le Ngor</span><span>Web &amp; identité de marque</span></p>
+                    </a>
+                    <a class="showcase-secondary" href="#work" aria-label="Découvrir la réalisation Dr Helminah">
+                        <div class="showcase-window">
+                            <div class="showcase-bar" aria-hidden="true"><span class="showcase-dots">● ● ●</span><span class="showcase-url">drhelminah.com</span></div>
+                            <img src="assets/images/drhelminah-showcase.webp" alt="Site professionnel du Dr Helminah" width="640" height="400" decoding="async">
+                        </div>
+                        <p class="showcase-caption"><span>Dr Helminah</span><span>Présence professionnelle</span></p>
+                    </a>
+                </div>
                 </div>
                 <div class="hero-scroll">
                     <div class="scroll-indicator">
-                        <span>Scroll</span>
+                        <span>Découvrir</span>
                         <div class="scroll-line"><div class="scroll-line-fill"></div></div>
                     </div>
                 </div>
@@ -152,7 +149,7 @@
                 <ul class="trust-grid">
                     <li class="trust-item" data-reveal="fade-up">
                         <span class="trust-value">Dès 72 h</span>
-                        <span class="trust-label">Premiers livrables</span>
+                        <span class="trust-label">Premiers livrables après validation du brief</span>
                     </li>
                     <li class="trust-item" data-reveal="fade-up">
                         <span class="trust-value">Sous 24 h</span>
@@ -179,17 +176,18 @@
                 <div class="marquee-fade marquee-fade--right"></div>
             </section>
 
-            <!-- Work / Horizontal Gallery -->
+            <!-- Work -->
             <section class="work" id="work" aria-label="Réalisations">
                 <div class="work-header">
                     <span class="section-eyebrow" data-reveal="chars">01 — Réalisations</span>
                     <h2 class="section-title" data-reveal="words">Des projets pensés pour durer</h2>
+                    <p class="work-intro">Des sites à explorer et des univers de marque à découvrir. Chaque projet interne est identifié comme tel.</p>
                 </div>
                 <div class="work-horizontal" id="workHorizontal">
                     <div class="work-track" id="workTrack">
                         <article class="work-card" data-tilt>
                             <div class="work-card-media">
-                                <img src="assets/images/lengor-desktop-fresh-lite.jpg" alt="Aperçu du site web du restaurant Le Ngor" loading="lazy">
+                                <img src="assets/images/lengor-desktop-fresh-lite.jpg" alt="Aperçu du site web du restaurant Le Ngor" width="1440" height="1000" loading="lazy" decoding="async">
                                 <div class="work-card-overlay"></div>
                             </div>
                             <div class="work-card-content">
@@ -201,7 +199,7 @@
                         </article>
                         <article class="work-card" data-tilt>
                             <div class="work-card-media">
-                                <img src="assets/images/real-drhelminah-screen.jpg" alt="Aperçu du site professionnel du Dr Helminah" loading="lazy">
+                                <img src="assets/images/real-drhelminah-screen.jpg" alt="Aperçu du site professionnel du Dr Helminah" width="1440" height="900" loading="lazy" decoding="async">
                                 <div class="work-card-overlay"></div>
                             </div>
                             <div class="work-card-content">
@@ -213,77 +211,29 @@
                         </article>
                         <article class="work-card" data-tilt>
                             <div class="work-card-media">
-                                <video src="assets/videos/portfolio-dakar-burger-preview.mp4" autoplay loop muted playsinline preload="metadata"></video>
+                                <img src="assets/images/dakar-burger-poster.webp" alt="Concept Dakar Burger : identité visuelle et site de restauration" width="864" height="1821" loading="lazy" decoding="async">
                                 <div class="work-card-overlay"></div>
                             </div>
                             <div class="work-card-content">
-                                <span class="work-card-tag">Food Brand + Identité</span>
+                                <span class="work-card-tag">Food Brand + Identité <span class="project-kind">Projet interne</span></span>
                                 <h3 class="work-card-title">Dakar Burger</h3>
                                 <p class="work-card-desc">Direction visuelle et présence digitale pour une marque fast-food locale qui sort du lot.</p>
-                                <span class="work-card-link work-card-link--muted">Projet interne</span>
+                                <a href="assets/videos/portfolio-dakar-burger-preview.mp4" target="_blank" rel="noopener" class="work-card-link">Voir l’animation<span aria-hidden="true"> →</span></a>
                             </div>
                         </article>
                         <article class="work-card" data-tilt>
                             <div class="work-card-media">
-                                <img src="assets/images/ecommerce-senegal-mockup-lite.jpg" alt="Maquette de la boutique e-commerce Suave Comfort" loading="lazy">
+                                <img src="assets/images/ecommerce-senegal-mockup-lite.jpg" alt="Maquette de la boutique e-commerce Suave Comfort" width="1586" height="992" loading="lazy" decoding="async">
                                 <div class="work-card-overlay"></div>
                             </div>
                             <div class="work-card-content">
-                                <span class="work-card-tag">E-commerce</span>
+                                <span class="work-card-tag">E-commerce <span class="project-kind">Projet interne</span></span>
                                 <h3 class="work-card-title">Suave Comfort</h3>
                                 <p class="work-card-desc">Un univers e-commerce pensé pour rendre l'offre lisible et rassurer avant l'achat.</p>
                                 <span class="work-card-link work-card-link--muted">Projet interne</span>
                             </div>
                         </article>
                     </div>
-                </div>
-            </section>
-
-            <!-- Clients strip -->
-            <section class="clients" aria-label="Ils nous font confiance">
-                <p class="clients-label" data-reveal="fade">Ils nous font confiance</p>
-                <ul class="clients-list" data-reveal="fade-up">
-                    <li>Le Ngor</li>
-                    <li aria-hidden="true">·</li>
-                    <li>Dr Helminah</li>
-                    <li aria-hidden="true">·</li>
-                    <li>Dakar Burger</li>
-                    <li aria-hidden="true">·</li>
-                    <li>Suave Comfort</li>
-                </ul>
-            </section>
-
-            <!-- Testimonials -->
-            <section class="testimonials" id="testimonials" aria-label="Témoignages clients">
-                <div class="testimonials-header">
-                    <span class="section-eyebrow" data-reveal="chars">Témoignages</span>
-                    <h2 class="section-title" data-reveal="words">Ce que nos clients disent</h2>
-                </div>
-                <div class="testimonials-grid">
-                    <article class="testimonial-card" data-reveal="fade-up">
-                        <span class="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
-                        <blockquote class="testimonial-text">AMEVIA a transformé notre présence en ligne. En 72 h, nous avions un site qui convertit vraiment.</blockquote>
-                        <footer class="testimonial-author">
-                            <span class="testimonial-name">Moussa D.</span>
-                            <span class="testimonial-role">Restaurateur</span>
-                        </footer>
-                    </article>
-                    <article class="testimonial-card" data-reveal="fade-up">
-                        <span class="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
-                        <blockquote class="testimonial-text">Un travail sur mesure, une réactivité rare. Notre identité visuelle est enfin à la hauteur de notre ambition.</blockquote>
-                        <footer class="testimonial-author">
-                            <span class="testimonial-name">Awa S.</span>
-                            <span class="testimonial-role">Fondatrice e-commerce</span>
-                        </footer>
-                    </article>
-                    <article class="testimonial-card" data-reveal="fade-up">
-                        <span class="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
-                        <blockquote class="testimonial-text">Professionnalisme et créativité. Ils comprennent les enjeux du marché sénégalais tout en pensant global.</blockquote>
-                        <footer class="testimonial-author">
-                            <span class="testimonial-name">Ibrahima K.</span>
-                            <span class="testimonial-role">Directeur marketing</span>
-                        </footer>
-                    </article>
                 </div>
             </section>
 
@@ -387,7 +337,7 @@
                     <article class="why-item" data-reveal="fade-up">
                         <span class="why-number" aria-hidden="true">02</span>
                         <h3 class="why-title">Rapidité sans sacrifier la qualité</h3>
-                        <p class="why-desc">Premiers livrables en 72 h. Parce que le temps est votre ressource la plus précieuse, nous avançons vite sans jamais bâcler.</p>
+                        <p class="why-desc">Premiers livrables dès 72 h après validation du brief et réception des éléments. Un calendrier clair, des étapes partagées et un suivi à chaque avancée.</p>
                     </article>
                     <article class="why-item" data-reveal="fade-up">
                         <span class="why-number" aria-hidden="true">03</span>
@@ -406,7 +356,7 @@
                 <div class="faq-list" data-reveal="fade-up">
                     <details class="faq-item">
                         <summary>Combien de temps faut-il pour livrer un site ?</summary>
-                        <div class="faq-answer"><p>Comptez à partir de 72 h pour un site vitrine, une fois le brief validé et les éléments reçus. Les projets plus complets (e-commerce, identité de marque complète) s'étalent sur quelques semaines.</p></div>
+                        <div class="faq-answer"><p>Les premiers livrables peuvent être proposés dès 72 h après validation du brief et réception des éléments. Le calendrier de mise en ligne est défini dans le devis selon le périmètre du projet.</p></div>
                     </details>
                     <details class="faq-item">
                         <summary>Travaillez-vous à distance ?</summary>
@@ -431,33 +381,41 @@
             <section class="contact" id="contact" aria-label="Contact">
                 <div class="contact-bg" aria-hidden="true"></div>
                 <div class="contact-content">
+                    <div class="contact-intro">
                     <span class="section-eyebrow" data-reveal="chars">06 — Contact</span>
                     <h2 class="section-title" data-reveal="words">Parlons de votre projet</h2>
-                    <p class="contact-desc" data-reveal="fade-up">Disponibles pour des missions ponctuelles ou des collaborations long terme. Décrivez-nous votre projet : nous revenons vers vous sous 24 h.</p>
-                    <form class="contact-form" id="contactForm" data-reveal="fade-up" novalidate>
+                    <p class="contact-desc">Un nouveau site, une identité à repenser ou une idée à concrétiser ? Présentez-nous votre activité et votre objectif. Nous revenons vers vous sous 24 h.</p>
+                    <a class="contact-email" href="mailto:hello@ameviaagency.com">hello@ameviaagency.com <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                    <p class="contact-assurance">Un premier échange pour cadrer vos besoins.<br>Un devis détaillé avant tout engagement.</p>
+                    </div>
+                    <form class="contact-form" id="contactForm" action="https://formsubmit.co/hello@ameviaagency.com" method="POST">
+                        <input type="hidden" name="_subject" value="Nouveau message AMEVIA Agency">
+                        <input type="hidden" name="_template" value="table">
                         <div class="form-row">
                             <div class="form-field">
                                 <input type="text" id="name" name="name" placeholder=" " autocomplete="name" required>
-                                <label for="name">Nom</label>
+                                <label for="name">Nom *</label>
                             </div>
                             <div class="form-field">
                                 <input type="email" id="email" name="email" placeholder=" " autocomplete="email" required>
-                                <label for="email">Email</label>
+                                <label for="email">Email *</label>
                             </div>
                         </div>
                         <div class="form-field">
                             <input type="text" id="subject" name="subject" placeholder=" ">
-                            <label for="subject">Sujet</label>
+                            <label for="subject">Votre activité ou votre entreprise</label>
                         </div>
                         <div class="form-field">
                             <textarea id="message" name="message" rows="4" placeholder=" " required></textarea>
-                            <label for="message">Votre message</label>
+                            <label for="message">Votre projet *</label>
                         </div>
+                        <p class="form-note">* Champs obligatoires. Quelques mots sur vos besoins, votre calendrier et votre budget si vous le connaissez.</p>
                         <button type="submit" class="btn-primary btn-large">
                             <span>Envoyer le message</span>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </button>
-                        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+                        <p class="form-status" id="formStatus" role="status" aria-live="polite" aria-atomic="true"></p>
+                        <p class="form-note">Vos informations servent à répondre à votre demande. <a href="mentions-legales.html#privacy">Confidentialité</a></p>
                     </form>
                 </div>
             </section>
@@ -468,7 +426,7 @@
             <footer class="footer">
                 <div class="footer-inner">
                     <div class="footer-brand">
-                        <img src="assets/images/logo.png" alt="" class="footer-logo">
+                        <img src="assets/images/logo-mark.webp" alt="" class="footer-logo" width="96" height="96" loading="lazy">
                         <p>Studio Web &amp; Identité de Marque.<br>Créer. Connecter. Marquer les esprits.</p>
                     </div>
                     <nav class="footer-links" aria-label="Liens du site">
@@ -493,14 +451,7 @@
         </div>
     </div>
 
-    <!-- Cursor -->
-    <div class="cursor" id="cursor" aria-hidden="true"></div>
-    <div class="cursor-trail" id="cursorTrail" aria-hidden="true"></div>
-
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
-    <script src="js/main.js?v=6" defer></script>
+    <script src="js/main.js?v=7" defer></script>
 </body>
 </html>
