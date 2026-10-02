@@ -155,7 +155,9 @@
                 else if (original === null) link.removeAttribute('tabindex');
                 else link.setAttribute('tabindex', original);
             });
-            if (open && links.length) links[0].focus();
+            if (open && links.length) window.requestAnimationFrame(() => {
+                if (open) links[0].focus();
+            });
             else if (restoreFocus) toggle.focus();
         };
         toggle.addEventListener('click', () => setOpen(!open));

@@ -1165,7 +1165,7 @@ a.showcase-secondary:hover .showcase-window { box-shadow: 0 30px 70px rgba(12,39
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
-        transition: opacity 0.3s var(--ease-out-expo), visibility 0.3s;
+        transition: opacity 0.3s var(--ease-out-expo);
         z-index: 99;
     }
     body.menu-open .nav-links { opacity: 1; visibility: visible; pointer-events: auto; }
