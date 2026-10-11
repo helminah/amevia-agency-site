@@ -1,0 +1,28 @@
+{
+  "concept": "BUN BAZAR",
+  "fictional": true,
+  "photos": [
+    {
+      "file": "assets/burger.jpg",
+      "author": "amirali mirhashemian",
+      "source": "https://unsplash.com/photos/burger-with-lettuce-and-tomatoes-sc5sTPMrVfk",
+      "sha256": "7cbbad4c35e6219d1e33c746a6866b364ab5362972900c2e4a7a0d02862584f6",
+      "license": "Unsplash License",
+      "license_url": "https://unsplash.com/license",
+      "verification_date": "2026-10-11",
+      "verification": "Page primaire et licence consultées ; la page indique une utilisation gratuite sous licence Unsplash.",
+      "use": "Photographie d’ambiance pour une marque fictive. Aucun établissement client ni produit commercialisé représenté."
+    },
+    {
+      "file": "assets/drinks.jpg",
+      "author": "Melissa Walker Horn",
+      "source": "https://unsplash.com/photos/clear-glass-jar-filled-with-lemonade-juice-lo_udD1o_lk",
+      "sha256": "27ad6ebaf1887963033687e4136c7e7b4d205e332faac5ae7af2582d4ba6c587",
+      "license": "Unsplash License",
+      "license_url": "https://unsplash.com/license",
+      "verification_date": "2026-10-11",
+      "verification": "Page primaire et licence consultées ; la page indique une utilisation gratuite sous licence Unsplash.",
+      "use": "Photographie d’ambiance pour une marque fictive. Aucun établissement client ni produit commercialisé représenté."
+    }
+  ]
+}

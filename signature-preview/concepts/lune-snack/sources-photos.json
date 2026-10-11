@@ -1,0 +1,17 @@
+{
+  "concept": "LUNE SNACK",
+  "fictional": true,
+  "photos": [
+    {
+      "file": "assets/plate.jpg",
+      "author": "Ojiako Nlemedim",
+      "source": "https://unsplash.com/photos/grilled-chicken-and-vegetables-on-a-plate-O0KH4FOziVA",
+      "sha256": "86d1416beb9fe9bf7b7abdb711f6f882d47c1bd5f7a85dcab85141802261d2c1",
+      "license": "Unsplash License",
+      "license_url": "https://unsplash.com/license",
+      "verification_date": "2026-10-11",
+      "verification": "Page primaire et licence consultées ; la page indique une utilisation gratuite sous licence Unsplash.",
+      "use": "Photographie d’ambiance pour une marque fictive. Aucun établissement client ni produit commercialisé représenté."
+    }
+  ]
+}

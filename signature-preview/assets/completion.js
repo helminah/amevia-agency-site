@@ -1,0 +1,8 @@
+(()=>{'use strict';
+const toggle=document.querySelector('.menu-toggle'),menu=document.querySelector('#mobile-menu');
+const closeMenu=()=>{menu.hidden=true;toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Ouvrir le menu')};
+toggle.addEventListener('click',()=>{const open=menu.hidden;menu.hidden=!open;toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu')});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!menu.hidden){closeMenu();toggle.focus()}});matchMedia('(min-width:761px)').addEventListener('change',e=>{if(e.matches)closeMenu()});
+const form=document.querySelector('#brief-form'),service=document.querySelector('#brief-service');document.querySelectorAll('[data-service]').forEach(a=>a.addEventListener('click',()=>{service.value=a.dataset.service}));
+form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const name=document.querySelector('#brief-name').value.trim(),message=document.querySelector('#brief-message').value.trim();if(!name||!message)return;const uri='mailto:hello@ameviaagency.com?subject='+encodeURIComponent('Nouveau projet — '+service.value)+'&body='+encodeURIComponent('Bonjour Amevia,\n\nJe suis '+name+'.\nMon projet : '+service.value+'\n\n'+message+'\n\nÀ bientôt,\n'+name);const status=document.querySelector('#brief-status');status.replaceChildren(document.createTextNode('Votre brouillon est prêt. Si votre messagerie ne s’ouvre pas, '));const link=document.createElement('a');link.href=uri;link.textContent='ouvrez-le ici';status.append(link);window.location.href=uri;});
+})();
